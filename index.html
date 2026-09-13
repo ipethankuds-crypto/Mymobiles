@@ -1,0 +1,2226 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proofly | AI Workforce Platform & Custom Mobile Apps · Jose Rene Navarro</title>
+  <meta name="description" content="Proofly - AI-powered workforce management platform & custom mobile apps built on Glide by 20-year Software QA veteran Jose Rene Navarro. Rapid delivery, zero-crash reliability." />
+
+  <!-- Authentic Brand Favicon -->
+  <link rel="icon" type="image/webp" href="assets/logo.webp" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#0066FF',
+              cyan: '#00F0FF',
+              dark: '#090D16',
+              slate: '#0F172A',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- React 18 & ReactDOM -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  
+  <!-- Babel Standalone for JSX -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-white text-slate-900 antialiased selection:bg-blue-600 selection:text-white">
+  <div id="root"></div>
+
+  <!-- React 18 Precision App Studio Application -->
+  <script type="text/babel">
+    const { useState, useEffect, useMemo, useRef } = React;
+
+    // =========================================================================
+    // Bespoke Vector Icon Library
+    // =========================================================================
+    const ICONS = {
+      'arrow-right': (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      ),
+      'check': (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full"><polyline points="20 6 9 17 4 12"/></svg>
+      ),
+      'smartphone': (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg>
+      ),
+      'scan-face': (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/><path d="M9 16c.85.6 1.85 1 3 1s2.15-.4 3-1"/></svg>
+      ),
+      'camera': (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+      ),
+      'shield-check': (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+      ),
+      'terminal': (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg>
+      ),
+      'zap': (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      ),
+      'clock': (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      ),
+      'phone': (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      ),
+      'map-pin': (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      ),
+      'cpu': (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+      ),
+      'file-spreadsheet': (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M8 13h2"/><path d="M14 13h2"/><path d="M8 17h2"/><path d="M14 17h2"/></svg>
+      ),
+      'users': (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      ),
+      'message-square': (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      ),
+      'calendar': (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+      ),
+      'external-link': (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+      ),
+      'mail': (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      ),
+      'copy': (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+      ),
+      'x': (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+      ),
+      'zoom-in': (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg>
+      )
+    };
+
+    function SvgIcon({ name, className = "w-4 h-4" }) {
+      return (
+        <span className={`inline-flex items-center justify-center shrink-0 ${className}`} aria-hidden="true">
+          {ICONS[name] || ICONS['check']}
+        </span>
+      );
+    }
+
+    // Authentic Brand Logo Component
+    function StudioLogoMark({ size = "md", className = "" }) {
+      const sizeClasses = size === "lg" ? "w-14 h-14" : size === "sm" ? "w-8 h-8" : "w-11 h-11";
+      return (
+        <div className={`${sizeClasses} rounded-xl overflow-hidden border border-slate-700/60 shadow-md bg-[#090D16] flex items-center justify-center shrink-0 group-hover:border-blue-500 group-hover:shadow-blue-500/20 transition-all ${className}`}>
+          <img src="assets/logo.webp" alt="Jose Navarro - Solutions That Work" className="w-full h-full object-cover" />
+        </div>
+      );
+    }
+
+    // =========================================================================
+    // PROOFLY ARCHITECTURE TIERS (From Page 1 & 2 of PDF Document)
+    // =========================================================================
+    const PROOFLY_TIERS = [
+      {
+        id: 'level-1',
+        level: 'Level 1',
+        name: 'Attendance & Tasks',
+        subtitle: 'Attendance + Task Verification',
+        badge: 'Foundation Tier',
+        flyer: 'assets/proofly-tier1.webp',
+        summary: 'AI Face Verification, Late Detection, Missing Checkout Alerts, Photo Task Proof & Admin Monitoring.',
+        features: [
+          'AI Biometric Face Verification (Face Score 1.00 Match)',
+          'Late Arrival Detection & Missing Checkout Alerts',
+          'Mandatory Shift Task Lists with Photo Upload Proof',
+          'Real-Time Admin Task & Attendance Monitoring Dashboard'
+        ],
+        phoneBadge: 'LVL 1 · FACE & TASKS',
+        hasChat: false,
+        hasPayroll: false,
+        hasScheduling: false,
+        turnaroundDays: '5-7 Business Days',
+        adminHoursSaved: '10+ hrs/wk'
+      },
+      {
+        id: 'level-2',
+        level: 'Level 2',
+        name: 'Team Messaging',
+        subtitle: 'Attendance + Tasks + In-App Messaging',
+        badge: 'Communication Tier',
+        flyer: 'assets/proofly-tier2.webp',
+        summary: 'Everything in Level 1 plus Shift Reminders, Missed Check-In Alerts & Direct Manager-to-Employee Chat.',
+        features: [
+          'Everything in Level 1 Attendance & Task Verification',
+          'Automatic Shift Reminders & Missed Check-In Alerts',
+          'Shift-Wide Announcements & Broadcast Alerts',
+          'Direct Manager-to-Employee Private Messaging'
+        ],
+        phoneBadge: 'LVL 2 · CHAT ACTIVE',
+        hasChat: true,
+        hasPayroll: false,
+        hasScheduling: false,
+        turnaroundDays: '6-8 Business Days',
+        adminHoursSaved: '14+ hrs/wk'
+      },
+      {
+        id: 'level-3',
+        level: 'Level 3',
+        name: 'CRA-Ready Payroll',
+        subtitle: 'Attendance + Tasks + Chat + CRA Payroll',
+        badge: 'Compliance Tier',
+        flyer: 'assets/proofly-tier3.webp',
+        summary: 'Everything in Levels 1 & 2 plus CRA-Ready Payroll, Missing Timesheets, Overtime Math & Anomaly Flagging.',
+        features: [
+          'Everything in Levels 1 & 2 (Biometrics, Tasks, Messaging)',
+          'Automated CRA-Ready Payroll CSV Spreadsheet Exports',
+          'Missing Timesheet Detection & Overtime Math (Ontario ESA)',
+          'Early / Late Departure Tracking & Smart Anomaly Flagging'
+        ],
+        phoneBadge: 'LVL 3 · CRA PAYROLL',
+        hasChat: true,
+        hasPayroll: true,
+        hasScheduling: false,
+        turnaroundDays: '7-10 Business Days',
+        adminHoursSaved: '18+ hrs/wk'
+      },
+      {
+        id: 'level-4',
+        level: 'Level 4',
+        name: 'Smart Scheduling',
+        subtitle: 'Full Operations + In-App Scheduling',
+        badge: 'Enterprise Tier',
+        flyer: 'assets/proofly-tier4.webp',
+        summary: 'Everything in Levels 1–3 plus Drag-and-Drop Shift Planner, Conflict Detection & Staff Availability Matching.',
+        features: [
+          'Everything in Levels 1, 2, and 3',
+          'Drag-and-Drop Visual Shift Dispatcher & Schedule Calendar',
+          'Employee Shift Confirmations & Automatic Push Notifications',
+          'Conflict Detection, Availability Matching & Open Shift Claims'
+        ],
+        phoneBadge: 'LVL 4 · FULL SCHEDULER',
+        hasChat: true,
+        hasPayroll: true,
+        hasScheduling: true,
+        turnaroundDays: '10-14 Business Days',
+        adminHoursSaved: '24+ hrs/wk'
+      }
+    ];
+
+    // =========================================================================
+    // TARGET INDUSTRIES (From Page 3 of PDF Document: "PERFECT FOR")
+    // =========================================================================
+    const PROOFLY_INDUSTRIES = [
+      {
+        id: 'cleaning',
+        name: 'Cleaning Services',
+        shortName: 'Cleaning',
+        site: 'Halifax Commercial Suites · Evening Shift',
+        worker: 'Elena Rostova',
+        workerRole: 'Lead Commercial Cleaner',
+        tasks: [
+          'Sanitize High-Touch Suites & Door Latches',
+          'Restroom Restock & Hygiene Checklist Log',
+          'Floor Buffing & Final Inspection Photo Upload'
+        ],
+        chatMsg: 'Manager: Please ensure 3rd floor executive boardrooms are locked by 22:00.'
+      },
+      {
+        id: 'construction',
+        name: 'Construction Teams',
+        shortName: 'Construction',
+        site: 'Bay St. Commercial Tower · Core Structure',
+        worker: 'Dave Kowalski',
+        workerRole: 'Field Site Foreman',
+        tasks: [
+          'Mandatory Morning PPE Safety Check',
+          'Tool & Heavy Equipment Staging Log',
+          'End-of-Day Hazardous Lockup Verification'
+        ],
+        chatMsg: 'Safety Director: Concrete pour scheduled for 08:30 AM at Bay 2.'
+      },
+      {
+        id: 'security',
+        name: 'Security Services',
+        shortName: 'Security',
+        site: 'Metropolitan Commercial Plaza · Perimeter Route',
+        worker: 'Marcus Adebayo',
+        workerRole: 'Night Patrol Officer',
+        tasks: [
+          'Gate 3 & Loading Dock NFC Checkpoint Scan',
+          'Perimeter Fence & CCTV Camera Status',
+          'Incident Log & Timestamped Photo Upload'
+        ],
+        chatMsg: 'Dispatch: All patrols report status every 45 mins. Dock B gate locked.'
+      },
+      {
+        id: 'landscaping',
+        name: 'Landscaping Companies',
+        shortName: 'Landscaping',
+        site: 'Oakridge Corporate Campus · Grounds A',
+        worker: 'Jordan Miller',
+        workerRole: 'Grounds Supervisor',
+        tasks: [
+          'Commercial Mower & Blade Safety Check',
+          'Turf Irrigation & Fertilizer Treatment',
+          'Before & After Property Photo Evidence'
+        ],
+        chatMsg: 'Operations: Rain forecast at 14:00. Prioritize front entrance beds.'
+      },
+      {
+        id: 'delivery',
+        name: 'Delivery & Logistics',
+        shortName: 'Logistics',
+        site: 'GTA Express Route #18 · Fleet Van 04',
+        worker: 'Kenji Sato',
+        workerRole: 'Route Driver',
+        tasks: [
+          'Vehicle Pre-Trip Inspection & Odometer',
+          'Package Manifest Barcode Scan (42 Pkgs)',
+          'Proof of Delivery Customer Signatures'
+        ],
+        chatMsg: 'Dispatch: Priority rush delivery added to Stop #12 on Queen St.'
+      },
+      {
+        id: 'healthcare',
+        name: 'Healthcare & Clinics',
+        shortName: 'Healthcare',
+        site: 'Yorkville Specialized Clinic · Suite 200',
+        worker: 'Chloe Tremblay',
+        workerRole: 'Clinical Operations Assistant',
+        tasks: [
+          'Exam Room Disinfection & Biohazard Log',
+          'Sterilization Autoclave Cycle Verification',
+          'Medical Supply Daily Par-Level Count'
+        ],
+        chatMsg: 'Clinic Director: Blood draw supplies restocked in Room 4.'
+      }
+    ];
+
+    // =========================================================================
+    // 5 LIVE PROJECTS (From Pages 4, 5, 6 of PDF Document)
+    // =========================================================================
+    const PROJECTS_DATA = [
+      {
+        id: 'manpower',
+        title: 'The Manpower Solution Level 1 Mobile App',
+        shortTitle: 'The Manpower Solution',
+        category: 'Workforce & Attendance',
+        filterCategory: 'workforce',
+        client: 'Manpower Solution',
+        activeMetric: '18 Active Employees',
+        badge: 'Level 1 Architecture · Field Operations',
+        flyerImg: 'assets/project-manpower.webp',
+        excerpt: 'Fast, paperless attendance system with photo proof, real-time admin monitoring, and instant reports currently used by 18 employees.',
+        fullDocDescription: 'The Manpower Solution Level 1 Mobile App was successfully launched and is currently used by its 18 employees. The app provides a fast, paperless attendance system with photo proof, real-time admin monitoring, and instant reports. It eliminates time theft, improves accountability, and simplifies daily operations for managers and staff alike.',
+        keyFeatures: [
+          'Fast, paperless mobile attendance tracking on any smartphone',
+          'Biometric photo proof for every shift start and checkout',
+          'Real-time admin monitoring dashboard for field managers',
+          'Instant shift reports and CSV exports ready for payroll',
+          'Eliminates buddy punching and time theft across 18 staff members',
+          'Zero app store download required (Glide Progressive Web App)'
+        ],
+        techStack: ['Glide PWA', 'Cloud Database', 'Biometric Verification', 'Real-Time Admin Hub']
+      },
+      {
+        id: 'cfc-music',
+        title: 'The CFC Music Ministry Scarborough South Mobile App',
+        shortTitle: 'CFC Music Ministry App',
+        category: 'Faith & Community',
+        filterCategory: 'community',
+        client: 'CFC Music Ministry (Scarborough South)',
+        activeMetric: '135+ Worship Songs',
+        badge: 'Community & Worship Platform',
+        flyerImg: 'assets/project-cfc-music.webp',
+        excerpt: 'Mobile app providing easy access to 135+ worship songs, song selection for services, latest service schedules, and announcements.',
+        fullDocDescription: 'The CFC Music Ministry Scarborough South Mobile App was successfully launched and is currently used by its members. The app provides easy access to 135+ worship songs, song selection for services, latest service schedules, and announcements. It simplifies rehearsal preparation and keeps the entire ministry connected and aligned anytime, anywhere.',
+        keyFeatures: [
+          'Searchable digital songbook containing 135+ worship songs with chords and lyrics',
+          'Curated weekly service song selection tool for music directors',
+          'Real-time service rehearsal schedules and event calendar sync',
+          'Direct ministry announcements and broadcast notification updates',
+          'Simplifies rehearsal preparation for all musicians and vocalists',
+          'Accessible on all devices without app store installation friction'
+        ],
+        techStack: ['Glide Mobile', 'Song Indexing Engine', 'Calendar Sync', 'Broadcast Hub']
+      },
+      {
+        id: 'saint-finder',
+        title: 'The Birthday Saint Finder App',
+        shortTitle: 'Birthday Saint Finder',
+        category: 'Faith & Public App',
+        filterCategory: 'community',
+        client: 'Public / Faith Community',
+        activeMetric: '100% Offline Capable · Zero Registration',
+        badge: 'Public Mobile Web App',
+        flyerImg: 'assets/project-saint-finder.webp',
+        excerpt: 'Catholic patron saint discovery by birthday, saint biographies, virtues, and baby name search with 100% offline support.',
+        fullDocDescription: 'The Birthday Saint Finder App was successfully launched and is currently available for use. This family-friendly app helps users discover Catholic patron saints associated with their birthday, explore saint biographies and virtues, and find saints for baby names. Designed for everyday inspiration, it works 100% offline, requires no registration, and makes faith learning simple and engaging for all ages.',
+        keyFeatures: [
+          'Interactive birthday-to-patron saint discovery search',
+          'Comprehensive saint biographies, feast days, and spiritual virtues',
+          'Catholic baby name search and saint origin finder',
+          '100% offline capability — functions anywhere without mobile data',
+          'No registration, signups, or private data collection required',
+          'Clean, family-friendly interface optimized for all generations'
+        ],
+        techStack: ['Glide PWA', 'Offline SQLite/IndexedDB Storage', 'Search Engine', 'Faith Database']
+      },
+      {
+        id: 'driving-academy',
+        title: 'Proofly Driving Academy',
+        shortTitle: 'Proofly Driving Academy',
+        category: 'Portals & Fleet Management',
+        filterCategory: 'portals',
+        client: 'Driving School Academy',
+        activeMetric: 'Dual Admin & Instructor Dashboards',
+        badge: 'Fleet & Driving School Platform',
+        flyerImg: 'assets/project-driving-academy.webp',
+        excerpt: 'All-in-one driving school management platform with dedicated Administrator and Instructor Dashboards.',
+        fullDocDescription: 'The Proofly Driving Academy is an all-in-one driving school management platform with dedicated Administrator and Instructor Dashboards. It manages students, packages, road tests, and vehicles, with conflict-free scheduling and real-time lesson tracking. Designed to eliminate double-bookings and streamline driving school operations, the platform was successfully launched.',
+        keyFeatures: [
+          'Dedicated Administrator control dashboard for school owners',
+          'Dedicated mobile field dashboard for in-car instructors',
+          'Student profile management, lesson package tracking & road test logs',
+          'Vehicle fleet maintenance, mileage logs, and availability tracking',
+          'Conflict-free scheduling engine eliminating double-bookings',
+          'Real-time lesson completion tracking with digital student sign-off'
+        ],
+        techStack: ['Glide Multi-Role Platform', 'Conflict-Free Scheduler', 'Fleet Manager', 'Dual Dashboards']
+      },
+      {
+        id: 'joren-property',
+        title: 'Joren Property Listings',
+        shortTitle: 'Joren Property Listings',
+        category: 'Portals & Real Estate',
+        filterCategory: 'portals',
+        client: 'Joren Real Estate',
+        activeMetric: 'Buyer Engagement & View Analytics',
+        badge: 'Real Estate Brokerage Mobile App',
+        flyerImg: 'assets/project-joren-property.webp',
+        excerpt: 'Real estate mobile app for buyers and agents to explore listings, view photos, and track property engagement.',
+        fullDocDescription: 'The Joren Property Listings is a mobile application designed for buyers and agents to explore available properties. Users can browse listings, view high-quality photos, and access complete property details anytime. The app also tracks property views to help agents gauge buyer interest, making property discovery and marketing simple, fast, and organized.',
+        keyFeatures: [
+          'High-resolution property galleries and complete property specifications',
+          'Instant property dimension, pricing, and neighborhood detail displays',
+          'Automated property view counter tracking buyer interest for agents',
+          'One-tap agent inquiry and property showing requests',
+          'Streamlined property discovery and marketing for fast turnover',
+          'Lightweight, responsive mobile interface accessible on any smartphone'
+        ],
+        techStack: ['Glide Real Estate App', 'Photo CDN Gallery', 'Engagement Analytics', 'Agent CRM Sync']
+      }
+    ];
+
+    // =========================================================================
+    // LIGHTBOX MODAL COMPONENT (View Full-Resolution Flyers)
+    // =========================================================================
+    function LightboxModal({ imageSrc, title, subtitle, onClose }) {
+      if (!imageSrc) return null;
+
+      useEffect(() => {
+        const handleKeyDown = (e) => {
+          if (e.key === 'Escape') onClose();
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+      }, [onClose]);
+
+      return (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-md animate-fade-in" onClick={onClose}>
+          <div className="relative max-w-4xl w-full bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[92vh]" onClick={(e) => e.stopPropagation()}>
+            <div className="p-4 sm:p-5 border-b border-slate-800 flex items-center justify-between bg-slate-950/70">
+              <div>
+                <h4 className="text-white font-bold text-sm sm:text-base flex items-center gap-2">
+                  <span>{title}</span>
+                  <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-blue-500/20 text-cyan-400 border border-cyan-500/30">Official Flyer</span>
+                </h4>
+                {subtitle && <p className="text-xs text-slate-400 mt-0.5">{subtitle}</p>}
+              </div>
+              <button
+                type="button"
+                onClick={onClose}
+                className="w-9 h-9 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition"
+                aria-label="Close modal"
+              >
+                <SvgIcon name="x" className="w-5 h-5" />
+              </button>
+            </div>
+            
+            <div className="flex-1 overflow-auto p-4 sm:p-6 flex items-center justify-center bg-black/40">
+              <img src={imageSrc} alt={title} className="max-h-[72vh] max-w-full object-contain rounded-xl shadow-lg border border-slate-800" />
+            </div>
+
+            <div className="p-3 sm:p-4 border-t border-slate-800 bg-slate-950 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-400">
+              <span>Authentic flyer document from Jose Rene Navarro</span>
+              <button
+                type="button"
+                onClick={onClose}
+                className="px-4 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-bold transition"
+              >
+                Close Preview
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // =========================================================================
+    // FEATURE 1: Hero Studio Configurator (Based on Jose's Exact PDF)
+    // =========================================================================
+    function AppConfiguratorHero({ onSelectTierFlyer, onOpenContactWithTier }) {
+      const [selectedTier, setSelectedTier] = useState(PROOFLY_TIERS[0]);
+      const [selectedIndustry, setSelectedIndustry] = useState(PROOFLY_INDUSTRIES[0]);
+      
+      // Interactive phone state
+      const [isSimClockedIn, setIsSimClockedIn] = useState(false);
+      const [simScanning, setSimScanning] = useState(false);
+      const [taskCompletion, setTaskCompletion] = useState({ 0: true, 1: false, 2: false });
+
+      const handleSimClock = () => {
+        if (!isSimClockedIn) {
+          setSimScanning(true);
+          setTimeout(() => {
+            setSimScanning(false);
+            setIsSimClockedIn(true);
+          }, 850);
+        } else {
+          setIsSimClockedIn(false);
+          setTaskCompletion({ 0: false, 1: false, 2: false });
+        }
+      };
+
+      return (
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          
+          {/* Controls Panel */}
+          <div className="lg:col-span-7 space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs font-semibold shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-blue-600 animate-ping"></span>
+              <span className="font-mono text-[11px] uppercase tracking-wider">Proofly Platform · Solutions That Work</span>
+            </div>
+
+            <div className="space-y-2">
+              <div className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-500 font-mono">
+                AI Workforce Platform · Custom Glide Mobile Apps · 20-Year Software QA
+              </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.08]">
+                Eliminate Paper Chaos With <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500">
+                  Proofly AI Mobile Apps.
+                </span>
+              </h1>
+            </div>
+
+            <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
+              Engineered by <strong>Jose Rene Navarro</strong>, combining <strong>20+ years of Software Quality Assurance rigor</strong> with rapid <strong>Glide mobile app delivery</strong>. Stop buddy punching, track field tasks with photo proof, and automate CRA payroll in <strong>7 business days</strong>.
+            </p>
+
+            {/* Interactive Studio Controls Box */}
+            <div className="p-5 sm:p-6 rounded-2xl border border-slate-200 bg-slate-50/80 space-y-5 shadow-sm">
+              
+              {/* Step 1: Select Proofly Level (from PDF) */}
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-500 font-mono">
+                    1. Select Proofly System Level:
+                  </label>
+                  <button
+                    type="button"
+                    onClick={() => onSelectTierFlyer(selectedTier.flyer, selectedTier.level + ' - ' + selectedTier.subtitle)}
+                    className="text-[11px] text-blue-600 hover:text-blue-800 font-bold font-mono flex items-center gap-1 group"
+                  >
+                    <SvgIcon name="zoom-in" className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
+                    <span>View Level Flyer</span>
+                  </button>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                  {PROOFLY_TIERS.map((tier) => (
+                    <button
+                      key={tier.id}
+                      type="button"
+                      onClick={() => { setSelectedTier(tier); setTaskCompletion({ 0: true, 1: false, 2: false }); }}
+                      className={`px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-center border ${
+                        selectedTier.id === tier.id 
+                          ? 'bg-slate-950 text-white border-slate-950 shadow-md ring-2 ring-blue-500/30' 
+                          : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300'
+                      }`}
+                    >
+                      <div className="text-[10px] text-blue-400 font-mono uppercase">{tier.level}</div>
+                      <div className="truncate font-bold">{tier.name}</div>
+                    </button>
+                  ))}
+                </div>
+                <p className="text-[11px] text-slate-500 mt-2">
+                  <strong>{selectedTier.subtitle}:</strong> {selectedTier.summary}
+                </p>
+              </div>
+
+              {/* Step 2: Select Industry (from Page 3 of PDF) */}
+              <div>
+                <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-2 font-mono">
+                  2. Choose Target Industry Profile (Doc Page 3):
+                </label>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
+                  {PROOFLY_INDUSTRIES.map((ind) => (
+                    <button
+                      key={ind.id}
+                      type="button"
+                      onClick={() => setSelectedIndustry(ind)}
+                      className={`p-2.5 rounded-xl text-left border transition flex items-center justify-between ${
+                        selectedIndustry.id === ind.id 
+                          ? 'bg-blue-50/80 border-blue-400 text-blue-900 font-bold' 
+                          : 'bg-white border-slate-200 text-slate-700 hover:border-slate-300'
+                      }`}
+                    >
+                      <span className="truncate">{ind.name}</span>
+                      {selectedIndustry.id === ind.id && <SvgIcon name="check" className="w-3.5 h-3.5 text-blue-600 shrink-0" />}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Live Estimate Metric Bar */}
+              <div className="pt-3 border-t border-slate-200 flex flex-wrap items-center justify-between text-xs gap-3">
+                <div>
+                  <span className="text-slate-500">Delivery Turnaround:</span>
+                  <span className="ml-1.5 font-bold text-slate-900 font-mono text-sm">{selectedTier.turnaroundDays}</span>
+                </div>
+                <div>
+                  <span className="text-slate-500">Admin Hours Saved:</span>
+                  <span className="ml-1.5 font-bold text-emerald-600 font-mono text-sm">{selectedTier.adminHoursSaved}</span>
+                </div>
+                <a href="#contact" onClick={() => onOpenContactWithTier(selectedTier.level + ' - ' + selectedTier.name, selectedIndustry.name)} className="text-xs font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1">
+                  Deploy this level →
+                </a>
+              </div>
+
+            </div>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap items-center gap-4 pt-1">
+              <a
+                href="#contact"
+                onClick={() => onOpenContactWithTier(selectedTier.level + ' - ' + selectedTier.name, selectedIndustry.name)}
+                className="px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-blue-600/30 transition-all active:scale-95 shimmer-trigger"
+              >
+                Deploy Proofly For Your Team
+              </a>
+              <a
+                href="#/work-done"
+                className="px-5 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs transition flex items-center gap-2 shadow-sm"
+              >
+                <SvgIcon name="smartphone" className="w-3.5 h-3.5 text-cyan-400" />
+                <span>Explore 5 Live Apps Done</span>
+              </a>
+            </div>
+
+          </div>
+
+          {/* Right Column: Interactive Generated Live Mobile Phone */}
+          <div className="lg:col-span-5 flex flex-col items-center justify-center">
+            
+            <div className="text-center mb-3">
+              <span className="text-[11px] font-bold text-slate-500 font-mono uppercase tracking-wider flex items-center justify-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                Interactive Proofly App Simulator
+              </span>
+            </div>
+
+            <div className="studio-phone">
+              <div className="studio-phone-island">
+                <span className="w-2 h-2 rounded-full bg-slate-800"></span>
+                <span className="text-[9px] text-slate-400 font-mono">Proofly AI</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              </div>
+
+              <div className="studio-phone-screen">
+                <div className="p-4 flex flex-col h-full text-slate-900 text-xs">
+                  
+                  {/* Phone Header */}
+                  <div className="flex items-center justify-between pb-3 border-b border-slate-200">
+                    <div>
+                      <div className="font-extrabold text-sm text-slate-900 leading-tight">
+                        {selectedIndustry.shortName} Ops
+                      </div>
+                      <div className="text-[10px] text-slate-500 flex items-center gap-1 mt-0.5">
+                        <SvgIcon name="map-pin" className="w-3 h-3 text-blue-600" />
+                        <span className="truncate max-w-[150px]">{selectedIndustry.site}</span>
+                      </div>
+                    </div>
+                    <span className="text-[9px] font-bold font-mono bg-blue-100 text-blue-800 px-2 py-0.5 rounded uppercase">
+                      {selectedTier.phoneBadge}
+                    </span>
+                  </div>
+
+                  {/* Staff / Operator Card */}
+                  <div className="mt-2.5 p-2.5 bg-white rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
+                    <div>
+                      <div className="text-[11px] font-bold text-slate-900">{selectedIndustry.worker}</div>
+                      <div className="text-[9px] text-slate-500">{selectedIndustry.workerRole}</div>
+                    </div>
+                    <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full ${isSimClockedIn ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-600'}`}>
+                      {isSimClockedIn ? 'ON DUTY' : 'NOT STARTED'}
+                    </span>
+                  </div>
+
+                  {/* Feature: Biometric Selfie Verification (Page 3 of PDF) */}
+                  <div className="mt-2.5 p-2.5 bg-white rounded-xl border border-slate-200 shadow-sm text-center">
+                    <div className="text-[9px] font-bold uppercase tracking-wider text-slate-400 mb-1 flex items-center justify-center gap-1">
+                      <SvgIcon name="scan-face" className="w-3 h-3 text-blue-600" />
+                      <span>AI Face Verification (Doc Page 3)</span>
+                    </div>
+                    <div className="relative w-20 h-20 mx-auto my-1.5 rounded-xl bg-slate-950 flex flex-col items-center justify-center text-white overflow-hidden border border-slate-700">
+                      {simScanning ? (
+                        <div className="space-y-1 text-[9px]">
+                          <div className="w-6 h-6 rounded-full border-2 border-t-cyan-400 border-slate-700 animate-spin mx-auto"></div>
+                          <span className="text-cyan-400 font-mono text-[8px]">Verifying ID...</span>
+                        </div>
+                      ) : isSimClockedIn ? (
+                        <div className="text-center p-1">
+                          <div className="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center mx-auto mb-0.5">
+                            <SvgIcon name="check" className="w-3.5 h-3.5" />
+                          </div>
+                          <div className="text-[9px] font-bold text-emerald-400">Score: 1.00</div>
+                          <div className="text-[7px] text-slate-400">Face Similar: true</div>
+                        </div>
+                      ) : (
+                        <div className="text-slate-400">
+                          <SvgIcon name="camera" className="w-6 h-6 mx-auto mb-0.5 text-slate-500" />
+                          <span className="text-[8px]">Tap Below</span>
+                        </div>
+                      )}
+                    </div>
+                    <button
+                      type="button"
+                      onClick={handleSimClock}
+                      className={`w-full py-1.5 rounded-lg font-bold text-[10px] text-white transition ${
+                        isSimClockedIn ? 'bg-amber-600 hover:bg-amber-700' : 'bg-blue-600 hover:bg-blue-700'
+                      }`}
+                    >
+                      {isSimClockedIn ? 'End Shift (Clock Out)' : 'Verify Face & Clock In'}
+                    </button>
+                  </div>
+
+                  {/* Feature: Mandatory Checklist Tasks */}
+                  <div className="mt-2.5 p-2.5 bg-white rounded-xl border border-slate-200 shadow-sm flex-1 overflow-y-auto">
+                    <div className="text-[9px] font-bold uppercase tracking-wider text-slate-400 mb-1.5 flex justify-between">
+                      <span>Task Verification & Photo Proof</span>
+                      <span className="text-blue-600 font-semibold font-mono">Mandatory</span>
+                    </div>
+                    <div className="space-y-1">
+                      {selectedIndustry.tasks.map((task, idx) => (
+                        <div
+                          key={task}
+                          onClick={() => setTaskCompletion({ ...taskCompletion, [idx]: !taskCompletion[idx] })}
+                          className={`p-1.5 rounded-lg border flex items-center justify-between cursor-pointer transition text-[9px] ${
+                            taskCompletion[idx] ? 'bg-emerald-50/60 border-emerald-200' : 'bg-slate-50 border-slate-200'
+                          }`}
+                        >
+                          <span className={`leading-tight font-medium ${taskCompletion[idx] ? 'line-through text-slate-400' : 'text-slate-800'}`}>
+                            {task}
+                          </span>
+                          <span className={`text-[8px] font-bold px-1.5 py-0.2 rounded shrink-0 ml-1 font-mono ${taskCompletion[idx] ? 'bg-emerald-200 text-emerald-900' : 'bg-slate-200 text-slate-600'}`}>
+                            {taskCompletion[idx] ? 'DONE' : 'UPLOAD'}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Level 2+: In-App Team Messaging Banner */}
+                  {selectedTier.hasChat && (
+                    <div className="mt-2 p-2 bg-blue-50 border border-blue-200 rounded-xl text-[9px] text-blue-900 flex items-start gap-1.5">
+                      <SvgIcon name="message-square" className="w-3.5 h-3.5 text-blue-600 shrink-0 mt-0.5" />
+                      <div>
+                        <div className="font-bold text-[8px] uppercase tracking-wider text-blue-700">Team Announcement</div>
+                        <div className="leading-tight text-slate-700">{selectedIndustry.chatMsg}</div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Level 3+: CRA-Ready Payroll Sync */}
+                  {selectedTier.hasPayroll && (
+                    <div className="mt-2 p-2 bg-slate-900 text-white rounded-xl flex items-center justify-between text-[9px]">
+                      <div>
+                        <div className="text-[8px] text-slate-400 uppercase font-mono">CRA Payroll Verification</div>
+                        <div className="font-bold text-cyan-400">38.5 Regular · 2.5 Overtime (Ontario ESA)</div>
+                      </div>
+                      <span className="text-[8px] font-mono bg-white/10 px-1.5 py-0.5 rounded text-white">
+                        CSV Export
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Level 4: Smart Scheduler Card */}
+                  {selectedTier.hasScheduling && (
+                    <div className="mt-2 p-2 bg-indigo-950 text-white rounded-xl flex items-center justify-between text-[9px]">
+                      <div>
+                        <div className="text-[8px] text-indigo-300 uppercase font-mono">Smart Scheduler</div>
+                        <div className="font-bold text-white">Tomorrow: 08:00 - 16:30 Confirmed</div>
+                      </div>
+                      <span className="text-[8px] font-mono bg-emerald-500/20 text-emerald-300 px-1.5 py-0.5 rounded">
+                        No Conflicts
+                      </span>
+                    </div>
+                  )}
+
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center mt-3 text-xs text-slate-500">
+              ⚡ Tap "Verify Face" or task items in the phone to test live interactivity
+            </div>
+
+          </div>
+
+        </div>
+      );
+    }
+
+    // =========================================================================
+    // DEDICATED SEPARATE PAGE: Work Done / Live Projects
+    // =========================================================================
+    function WorkDonePage({ onOpenFlyer, onOpenContactWithProject }) {
+      const [filter, setFilter] = useState('all'); // 'all', 'workforce', 'community', 'portals'
+
+      const filteredProjects = useMemo(() => {
+        if (filter === 'all') return PROJECTS_DATA;
+        return PROJECTS_DATA.filter(p => p.filterCategory === filter);
+      }, [filter]);
+
+      return (
+        <div className="py-12 px-5 sm:px-8 bg-white min-h-screen">
+          <div className="max-w-7xl mx-auto space-y-12">
+            
+            {/* Page Header */}
+            <div className="border-b border-slate-200 pb-8 space-y-4">
+              <div className="flex items-center gap-2 text-xs font-mono text-blue-600 uppercase tracking-wider">
+                <a href="#/" className="hover:underline">Home</a>
+                <span>/</span>
+                <span className="text-slate-500">Work Done & Production Apps</span>
+              </div>
+
+              <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+                <div>
+                  <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-950 tracking-tight">
+                    Verified Client Work Done & Live Apps
+                  </h1>
+                  <p className="mt-2 text-slate-600 text-sm sm:text-base max-w-3xl leading-relaxed">
+                    Every application below was custom engineered on Glide, certified with <strong>20+ years of Software Quality Assurance rigor</strong>, and is actively used in daily production.
+                  </p>
+                </div>
+
+                {/* Direct Proof Metrics Bar */}
+                <div className="flex items-center gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-200 shrink-0">
+                  <div className="text-center px-2">
+                    <div className="text-2xl font-extrabold text-blue-600 font-mono">5 / 5</div>
+                    <div className="text-[10px] uppercase font-bold text-slate-500 font-mono">Launched Apps</div>
+                  </div>
+                  <div className="h-8 w-px bg-slate-200"></div>
+                  <div className="text-center px-2">
+                    <div className="text-2xl font-extrabold text-emerald-600 font-mono">18+</div>
+                    <div className="text-[10px] uppercase font-bold text-slate-500 font-mono">Active Staff</div>
+                  </div>
+                  <div className="h-8 w-px bg-slate-200"></div>
+                  <div className="text-center px-2">
+                    <div className="text-2xl font-extrabold text-indigo-600 font-mono">135+</div>
+                    <div className="text-[10px] uppercase font-bold text-slate-500 font-mono">Songs Managed</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Filter Tabs */}
+              <div className="flex flex-wrap gap-2 pt-4">
+                <button
+                  type="button"
+                  onClick={() => setFilter('all')}
+                  className={`px-4 py-2 rounded-xl text-xs font-bold transition ${filter === 'all' ? 'bg-slate-950 text-white shadow' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
+                >
+                  All Production Apps ({PROJECTS_DATA.length})
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setFilter('workforce')}
+                  className={`px-4 py-2 rounded-xl text-xs font-bold transition ${filter === 'workforce' ? 'bg-blue-600 text-white shadow' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
+                >
+                  Workforce & Attendance (The Manpower Solution)
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setFilter('portals')}
+                  className={`px-4 py-2 rounded-xl text-xs font-bold transition ${filter === 'portals' ? 'bg-blue-600 text-white shadow' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
+                >
+                  Portals & Academy (Driving Academy & Joren Listings)
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setFilter('community')}
+                  className={`px-4 py-2 rounded-xl text-xs font-bold transition ${filter === 'community' ? 'bg-blue-600 text-white shadow' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
+                >
+                  Community & Public (CFC Music & Saint Finder)
+                </button>
+              </div>
+            </div>
+
+            {/* Project Deep-Dive Cards */}
+            <div className="space-y-12">
+              {filteredProjects.map((project, index) => (
+                <div key={project.id} className="p-6 sm:p-10 rounded-3xl border border-slate-200 bg-slate-50/60 shadow-sm hover:shadow-xl transition-all group">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+                    
+                    {/* Flyer Preview Column with Zoom Button */}
+                    <div className="lg:col-span-5 flex flex-col items-center">
+                      <div
+                        onClick={() => onOpenFlyer(project.flyerImg, project.title, project.client)}
+                        className="relative w-full max-w-sm rounded-2xl overflow-hidden border border-slate-300 shadow-md bg-slate-950 cursor-pointer group/img"
+                        title="Click to view full high-resolution flyer"
+                      >
+                        <img
+                          src={project.flyerImg}
+                          alt={project.title}
+                          className="w-full h-auto object-cover group-hover/img:scale-105 transition-transform duration-300"
+                        />
+                        <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white text-xs font-bold">
+                          <SvgIcon name="zoom-in" className="w-5 h-5 text-cyan-400" />
+                          <span>Click to Zoom Flyer</span>
+                        </div>
+                        <div className="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-sm border border-slate-700 text-white px-2.5 py-1 rounded-lg text-[10px] font-mono">
+                          Official Flyer Document
+                        </div>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => onOpenFlyer(project.flyerImg, project.title, project.client)}
+                        className="mt-3 text-xs font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1.5"
+                      >
+                        <SvgIcon name="zoom-in" className="w-3.5 h-3.5" />
+                        <span>View High-Resolution Flyer</span>
+                      </button>
+                    </div>
+
+                    {/* Detailed Information Column */}
+                    <div className="lg:col-span-7 space-y-4">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="text-xs font-bold uppercase tracking-wider font-mono text-blue-600 bg-blue-100/70 px-3 py-1 rounded-md">
+                          {project.badge}
+                        </span>
+                        <span className="text-xs font-bold px-3 py-1 rounded-md bg-emerald-100 text-emerald-800 font-mono">
+                          {project.activeMetric}
+                        </span>
+                      </div>
+
+                      <h2 className="text-2xl sm:text-3xl font-bold text-slate-950">
+                        {project.title}
+                      </h2>
+
+                      {/* Verbatim Document Text Callout */}
+                      <div className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 text-slate-700 text-xs sm:text-sm leading-relaxed shadow-sm">
+                        <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 font-mono mb-1.5 flex items-center gap-1">
+                          <SvgIcon name="shield-check" className="w-3.5 h-3.5 text-blue-600" />
+                          <span>Verified Production Deployment Narrative:</span>
+                        </div>
+                        <blockquote className="italic font-serif text-slate-900 border-l-2 border-blue-600 pl-3">
+                          "{project.fullDocDescription}"
+                        </blockquote>
+                      </div>
+
+                      {/* Key Capabilities Checklist */}
+                      <div>
+                        <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 font-mono mb-2.5">
+                          Key Capabilities & Verified Modules:
+                        </h4>
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700">
+                          {project.keyFeatures.map((feat) => (
+                            <li key={feat} className="flex items-start gap-2">
+                              <SvgIcon name="check" className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                              <span>{feat}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Tech Stack Tags */}
+                      <div className="pt-2 flex flex-wrap items-center gap-2">
+                        <span className="text-[11px] font-mono text-slate-400">Architecture:</span>
+                        {project.techStack.map(tag => (
+                          <span key={tag} className="text-[10px] font-semibold px-2.5 py-1 rounded-md bg-slate-200/80 text-slate-700 font-mono">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Action Bar */}
+                      <div className="pt-4 border-t border-slate-200 flex flex-wrap items-center gap-3">
+                        <a
+                          href="#contact"
+                          onClick={() => onOpenContactWithProject(project.title)}
+                          className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-md transition"
+                        >
+                          Request Similar App for Your Organization
+                        </a>
+                        <a
+                          href="tel:437-423-3456"
+                          className="px-4 py-2.5 rounded-xl bg-white border border-slate-200 hover:border-slate-300 text-slate-800 font-bold text-xs transition flex items-center gap-1.5"
+                        >
+                          <SvgIcon name="phone" className="w-3.5 h-3.5 text-blue-600" />
+                          <span>Call Jose: (437) 423-3456</span>
+                        </a>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Bottom Callout Banner */}
+            <div className="p-8 sm:p-10 rounded-3xl bg-slate-950 text-white text-center space-y-4">
+              <span className="text-xs font-bold uppercase tracking-wider text-cyan-400 font-mono">Custom Glide Development</span>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
+                Have an idea for a business mobile app or workflow?
+              </h3>
+              <p className="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
+                Jose Rene Navarro takes you from concept to live deployment in 5 to 7 business days with zero app store delays, backed by 20+ years of Software QA rigor.
+              </p>
+              <div className="pt-2 flex flex-wrap justify-center gap-4">
+                <a href="#contact" className="px-8 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-blue-600/30 transition">
+                  Book Free Consultation
+                </a>
+                <a href="#/" className="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white font-bold text-xs transition">
+                  ← Return to Home Overview
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      );
+    }
+
+    // =========================================================================
+    // FEATURE: What Jose Actually Does (3 Core Pillars from Blog)
+    // =========================================================================
+    function CoreServicesSection() {
+      const services = [
+        {
+          id: 'website-qa',
+          icon: 'shield-check',
+          title: 'Website Quality Assurance Testing',
+          tag: '20+ Yrs QA Engineering',
+          highlight: 'Detailed testing for UX, performance & reliability',
+          desc: 'A website should work smoothly, load quickly, and give visitors confidence in your brand. I identify broken links, navigation issues, form errors, mobile responsiveness bugs, and usability concerns before they cost you customers.',
+          points: [
+            'Broken link & 404 navigation defect detection',
+            'Contact form submission & lead capture verification',
+            'Cross-device mobile responsive layout verification',
+            'Page speed, Core Web Vitals & usability reviews',
+            'Structured QA reports with clear developer fix notes'
+          ],
+          cta: 'Request Website QA Audit'
+        },
+        {
+          id: 'mobile-apps',
+          icon: 'smartphone',
+          title: 'Mobile Application Solutions (Glide & Proofly)',
+          tag: 'AI Frontline Platforms',
+          highlight: 'AI-verified attendance, shift checklists & payroll reporting',
+          desc: 'Simple, practical AI-powered mobile solutions for daily business operations. Combining biometric attendance, team messaging, scheduling, and before/after photo proof in one organized system accessible on any smartphone.',
+          points: [
+            'AI selfie facial verification (Face score 1.00 anti-buddy punching)',
+            'Before/after photo evidence for cleaning & field maintenance',
+            'In-app shift messaging & team broadcast announcements',
+            'Automated regular vs. overtime CRA payroll exports',
+            'Glide PWA delivery with zero App Store download delays'
+          ],
+          cta: 'Build Custom Mobile App'
+        },
+        {
+          id: 'process-improvement',
+          icon: 'zap',
+          title: 'Business Process Improvement & Web Analysis',
+          tag: 'Workflow Modernization',
+          highlight: 'Turn paper chaos into clean, audit-proof digital systems',
+          desc: 'Designed for commercial cleaning services, field teams, and growing businesses struggling with lost paperwork, illegible handwriting, and disputed client hours. I streamline daily operations to save time and eliminate errors.',
+          points: [
+            'Eliminate paper clipboards & fragile spreadsheets',
+            'Real-time managerial visibility over field crews',
+            'Dispute-free client invoices with photo & GPS proof',
+            'Ontario ESA compliance & CRA-ready timesheet exports',
+            'Zero-crash architecture backed by 20 years of testing'
+          ],
+          cta: 'Modernize Your Workflow'
+        }
+      ];
+
+      return (
+        <section id="services" className="py-20 px-5 sm:px-8 bg-slate-50 border-t border-slate-200">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center max-w-3xl mx-auto mb-14">
+              <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200 font-mono">
+                Core Capabilities
+              </span>
+              <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-950">
+                What Jose Rene Navarro Actually Does
+              </h2>
+              <p className="mt-3 text-slate-600 text-sm max-w-2xl mx-auto leading-relaxed">
+                Three specialized service pillars engineered with 20+ years of Software Quality Assurance rigor and no-code Glide mobile innovation.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {services.map((svc) => (
+                <div key={svc.id} className="bg-white rounded-3xl p-7 border border-slate-200 hover:border-blue-400 hover:shadow-xl transition-all flex flex-col justify-between group">
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <SvgIcon name={svc.icon} className="w-6 h-6" />
+                      </div>
+                      <span className="text-[10px] font-bold uppercase tracking-wider font-mono px-2.5 py-1 rounded-md bg-slate-100 text-slate-700">
+                        {svc.tag}
+                      </span>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                      {svc.title}
+                    </h3>
+                    <div className="text-xs font-semibold text-blue-600 mt-1 mb-3">
+                      {svc.highlight}
+                    </div>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      {svc.desc}
+                    </p>
+
+                    <div className="mt-5 pt-4 border-t border-slate-100">
+                      <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2 font-mono">
+                        Key Deliverables:
+                      </div>
+                      <ul className="space-y-2 text-xs text-slate-700">
+                        {svc.points.map((pt) => (
+                          <li key={pt} className="flex items-start gap-2">
+                            <SvgIcon name="check" className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                            <span>{pt}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="mt-8 pt-4 border-t border-slate-100">
+                    <a href="#contact" className="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-800 text-xs font-bold transition flex items-center justify-center gap-1.5 group-hover:bg-blue-600 group-hover:text-white">
+                      <span>{svc.cta}</span>
+                      <SvgIcon name="arrow-right" className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    // =========================================================================
+    // FEATURE 2: Paper Chaos vs Glide Mobile
+    // =========================================================================
+    function PaperVsGlideSection() {
+      const [activeTab, setActiveTab] = useState('glide');
+
+      return (
+        <section className="py-20 px-5 sm:px-8 border-y border-slate-200 bg-slate-50">
+          <div className="max-w-6xl mx-auto">
+            
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200 font-mono">
+                The Operational Shift
+              </span>
+              <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-950">
+                Paper Timesheets vs. Custom Glide Mobile
+              </h2>
+              <p className="mt-3 text-slate-600 text-sm">
+                Toggle below to see why field businesses replace paper clipboards and fragile spreadsheets with Jose's mobile systems.
+              </p>
+
+              <div className="mt-6 inline-flex p-1 bg-slate-200 rounded-xl">
+                <button
+                  type="button"
+                  onClick={() => setActiveTab('paper')}
+                  className={`px-5 py-2 rounded-lg text-xs font-bold transition ${activeTab === 'paper' ? 'bg-red-600 text-white shadow' : 'text-slate-700 hover:text-slate-900'}`}
+                >
+                  The Old Way (Paper Chaos)
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveTab('glide')}
+                  className={`px-5 py-2 rounded-lg text-xs font-bold transition ${activeTab === 'glide' ? 'bg-blue-600 text-white shadow' : 'text-slate-700 hover:text-slate-900'}`}
+                >
+                  The Proofly & QA Way (Jose's System)
+                </button>
+              </div>
+            </div>
+
+            {activeTab === 'paper' ? (
+              <div className="rounded-3xl border-2 border-red-200 bg-white p-8 sm:p-12 shadow-xl animate-in-up">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                  <div className="md:col-span-5 bg-amber-50/90 border-2 border-dashed border-amber-300 p-6 rounded-2xl relative font-mono text-xs text-slate-800 space-y-3">
+                    <div className="font-bold text-red-700 uppercase tracking-widest text-[10px]">Crumpled Paper Timesheet · Week 34</div>
+                    <div className="border-b border-amber-200 pb-2">
+                      <div className="text-slate-400">Worker:</div>
+                      <div className="font-serif italic text-base">Marcus C. (Signed by coworker?)</div>
+                    </div>
+                    <div className="space-y-1 text-[11px]">
+                      <div className="flex justify-between line-through text-slate-400"><span>Mon: 07:42 - 16:15</span><span>8.5 hrs (Rounded to 9.0)</span></div>
+                      <div className="flex justify-between text-red-700 font-bold"><span>Tue: [Coffee Stain - Illegible]</span><span>???</span></div>
+                      <div className="flex justify-between"><span>Wed: 08:00 - 17:00</span><span>9.0 hrs</span></div>
+                      <div className="flex justify-between text-red-600"><span>Thu: Checked in via text message</span><span>No photo verification</span></div>
+                    </div>
+                    <div className="pt-2 border-t border-amber-200 text-red-700 font-bold text-center">
+                      ⚠️ Overtime disputed by client ($450 discrepancy)
+                    </div>
+                  </div>
+
+                  <div className="md:col-span-7 space-y-4">
+                    <span className="text-xs font-bold text-red-600 uppercase tracking-wider">The Hidden Costs of Paper</span>
+                    <h3 className="text-2xl font-bold text-slate-900">Why paper forms are costing you thousands</h3>
+                    <ul className="space-y-3 text-xs text-slate-600">
+                      <li className="flex items-start gap-2">
+                        <span className="text-red-500 font-bold">✕</span>
+                        <span><strong>Buddy Punching:</strong> Coworkers easily sign absent team members in on paper clipboards.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-red-500 font-bold">✕</span>
+                        <span><strong>15-Minute Time Rounding:</strong> Small time inflations cost $9,750+ yearly per 10 workers.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-red-500 font-bold">✕</span>
+                        <span><strong>Weekend Admin Hell:</strong> Managers waste 6-10 hours retyping handwriting into spreadsheets.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-red-500 font-bold">✕</span>
+                        <span><strong>Zero Client Proof:</strong> No photo timestamps to prove cleaners or technicians completed work.</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="rounded-3xl border-2 border-blue-500 bg-slate-950 text-white p-8 sm:p-12 shadow-2xl animate-in-up">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                  <div className="md:col-span-5 bg-slate-900 border border-slate-700 p-6 rounded-2xl text-xs space-y-3 shadow-inner">
+                    <div className="flex items-center justify-between pb-2 border-b border-slate-800">
+                      <span className="font-bold text-cyan-400">Proofly Mobile Engine</span>
+                      <span className="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded font-mono">100% VERIFIED</span>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex justify-between items-center">
+                        <span className="text-slate-400">Biometric Selfie Match:</span>
+                        <span className="font-bold text-emerald-400 font-mono">Score 1.00 (Face Similar: true)</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-slate-400">Shift Task Photos:</span>
+                        <span className="text-white font-mono">3 / 3 Verified & Time-Stamped</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-slate-400">In-App Chat Announcements:</span>
+                        <span className="text-blue-400 font-mono">Delivered to Field Crew</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-slate-400">CRA Overtime Math:</span>
+                        <span className="font-bold text-cyan-400 font-mono">Calculated Automatically</span>
+                      </div>
+                    </div>
+                    <div className="pt-2 border-t border-slate-800 text-center text-emerald-400 font-bold">
+                      ✓ Instant one-click CSV export ready for accountant
+                    </div>
+                  </div>
+
+                  <div className="md:col-span-7 space-y-4">
+                    <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider font-mono">The Proofly Advantage</span>
+                    <h3 className="text-2xl font-bold text-white">Full accountability in 7 business days</h3>
+                    <ul className="space-y-3 text-xs text-slate-300">
+                      <li className="flex items-start gap-2">
+                        <span className="text-emerald-400 font-bold">✓</span>
+                        <span><strong>Zero Buddy Punching:</strong> AI selfie verification stops unauthorized proxy check-ins instantly.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-emerald-400 font-bold">✓</span>
+                        <span><strong>Instant Frontline Adoption:</strong> Workers open a link or scan a QR code on any smartphone without app stores.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-emerald-400 font-bold">✓</span>
+                        <span><strong>Dispute-Free Client Invoicing:</strong> Time-stamped task photos provide undeniable proof of work.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-emerald-400 font-bold">✓</span>
+                        <span><strong>Tested by 20 Yrs QA:</strong> Every edge case and offline synchronization mode is certified before launch.</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            )}
+
+          </div>
+        </section>
+      );
+    }
+
+    // =========================================================================
+    // FEATURE 3: Proofly 4-Level Architecture Roadmap
+    // =========================================================================
+    function ProoflyLevelsSection({ onOpenTierFlyer }) {
+      return (
+        <section id="proofly-suite" className="py-20 px-5 sm:px-8 bg-white">
+          <div className="max-w-6xl mx-auto">
+            
+            <div className="text-center max-w-3xl mx-auto mb-14">
+              <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200 font-mono">
+                The Proofly Architecture (Pages 1 & 2 of PDF)
+              </span>
+              <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-950">
+                A Modular Workforce System That Grows With You
+              </h2>
+              <p className="mt-3 text-slate-600 text-sm">
+                Start at Level 1 to eliminate paper timesheets today, and unlock advanced operational levels as your team expands.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {PROOFLY_TIERS.map((item) => (
+                <div key={item.id} className="p-7 rounded-2xl border border-slate-200 bg-slate-50/60 hover:bg-white hover:border-blue-400 hover:shadow-xl transition-all flex flex-col justify-between group">
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-xs font-bold uppercase tracking-wider font-mono text-blue-600 bg-blue-100/70 px-2.5 py-1 rounded-md">
+                        {item.level} · {item.name}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => onOpenTierFlyer(item.flyer, item.level + ' - ' + item.subtitle)}
+                        className="text-[11px] font-bold text-blue-600 hover:underline flex items-center gap-1 font-mono"
+                      >
+                        <SvgIcon name="zoom-in" className="w-3.5 h-3.5" />
+                        <span>View Flyer</span>
+                      </button>
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">{item.subtitle}</h3>
+                    <p className="text-xs text-slate-600 mt-2 leading-relaxed">{item.summary}</p>
+                    
+                    <ul className="mt-5 space-y-2 text-xs text-slate-700">
+                      {item.features.map((b) => (
+                        <li key={b} className="flex items-center gap-2">
+                          <SvgIcon name="check" className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mt-6 pt-4 border-t border-slate-200/80 flex items-center justify-between">
+                    <span className="text-xs font-semibold text-slate-500 font-mono">Turnaround: {item.turnaroundDays}</span>
+                    <a href="#contact" className="text-xs font-bold text-blue-600 hover:underline flex items-center gap-1">
+                      Deploy {item.level} <SvgIcon name="arrow-right" className="w-3 h-3" />
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </section>
+      );
+    }
+
+    // =========================================================================
+    // FEATURE 4: 20-Year QA Terminal
+    // =========================================================================
+    const QA_TEST_CASES = [
+      {
+        id: 'offline',
+        title: 'Basement & Underground Parking Offline Mode',
+        scenario: 'A commercial cleaner enters an underground parking garage with zero cellular reception.',
+        qaVerdict: 'PASS: Local SQLite/IndexedDB caches biometric check-in selfie & photo timestamps. Auto-syncs to cloud within 400ms of reconnection.',
+        log: '[QA-TEST-01] Network: OFFLINE. Cached record: #8821. Signal Restored: Sync completed with 0 data loss.'
+      },
+      {
+        id: 'concurrency',
+        title: '50 Concurrent 08:00 AM Shift Clock-Ins',
+        scenario: 'Entire cleaning and construction shift clocks in simultaneously at 07:59 AM.',
+        qaVerdict: 'PASS: Zero database table locking. Handled via atomic cloud webhooks with 14ms response rate.',
+        log: '[QA-TEST-02] Concurrency Load: 50 simultaneous write requests. Error rate: 0.00%. Average latency: 14.2ms.'
+      },
+      {
+        id: 'overtime',
+        title: 'Ontario ESA Overtime & Statutory Holiday Math',
+        scenario: 'Employee works 46.5 hours across a week containing Victoria Day statutory holiday.',
+        qaVerdict: 'PASS: Automated conditional rules calculate 44 regular hrs, 2.5 overtime hrs (1.5x), and holiday premium without human math error.',
+        log: '[QA-TEST-03] Rule Check: Ontario ESA section 22 applied. Overtime threshold: 44.0h. Export format: CRA-Ready CSV.'
+      },
+      {
+        id: 'budget_phone',
+        title: 'Legacy Budget Smartphone (iPhone 8 / Android 8)',
+        scenario: 'Frontline cleaner using an older 2018 budget Android smartphone.',
+        qaVerdict: 'PASS: Progressive Web App bundle is under 1.8MB. Smooth 60fps scrolling, instant camera modal launch.',
+        log: '[QA-TEST-04] Device: Low memory emulation (2GB RAM). Memory heap: 42MB. Render time: 18ms.'
+      }
+    ];
+
+    function QaTerminalSection() {
+      const [activeCase, setActiveCase] = useState(QA_TEST_CASES[0]);
+
+      return (
+        <section id="qa-terminal" className="py-20 px-5 sm:px-8 bg-slate-950 text-white relative">
+          <div className="max-w-6xl mx-auto">
+            
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="text-xs font-bold uppercase tracking-wider text-cyan-400 bg-cyan-950/60 px-3 py-1 rounded-full border border-cyan-800/60 font-mono">
+                The QA Engineering Superpower
+              </span>
+              <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-white">
+                Why Jose's Mobile Apps Never Crash
+              </h2>
+              <p className="mt-3 text-slate-400 text-sm">
+                Anyone can build a pretty prototype. But keeping it running when 30 frontline workers clock in on spotty cell service requires 20+ years of software quality engineering.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              
+              {/* Left: Test Case Selectors */}
+              <div className="lg:col-span-5 space-y-2">
+                <div className="text-xs font-bold uppercase tracking-wider text-slate-500 font-mono mb-3">
+                  Click a Stress-Test Scenario:
+                </div>
+                {QA_TEST_CASES.map((tc) => (
+                  <button
+                    key={tc.id}
+                    type="button"
+                    onClick={() => setActiveCase(tc)}
+                    className={`w-full p-4 rounded-xl text-left transition-all border ${
+                      activeCase.id === tc.id
+                        ? 'bg-blue-600/20 border-blue-500 text-white shadow-lg'
+                        : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white hover:border-slate-700'
+                    }`}
+                  >
+                    <div className="font-bold text-xs flex items-center justify-between">
+                      <span>{tc.title}</span>
+                      <span className="text-[10px] font-mono text-cyan-400">TEST</span>
+                    </div>
+                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-1">{tc.scenario}</div>
+                  </button>
+                ))}
+              </div>
+
+              {/* Right: Live Terminal Emulator */}
+              <div className="lg:col-span-7 bg-black rounded-2xl border border-slate-800 p-6 font-mono text-xs shadow-2xl space-y-4">
+                <div className="flex items-center justify-between pb-3 border-b border-slate-800 text-slate-500">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                    <span className="ml-2 text-slate-400">jose-navarro-qa-rigor.sh</span>
+                  </div>
+                  <span className="text-[10px] text-cyan-400">STRESS TEST HARNESS</span>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="text-slate-500"># Scenario Under Test:</div>
+                  <div className="text-white font-bold">{activeCase.scenario}</div>
+
+                  <div className="pt-2 text-slate-500"># Execution Log:</div>
+                  <div className="p-3 bg-slate-900/80 rounded-lg text-cyan-300 text-[11px]">
+                    {activeCase.log}
+                  </div>
+
+                  <div className="pt-2 text-slate-500"># 20-Year QA Rigor Verdict:</div>
+                  <div className="p-3 bg-emerald-950/40 border border-emerald-500/40 rounded-lg text-emerald-400 text-xs font-semibold">
+                    {activeCase.qaVerdict}
+                  </div>
+                </div>
+
+                <div className="pt-2 text-[10px] text-slate-500 flex items-center justify-between">
+                  <span>Tested across iOS, Android, Chrome & Safari</span>
+                  <span className="terminal-cursor"></span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+      );
+    }
+
+    // =========================================================================
+    // FEATURE 5: Live Apps Showcase on Home
+    // =========================================================================
+    function PortfolioHomeSection({ onOpenFlyer }) {
+      return (
+        <section id="portfolio" className="py-20 px-5 sm:px-8 bg-slate-50 border-t border-slate-200">
+          <div className="max-w-6xl mx-auto">
+            
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200 font-mono">
+                  Verified Client Deployments (PDF Pages 4-6)
+                </span>
+                <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-950">
+                  Real Mobile Apps Serving Real Users
+                </h2>
+                <p className="mt-2 text-slate-600 text-sm max-w-2xl">
+                  5 live applications built and deployed on Glide by Jose Rene Navarro, verified with real metrics.
+                </p>
+              </div>
+
+              <a
+                href="#/work-done"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-md transition shrink-0"
+              >
+                <span>View Dedicated Work Done Page</span>
+                <SvgIcon name="arrow-right" className="w-3.5 h-3.5" />
+              </a>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {PROJECTS_DATA.slice(0, 3).map((app) => (
+                <div key={app.id} className="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between group">
+                  <div
+                    onClick={() => onOpenFlyer(app.flyerImg, app.title, app.client)}
+                    className="h-56 bg-slate-950 flex items-center justify-center p-3 overflow-hidden cursor-pointer relative group/thumb"
+                  >
+                    <img src={app.flyerImg} alt={app.title} className="h-full object-contain group-hover/thumb:scale-105 transition-transform duration-300" />
+                    <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center gap-1.5 text-white text-xs font-bold">
+                      <SvgIcon name="zoom-in" className="w-4 h-4 text-cyan-400" />
+                      <span>Zoom Flyer</span>
+                    </div>
+                  </div>
+                  <div className="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-blue-600 font-mono">{app.category}</span>
+                        <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-mono">{app.activeMetric}</span>
+                      </div>
+                      <h3 className="text-base font-bold text-slate-900 mt-2">{app.title}</h3>
+                      <p className="text-xs text-slate-600 mt-2 leading-relaxed line-clamp-3">{app.excerpt}</p>
+                    </div>
+
+                    <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                      <button
+                        type="button"
+                        onClick={() => onOpenFlyer(app.flyerImg, app.title, app.client)}
+                        className="text-xs font-bold text-blue-600 hover:underline"
+                      >
+                        Inspect Flyer →
+                      </button>
+                      <a href="#/work-done" className="text-xs font-semibold text-slate-500 hover:text-slate-900">
+                        Full Case Study
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Banner linking to full page */}
+            <div className="mt-10 p-6 rounded-2xl bg-white border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+                  <SvgIcon name="smartphone" className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="font-bold text-sm text-slate-900">Explore all 5 live deployments on the dedicated page</div>
+                  <div className="text-xs text-slate-500">Includes Manpower Solution, CFC Music, Birthday Saint Finder, Driving Academy & Joren Listings.</div>
+                </div>
+              </div>
+              <a href="#/work-done" className="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs transition shrink-0">
+                Open Work Done Page →
+              </a>
+            </div>
+
+          </div>
+        </section>
+      );
+    }
+
+    // =========================================================================
+    // FEATURE 6: Founder Bio (Jose Rene Navarro)
+    // =========================================================================
+    function FounderSection() {
+      return (
+        <section id="about-founder" className="py-20 px-5 sm:px-8 bg-white border-t border-slate-200">
+          <div className="max-w-5xl mx-auto">
+            
+            <div className="p-8 sm:p-12 rounded-3xl border border-slate-200 bg-slate-50/70 shadow-sm">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                
+                <div className="md:col-span-4 flex flex-col items-center text-center">
+                  <div className="w-36 h-36 rounded-2xl overflow-hidden border-2 border-blue-600 shadow-lg bg-slate-200">
+                    <img src="assets/jose-headshot.jpg" alt="Jose Rene Navarro" className="w-full h-full object-cover" />
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mt-4">Jose Rene Navarro</h3>
+                  <div className="text-xs font-semibold text-blue-600">QA Professional · Glide App Builder · Web Analyst</div>
+                  <div className="text-xs text-slate-500 mt-0.5">Toronto, Ontario, Canada</div>
+
+                  {/* Official Brand Logo Badge */}
+                  <div className="mt-4 p-2.5 rounded-2xl bg-slate-950 border border-slate-800 flex items-center gap-2.5 shadow-md max-w-[220px]">
+                    <div className="w-10 h-10 rounded-xl overflow-hidden border border-white/20 shrink-0">
+                      <img src="assets/logo.webp" alt="Jose Navarro Logo" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="text-left">
+                      <div className="text-[10px] font-bold text-white tracking-tight">JOSE NAVARRO</div>
+                      <div className="text-[8px] font-mono text-cyan-400">SOLUTIONS THAT WORK.</div>
+                    </div>
+                  </div>
+
+                  <div className="mt-4 flex items-center gap-3">
+                    <a href="tel:437-423-3456" className="p-2 rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-blue-600 shadow-sm" title="Call Jose">
+                      <SvgIcon name="phone" className="w-4 h-4" />
+                    </a>
+                    <a href="mailto:navarrojoserene.ca@gmail.com" className="p-2 rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-blue-600 shadow-sm" title="Email Jose">
+                      <SvgIcon name="mail" className="w-4 h-4" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/jose-navarro-93b31015/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-blue-600 shadow-sm" title="LinkedIn Profile">
+                      <span className="text-xs font-bold font-mono">in</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div className="md:col-span-8 space-y-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <span className="text-xs font-bold uppercase tracking-wider text-blue-600 font-mono">Founder & Lead Engineer</span>
+                  <h2 className="text-2xl font-bold text-slate-900">
+                    "Great software does not need to be complicated — it just needs to work."
+                  </h2>
+                  <p>
+                    With more than <strong>20 years in software quality assurance</strong>, I have tested and supported mobile applications, enterprise websites, embedded systems, and business platforms across diverse industries.
+                  </p>
+                  <p>
+                    My expertise spans test planning, defect management, usability testing, cross-device verification, and release certification. Seeing businesses struggle with lost paper forms, unreadable handwriting, and fragile spreadsheets inspired me to create <strong>Proofly</strong>.
+                  </p>
+                  <p>
+                    Today, I combine this extensive testing experience with <strong>Glide no-code innovation</strong> to build practical, affordable, and dependable mobile apps that businesses can count on.
+                  </p>
+                  <div className="pt-3 border-t border-slate-200 flex flex-wrap gap-4 text-xs font-semibold text-slate-800">
+                    <span>Direct: <a href="tel:437-423-3456" className="text-blue-600 underline">(437) 423-3456</a></span>
+                    <span>Email: <a href="mailto:navarrojoserene.ca@gmail.com" className="text-blue-600 underline">navarrojoserene.ca@gmail.com</a></span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </section>
+      );
+    }
+
+    // =========================================================================
+    // FEATURE 7: FAQ Section
+    // =========================================================================
+    function FaqSection() {
+      const [openIdx, setOpenIdx] = useState(0);
+
+      const faqs = [
+        {
+          q: 'What is Proofly and how does it eliminate paper timesheets?',
+          a: 'Proofly is an AI-verified mobile workforce management system built by Jose Rene Navarro. Field staff use their phones to verify attendance with AI facial recognition, complete shift checklists with mandatory photo proof, and sync verified hours directly to CRA-ready payroll spreadsheets.'
+        },
+        {
+          q: 'Do workers need to download anything from the Apple App Store or Google Play?',
+          a: 'No! Proofly apps run as modern Progressive Web Apps (PWAs). Employees simply scan a QR code or tap a secure link to add the app icon directly to their smartphone home screen in 5 seconds without App Store passwords or updates.'
+        },
+        {
+          q: 'Why does 20+ years of Software QA matter for a mobile app?',
+          a: 'Anyone can make a simple prototype. But ensuring an app does not crash when 40 workers clock in at once, correctly caches photos during basement signal blackouts, and calculates Ontario overtime math without human error requires engineering rigor.'
+        },
+        {
+          q: 'Can Proofly export hours directly to my payroll or accountant?',
+          a: 'Yes. Proofly formats verified shift hours into clean CSV spreadsheets broken down by employee, regular hours, overtime, and site tags, ready for QuickBooks, Sage, ADP, or your accountant.'
+        },
+        {
+          q: 'How long does it take to launch our custom mobile app?',
+          a: 'Most custom Glide apps take between 5 to 10 business days from discovery kickoff to full deployment.'
+        }
+      ];
+
+      return (
+        <section className="py-20 px-5 sm:px-8 bg-slate-50 border-t border-slate-200">
+          <div className="max-w-4xl mx-auto">
+            
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <span className="text-xs font-bold uppercase tracking-wider text-blue-600 font-mono">Answers</span>
+              <h2 className="mt-2 text-3xl font-extrabold text-slate-950">Frequently Asked Questions</h2>
+            </div>
+
+            <div className="space-y-3">
+              {faqs.map((faq, idx) => (
+                <div key={faq.q} className="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+                  <button
+                    type="button"
+                    onClick={() => setOpenIdx(openIdx === idx ? -1 : idx)}
+                    className="w-full p-5 text-left font-bold text-xs sm:text-sm text-slate-900 flex items-center justify-between hover:text-blue-600 transition"
+                  >
+                    <span>{faq.q}</span>
+                    <span className="text-blue-600 text-lg font-mono">{openIdx === idx ? '−' : '+'}</span>
+                  </button>
+                  {openIdx === idx && (
+                    <div className="px-5 pb-5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                      {faq.a}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </section>
+      );
+    }
+
+    // =========================================================================
+    // FEATURE 8: Consultation Intake & Direct Email Routing
+    // =========================================================================
+    function ContactSection({ initialTier, initialIndustry }) {
+      const [name, setName] = useState('');
+      const [businessName, setBusinessName] = useState('');
+      const [email, setEmail] = useState('');
+      const [phone, setPhone] = useState('');
+      const [projectType, setProjectType] = useState(initialTier || 'Proofly Level 1: Attendance & Tasks');
+      const [industry, setIndustry] = useState(initialIndustry || 'Commercial Cleaning');
+      const [message, setMessage] = useState('');
+
+      const [submitted, setSubmitted] = useState(false);
+      const [sending, setSending] = useState(false);
+      const [copied, setCopied] = useState(false);
+      const [lastMailtoUrl, setLastMailtoUrl] = useState('');
+
+      useEffect(() => {
+        if (initialTier) setProjectType(initialTier);
+        if (initialIndustry) setIndustry(initialIndustry);
+      }, [initialTier, initialIndustry]);
+
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        setSending(true);
+
+        const payload = {
+          name,
+          businessName,
+          email,
+          phone,
+          projectType,
+          industry,
+          message,
+          recipient: 'navarrojoserene.ca@gmail.com'
+        };
+
+        // 1. Send to local backend logging endpoint
+        try {
+          await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+        } catch (err) {
+          console.warn('API submission log warning:', err);
+        }
+
+        // 2. Build preformatted mailto URL to Jose's email
+        const subject = encodeURIComponent(`Proofly Project Inquiry: ${businessName || name} - ${projectType}`);
+        const body = encodeURIComponent(
+          `Dear Jose Rene Navarro,\n\n` +
+          `I would like to discuss a mobile application project.\n\n` +
+          `--- CLIENT INFORMATION ---\n` +
+          `Name: ${name}\n` +
+          `Business/Organization: ${businessName}\n` +
+          `Work Email: ${email}\n` +
+          `Phone: ${phone || 'Not provided'}\n` +
+          `Selected Solution Tier: ${projectType}\n` +
+          `Target Industry: ${industry}\n\n` +
+          `--- PROJECT SCOPE & WORKFLOW ---\n` +
+          `${message}\n\n` +
+          `---\n` +
+          `Inquiry sent via Proofly Platform to navarrojoserene.ca@gmail.com`
+        );
+        const mailtoUri = `mailto:navarrojoserene.ca@gmail.com?subject=${subject}&body=${body}`;
+        setLastMailtoUrl(mailtoUri);
+
+        // 3. Trigger email client automatically
+        window.location.href = mailtoUri;
+
+        setSending(false);
+        setSubmitted(true);
+      };
+
+      const copyInquiryText = () => {
+        const text = 
+          `Client: ${name}\n` +
+          `Business: ${businessName}\n` +
+          `Email: ${email}\n` +
+          `Phone: ${phone}\n` +
+          `Solution: ${projectType}\n` +
+          `Industry: ${industry}\n` +
+          `Details: ${message}\n` +
+          `Recipient: navarrojoserene.ca@gmail.com`;
+        navigator.clipboard.writeText(text).then(() => {
+          setCopied(true);
+          setTimeout(() => setCopied(false), 2500);
+        });
+      };
+
+      return (
+        <section id="contact" className="py-20 px-5 sm:px-8 bg-white border-t border-slate-200">
+          <div className="max-w-6xl mx-auto">
+            
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+              
+              <div className="lg:col-span-5 space-y-5">
+                <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200 font-mono">
+                  Discovery Consultation
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-950">
+                  Ready to Modernize Your Operations?
+                </h2>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Book a discovery review with <strong>Jose Rene Navarro</strong>. Every inquiry routes directly to Jose's email. We will evaluate your workflow, determine Glide feasibility, and provide an exact timeline.
+                </p>
+
+                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3 text-xs">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center">
+                      <SvgIcon name="phone" className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="text-[10px] text-slate-500 uppercase font-mono">Direct Phone Line</div>
+                      <a href="tel:437-423-3456" className="text-sm font-bold text-slate-900 hover:text-blue-600">(437) 423-3456</a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-xl bg-slate-900 text-white flex items-center justify-center">
+                      <SvgIcon name="mail" className="w-4 h-4 text-cyan-400" />
+                    </div>
+                    <div>
+                      <div className="text-[10px] text-slate-500 uppercase font-mono">Direct Email Address</div>
+                      <a href="mailto:navarrojoserene.ca@gmail.com" className="text-sm font-bold text-slate-900 hover:text-blue-600">navarrojoserene.ca@gmail.com</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-950 flex items-center gap-2.5">
+                  <SvgIcon name="shield-check" className="w-5 h-5 text-emerald-600 shrink-0" />
+                  <span><strong>Zero Risk:</strong> 20+ years of QA rigor guarantees honest feasibility advice for your team.</span>
+                </div>
+              </div>
+
+              {/* Consultation Form / Confirmation */}
+              <div className="lg:col-span-7 p-8 rounded-3xl border border-slate-200 bg-slate-50/80 shadow-xl">
+                {submitted ? (
+                  <div className="text-center py-8 space-y-5">
+                    <div className="w-14 h-14 rounded-full bg-emerald-500 text-white flex items-center justify-center mx-auto shadow-lg shadow-emerald-500/30">
+                      <SvgIcon name="check" className="w-7 h-7" />
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-bold text-slate-900">Inquiry Prepared for Jose Rene Navarro</h3>
+                      <div className="inline-block mt-2 px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-mono font-bold">
+                        Recipient: navarrojoserene.ca@gmail.com
+                      </div>
+                    </div>
+
+                    <p className="text-xs text-slate-600 max-w-md mx-auto leading-relaxed">
+                      Your inquiry has been logged in our system and formatted for Jose. Your default mail application has been triggered to complete delivery.
+                    </p>
+
+                    <div className="p-4 bg-white rounded-2xl border border-slate-200 text-left text-xs space-y-2 text-slate-700">
+                      <div className="font-bold text-slate-900 border-b pb-1">Submission Summary:</div>
+                      <div><strong>Client:</strong> {name} ({businessName})</div>
+                      <div><strong>Contact:</strong> {email} · {phone || 'No phone'}</div>
+                      <div><strong>Requested Solution:</strong> {projectType}</div>
+                      <div><strong>Industry:</strong> {industry}</div>
+                      <div><strong>Scope:</strong> {message}</div>
+                    </div>
+
+                    <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+                      <a
+                        href={lastMailtoUrl}
+                        className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow transition flex items-center gap-1.5"
+                      >
+                        <SvgIcon name="mail" className="w-4 h-4" />
+                        <span>Re-Open Mail Client</span>
+                      </a>
+                      <button
+                        type="button"
+                        onClick={copyInquiryText}
+                        className="px-4 py-2.5 rounded-xl bg-white border border-slate-300 hover:bg-slate-50 text-slate-800 font-bold text-xs transition flex items-center gap-1.5"
+                      >
+                        <SvgIcon name="copy" className="w-4 h-4 text-slate-600" />
+                        <span>{copied ? 'Copied to Clipboard!' : 'Copy Inquiry Text'}</span>
+                      </button>
+                      <a
+                        href="tel:437-423-3456"
+                        className="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs transition flex items-center gap-1.5"
+                      >
+                        <SvgIcon name="phone" className="w-4 h-4 text-emerald-400" />
+                        <span>Call (437) 423-3456</span>
+                      </a>
+                    </div>
+
+                    <div className="pt-4 border-t border-slate-200">
+                      <button
+                        type="button"
+                        onClick={() => setSubmitted(false)}
+                        className="text-xs font-bold text-blue-600 hover:underline"
+                      >
+                        ← Submit another inquiry
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-4 text-xs">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block font-bold text-slate-700 uppercase tracking-wider mb-1">Your Name *</label>
+                        <input
+                          required
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
+                          placeholder="e.g. Robert Smith"
+                          className="w-full h-10 px-3 rounded-xl border border-slate-300 bg-white text-slate-900 focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                        />
+                      </div>
+                      <div>
+                        <label className="block font-bold text-slate-700 uppercase tracking-wider mb-1">Business Name *</label>
+                        <input
+                          required
+                          value={businessName}
+                          onChange={(e) => setBusinessName(e.target.value)}
+                          placeholder="e.g. Apex Facility Services"
+                          className="w-full h-10 px-3 rounded-xl border border-slate-300 bg-white text-slate-900 focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block font-bold text-slate-700 uppercase tracking-wider mb-1">Work Email *</label>
+                        <input
+                          required
+                          type="email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          placeholder="e.g. robert@apexclean.ca"
+                          className="w-full h-10 px-3 rounded-xl border border-slate-300 bg-white text-slate-900 focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                        />
+                      </div>
+                      <div>
+                        <label className="block font-bold text-slate-700 uppercase tracking-wider mb-1">Phone Number</label>
+                        <input
+                          type="tel"
+                          value={phone}
+                          onChange={(e) => setPhone(e.target.value)}
+                          placeholder="e.g. (416) 555-0199"
+                          className="w-full h-10 px-3 rounded-xl border border-slate-300 bg-white text-slate-900 focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block font-bold text-slate-700 uppercase tracking-wider mb-1">Solution Tier</label>
+                        <select
+                          value={projectType}
+                          onChange={(e) => setProjectType(e.target.value)}
+                          className="w-full h-10 px-3 rounded-xl border border-slate-300 bg-white text-slate-900 focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                        >
+                          <option>Proofly Level 1: Attendance & Tasks</option>
+                          <option>Proofly Level 2: Team Messaging</option>
+                          <option>Proofly Level 3: CRA-Ready Payroll</option>
+                          <option>Proofly Level 4: Smart Scheduling</option>
+                          <option>Custom Glide Mobile Application</option>
+                          <option>Website QA & Usability Audit</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block font-bold text-slate-700 uppercase tracking-wider mb-1">Target Industry</label>
+                        <select
+                          value={industry}
+                          onChange={(e) => setIndustry(e.target.value)}
+                          className="w-full h-10 px-3 rounded-xl border border-slate-300 bg-white text-slate-900 focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                        >
+                          <option>Commercial Cleaning</option>
+                          <option>Construction & Trades</option>
+                          <option>Security Services</option>
+                          <option>Landscaping Companies</option>
+                          <option>Delivery & Logistics</option>
+                          <option>Healthcare & Clinics</option>
+                          <option>Faith / Community Ministry</option>
+                          <option>Driving School / Fleet</option>
+                          <option>Real Estate & Brokerage</option>
+                          <option>Other Operational Business</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block font-bold text-slate-700 uppercase tracking-wider mb-1">
+                        Describe Your Current Workflow or Problem *
+                      </label>
+                      <textarea
+                        required
+                        rows="4"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        placeholder="Tell Jose what you currently do (e.g. 15 workers on paper clipboards) and what features you want the app to have..."
+                        className="w-full p-3 rounded-xl border border-slate-300 bg-white text-slate-900 focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                      ></textarea>
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={sending}
+                      className="w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold uppercase tracking-wider shadow-md hover:shadow-blue-500/30 transition active:scale-98 shimmer-trigger disabled:opacity-50"
+                    >
+                      {sending ? 'Sending to Jose Rene Navarro...' : 'Send Inquiry to navarrojoserene.ca@gmail.com'}
+                    </button>
+
+                    <div className="text-[11px] text-center text-slate-500">
+                      Inquiries route directly to Jose Rene Navarro at <span className="font-mono text-blue-600 font-bold">navarrojoserene.ca@gmail.com</span>
+                    </div>
+                  </form>
+                )}
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+      );
+    }
+
+    // =========================================================================
+    // Master Application Layout & View Controller
+    // =========================================================================
+    function App() {
+      const [currentView, setCurrentView] = useState('home'); // 'home' or 'work-done'
+      const [lightbox, setLightbox] = useState({ open: false, src: '', title: '', subtitle: '' });
+      const [prefillTier, setPrefillTier] = useState('');
+      const [prefillIndustry, setPrefillIndustry] = useState('');
+
+      // URL Hash Router
+      useEffect(() => {
+        const handleHash = () => {
+          const hash = window.location.hash;
+          if (hash.startsWith('#/work-done')) {
+            setCurrentView('work-done');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          } else {
+            setCurrentView('home');
+          }
+        };
+
+        handleHash();
+        window.addEventListener('hashchange', handleHash);
+        return () => window.removeEventListener('hashchange', handleHash);
+      }, []);
+
+      const openFlyerLightbox = (src, title, subtitle = '') => {
+        setLightbox({ open: true, src, title, subtitle });
+      };
+
+      const closeLightbox = () => {
+        setLightbox({ open: false, src: '', title: '', subtitle: '' });
+      };
+
+      const handleOpenContactWithTier = (tierName, industryName) => {
+        setPrefillTier(tierName);
+        if (industryName) setPrefillIndustry(industryName);
+        if (currentView !== 'home') {
+          window.location.hash = '#contact';
+        }
+      };
+
+      const handleOpenContactWithProject = (projectTitle) => {
+        setPrefillTier('Custom App: ' + projectTitle);
+        window.location.hash = '#contact';
+      };
+
+      return (
+        <div className="min-h-screen flex flex-col bg-white">
+          
+          {/* Header */}
+          <header className="sticky top-0 z-50 glass-panel border-b border-slate-200">
+            <div className="max-w-7xl mx-auto px-5 sm:px-8 h-18 py-3 flex items-center justify-between">
+              <a href="#/" className="flex items-center gap-3 group">
+                <StudioLogoMark />
+                <div>
+                  <div className="text-xl font-extrabold tracking-tight text-slate-950 flex items-center gap-2">
+                    <span className="font-heading">Proofly</span>
+                    <span className="text-[10px] font-bold bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded uppercase font-mono tracking-wide">AI WORKFORCE</span>
+                  </div>
+                  <div className="text-[11px] text-slate-500 font-medium flex items-center gap-1.5">
+                    <span>By Jose Rene Navarro</span>
+                    <span>•</span>
+                    <span className="text-blue-600 font-semibold">Solutions That Work</span>
+                  </div>
+                </div>
+              </a>
+
+              <nav className="hidden md:flex items-center gap-6 text-xs font-bold text-slate-600">
+                <a
+                  href="#/"
+                  className={`transition ${currentView === 'home' ? 'text-blue-600' : 'hover:text-blue-600'}`}
+                >
+                  Overview
+                </a>
+                <a href="#proofly-suite" className="hover:text-blue-600 transition">
+                  Proofly Levels 1–4
+                </a>
+                <a
+                  href="#/work-done"
+                  className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full transition ${
+                    currentView === 'work-done'
+                      ? 'bg-blue-600 text-white font-extrabold shadow-sm'
+                      : 'bg-blue-50 text-blue-700 hover:bg-blue-100 font-bold'
+                  }`}
+                >
+                  <SvgIcon name="smartphone" className="w-3.5 h-3.5" />
+                  <span>Work Done (5 Live Apps)</span>
+                </a>
+                <a href="#qa-terminal" className="hover:text-blue-600 transition">
+                  20-Yr QA Rigor
+                </a>
+                <a href="#about-founder" className="hover:text-blue-600 transition">
+                  About Jose
+                </a>
+              </nav>
+
+              <div className="flex items-center gap-3">
+                <a href="tel:437-423-3456" className="hidden sm:inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-blue-600 font-mono">
+                  <SvgIcon name="phone" className="w-3.5 h-3.5 text-blue-600" />
+                  <span>(437) 423-3456</span>
+                </a>
+                <a href="#contact" className="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-md transition shimmer-trigger">
+                  Consultation
+                </a>
+              </div>
+            </div>
+          </header>
+
+          {/* Main Content View Switcher */}
+          <main className="flex-1">
+            {currentView === 'work-done' ? (
+              <WorkDonePage
+                onOpenFlyer={openFlyerLightbox}
+                onOpenContactWithProject={handleOpenContactWithProject}
+              />
+            ) : (
+              <React.Fragment>
+                <section className="ambient-glow-top studio-dots pt-8 pb-16 px-5 sm:px-8">
+                  <div className="max-w-7xl mx-auto">
+                    <AppConfiguratorHero
+                      onSelectTierFlyer={openFlyerLightbox}
+                      onOpenContactWithTier={handleOpenContactWithTier}
+                    />
+                  </div>
+                </section>
+
+                <CoreServicesSection />
+                <PaperVsGlideSection />
+                <ProoflyLevelsSection onOpenTierFlyer={openFlyerLightbox} />
+                <QaTerminalSection />
+                <PortfolioHomeSection onOpenFlyer={openFlyerLightbox} />
+                <FounderSection />
+                <FaqSection />
+                <ContactSection
+                  initialTier={prefillTier}
+                  initialIndustry={prefillIndustry}
+                />
+              </React.Fragment>
+            )}
+          </main>
+
+          {/* Lightbox Flyer Modal */}
+          {lightbox.open && (
+            <LightboxModal
+              imageSrc={lightbox.src}
+              title={lightbox.title}
+              subtitle={lightbox.subtitle}
+              onClose={closeLightbox}
+            />
+          )}
+
+          {/* Footer */}
+          <footer className="bg-slate-950 text-white py-14 px-5 sm:px-8 border-t border-slate-800 text-xs">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-slate-800">
+              <div className="space-y-3 md:col-span-2">
+                <div className="flex items-center gap-3">
+                  <StudioLogoMark size="lg" />
+                  <div>
+                    <span className="font-bold text-xl tracking-tight text-white block font-heading">Proofly</span>
+                    <span className="text-[11px] text-blue-400 font-mono uppercase tracking-wider">Solutions That Work · By Jose Rene Navarro</span>
+                  </div>
+                </div>
+                <p className="text-slate-400 max-w-sm leading-relaxed">
+                  AI-powered workforce management & custom Glide mobile applications — backed by 20+ years of software quality engineering rigor.
+                </p>
+                <div className="text-slate-500 font-mono text-[11px]">
+                  Toronto, Ontario, Canada · (437) 423-3456 · navarrojoserene.ca@gmail.com
+                </div>
+              </div>
+
+              <div>
+                <div className="font-bold text-slate-200 uppercase tracking-wider mb-3 font-mono">Solutions & Work</div>
+                <ul className="space-y-2 text-slate-400">
+                  <li><a href="#/work-done" className="hover:text-white transition">The Manpower Solution App (18 Staff)</a></li>
+                  <li><a href="#/work-done" className="hover:text-white transition">CFC Music Ministry App (135+ Songs)</a></li>
+                  <li><a href="#/work-done" className="hover:text-white transition">Birthday Saint Finder (100% Offline)</a></li>
+                  <li><a href="#/work-done" className="hover:text-white transition">Proofly Driving Academy Platform</a></li>
+                  <li><a href="#/work-done" className="hover:text-white transition">Joren Property Listings App</a></li>
+                </ul>
+              </div>
+
+              <div>
+                <div className="font-bold text-slate-200 uppercase tracking-wider mb-3 font-mono">Direct Contact</div>
+                <ul className="space-y-2 text-slate-400">
+                  <li><a href="tel:437-423-3456" className="text-blue-400 hover:underline font-mono">📞 (437) 423-3456</a></li>
+                  <li><a href="mailto:navarrojoserene.ca@gmail.com" className="hover:text-white font-mono">✉️ navarrojoserene.ca@gmail.com</a></li>
+                  <li><a href="https://www.linkedin.com/in/jose-navarro-93b31015/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">🔗 LinkedIn Profile</a></li>
+                  <li><span className="text-slate-500 font-mono">joserenenavarro.blog · my-mobileapps.com</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row items-center justify-between text-slate-500 text-[11px] gap-2">
+              <span>© 2026 Proofly / Jose Rene Navarro. All rights reserved.</span>
+              <span>Solutions That Work · Built on Glide with 20+ Yrs QA</span>
+            </div>
+          </footer>
+
+        </div>
+      );
+    }
+
+    // Mount App
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>

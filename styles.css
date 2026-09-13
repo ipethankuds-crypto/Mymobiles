@@ -1,0 +1,203 @@
+/* Proofly AI Workforce Platform & Custom Mobile Apps - Jose Rene Navarro */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-heading: 'Space Grotesk', -apple-system, sans-serif;
+  --font-subheading: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-primary: #0066FF;
+  --color-primary-dark: #004ecc;
+  --color-accent-cyan: #00F0FF;
+  --color-obsidian: #090D16;
+  --color-dark-card: #0F172A;
+  --color-emerald: #10B981;
+}
+
+body {
+  font-family: var(--font-body);
+  color: #0f172a;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  letter-spacing: -0.015em;
+}
+
+h1, h2, h3, .font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.03em;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Ambient Radial Mesh Gradients (Unique & High-Tech) */
+.ambient-glow-top {
+  background: radial-gradient(circle at 50% -10%, rgba(0, 102, 255, 0.12) 0%, rgba(0, 240, 255, 0.05) 30%, transparent 65%);
+}
+
+.ambient-glow-dark {
+  background: radial-gradient(circle at 80% 20%, rgba(0, 102, 255, 0.18) 0%, rgba(0, 240, 255, 0.08) 35%, transparent 70%);
+}
+
+/* Studio Dot Grid Background */
+.studio-dots {
+  background-image: radial-gradient(rgba(148, 163, 184, 0.28) 1.2px, transparent 1.2px);
+  background-size: 20px 20px;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+}
+
+.glass-panel-dark {
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Bespoke Button Styling: Glow Halo & Refined Hover */
+.btn-precision {
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px -2px rgba(0, 102, 255, 0.35);
+}
+
+.btn-precision:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -4px rgba(0, 102, 255, 0.5), 0 0 0 1px rgba(0, 240, 255, 0.3);
+}
+
+.btn-precision:active {
+  transform: translateY(0);
+}
+
+/* Subtle Shimmer for interactive elements */
+@keyframes studioShimmer {
+  0% { transform: translateX(-100%) rotate(30deg); }
+  100% { transform: translateX(250%) rotate(30deg); }
+}
+
+.shimmer-trigger {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-trigger::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 60%
+  );
+  transform: translateX(-100%) rotate(30deg);
+  pointer-events: none;
+}
+
+.shimmer-trigger:hover::after {
+  animation: studioShimmer 0.85s ease-out;
+}
+
+/* Interactive Studio Mobile Phone Mockup */
+.studio-phone {
+  width: 320px;
+  height: 640px;
+  background: #090d16;
+  border: 10px solid #1e293b;
+  border-radius: 44px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 480px) {
+  .studio-phone {
+    width: 290px;
+    height: 590px;
+    border-width: 8px;
+    border-radius: 36px;
+  }
+}
+
+.studio-phone-island {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 105px;
+  height: 24px;
+  background: #000;
+  border-radius: 14px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+}
+
+.studio-phone-screen {
+  height: 100%;
+  width: 100%;
+  background: #f8fafc;
+  overflow-y: auto;
+  padding-top: 40px;
+  padding-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Biometric Mesh Scan Animation */
+@keyframes meshPulse {
+  0% { stroke-dashoffset: 200; opacity: 0.3; }
+  50% { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: -200; opacity: 0.3; }
+}
+
+.biometric-mesh-line {
+  stroke-dasharray: 8 4;
+  animation: meshPulse 3s infinite linear;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Terminal Cursor Blink */
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background: #00f0ff;
+  vertical-align: middle;
+  animation: cursorBlink 1s infinite;
+}
