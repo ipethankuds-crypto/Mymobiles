@@ -72,5 +72,44 @@
     "name": "Verification Test",
     "email": "test@verification.local",
     "message": "Verifying automated email dispatch functionality"
+  },
+  {
+    "id": "inq_1789824101479",
+    "timestamp": "2026-09-19T13:21:41.479Z",
+    "recipient": "navarrojoserene.ca@gmail.com",
+    "consultant": "Jose Rene Navarro (navarrojoserene.ca@gmail.com)",
+    "name": "Sarah Jenkins",
+    "businessName": "Metro Cleaners Toronto",
+    "email": "sarah.jenkins@metrocleaners.ca",
+    "phone": "(416) 777-8899",
+    "projectType": "AI Face Verification & Mobile Attendance App (Anti-Buddy Punching)",
+    "industry": "Commercial Cleaning",
+    "message": "Inquiry Test 1: Testing direct client email reply-to for Jose Rene Navarro at navarrojoserene.ca@gmail.com"
+  },
+  {
+    "id": "inq_1789824103613",
+    "timestamp": "2026-09-19T13:21:43.613Z",
+    "recipient": "navarrojoserene.ca@gmail.com",
+    "consultant": "Jose Rene Navarro (navarrojoserene.ca@gmail.com)",
+    "name": "David Lee",
+    "businessName": "St. Augustine Choir",
+    "email": "david.lee@staugustine.org",
+    "phone": "(647) 888-9900",
+    "projectType": "Free App Access: CFC Music Ministry",
+    "industry": "Faith & Worship",
+    "message": "Inquiry Test 2: Requesting free access link for the CFC Music Ministry app for our choir leaders."
+  },
+  {
+    "id": "inq_1789829031423",
+    "timestamp": "2026-09-19T14:43:51.423Z",
+    "recipient": "navarrojoserene.ca@gmail.com",
+    "consultant": "Jose Rene Navarro (navarrojoserene.ca@gmail.com)",
+    "name": "Test Visitor",
+    "businessName": "Acme Cleaning",
+    "email": "visitor@acme.com",
+    "phone": "416-555-0199",
+    "projectType": "AI Face Verification & Custom App",
+    "industry": "Commercial Cleaning",
+    "message": "Interested in AI face biometric clock-in."
   }
 ]

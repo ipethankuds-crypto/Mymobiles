@@ -32,26 +32,34 @@ function saveAndDispatchInquiry(record) {
   console.log(`[INQUIRY LOGGED] From: ${record.name} (${record.email}) -> Recipient: navarrojoserene.ca@gmail.com`);
 
   const tempInquiryFile = path.join(PUBLIC_DIR, `.temp_inq_${record.id}.json`);
+  const clientSubject = `[Proofly Client Inquiry] ${record.name} - ${record.projectType || 'Custom App'} (${record.businessName || 'Business'})`;
   const emailData = {
     name: record.name,
     businessName: record.businessName || 'Proofly Lead',
     email: record.email,
+    _replyto: record.email,
     phone: record.phone || 'Not provided',
     solutionType: record.projectType || 'AI Concierge Inquiry',
     industry: record.industry || 'General',
     message: record.message,
-    _subject: `New Proofly Inquiry from ${record.businessName || record.name}`
+    _subject: clientSubject,
+    _template: 'table',
+    _captcha: 'false'
   };
 
   try {
     fs.writeFileSync(tempInquiryFile, JSON.stringify(emailData, null, 2), 'utf8');
-    const cmd = `curl.exe -s -X POST "https://formsubmit.co/ajax/navarrojoserene.ca@gmail.com" -H "Content-Type: application/json" -H "Accept: application/json" -H "Referer: http://localhost:3000" -H "Origin: http://localhost:3000" --data @"${tempInquiryFile}"`;
+    const cmd = `curl.exe -s -X POST "https://formsubmit.co/ajax/navarrojoserene.ca@gmail.com" -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" -H "Referer: https://proofly.ca" -H "Origin: https://proofly.ca" -H "Content-Type: application/json" -H "Accept: application/json" --data @"${tempInquiryFile}"`;
     exec(cmd, (cErr, stdout) => {
       if (fs.existsSync(tempInquiryFile)) fs.unlinkSync(tempInquiryFile);
       if (cErr) {
         console.error('[EMAIL DISPATCH WARNING]', cErr.message);
       } else {
-        console.log('[EMAIL DISPATCH SUCCESS]', stdout.trim());
+        const resText = (stdout || '').trim();
+        console.log('[EMAIL DISPATCH RESPONSE]', resText);
+        if (resText.includes('needs Activation')) {
+          console.log('[ACTION REQUIRED] FormSubmit sent an activation email to navarrojoserene.ca@gmail.com. Please open Gmail and click "Activate Form" once to start receiving inquiries.');
+        }
       }
     });
   } catch (dispatchErr) {
@@ -178,9 +186,9 @@ function generateAiResponse(userMsg, history) {
   }
 
   // 9. Comparisons: PWA vs Native App / Glide vs Traditional Agencies
-  if (q.includes('pwa vs') || q.includes('native') || q.includes('app store') || q.includes('flutter') || q.includes('react native') || q.includes('traditional') || q.includes('agency')) {
+  if (q.includes('pwa vs') || q.includes('native') || q.includes('flutter') || q.includes('react native') || q.includes('traditional') || q.includes('agency')) {
     return {
-      reply: `📱 **PWA (Progressive Web App) vs. Traditional Native App**:\n\n• **Speed to Market**: Glide PWAs deploy in **5 to 7 business days**. Traditional native apps take **4 to 6 months**.\n• **Cost**: Glide PWAs save up to **80% in development fees** ($25k–$50k+ traditional vs. accessible high-ROI custom Glide apps).\n• **Zero App Store Friction**: No waiting 2 weeks for Apple or Google approval, and no 30% App Store cuts. Employees install it directly to their home screen with 1 tap.\n• **Universal Device Support**: One single codebase works on iPhone, Android, iPad, and desktop web browsers with real-time cloud data sync.\n\nWould you like to see how a Glide PWA works for your team?`,
+      reply: `📱 **PWA (Progressive Web App) vs. Traditional Native App**:\n\n• **Speed to Market**: Glide PWAs deploy in **5 to 7 business days**. Traditional native apps take **4 to 6 months**.\n• **Cost**: Glide PWAs save up to **80% in development fees** ($25k–$50k+ traditional vs. accessible high-ROI custom Glide apps).\n• **Instant Deployment**: Deploys immediately to employee smartphones and desktop web browsers with 1 tap, with immediate real-time cloud updates.\n• **Universal Device Support**: One single codebase works on iPhone, Android, iPad, and desktop web browsers with real-time cloud data sync.\n\nWould you like to see how a Glide PWA works for your team?`,
       suggestions: ['Show me case studies', 'How much does it cost?', 'Book a discovery call']
     };
   }
@@ -249,7 +257,7 @@ function generateAiResponse(userMsg, history) {
   // 14. Case Studies & Previous Work
   if (q.includes('case stud') || q.includes('work done') || q.includes('portfolio') || q.includes('previous') || q.includes('apps') || q.includes('manpower') || q.includes('cfc') || q.includes('saint') || q.includes('driving') || q.includes('joren')) {
     return {
-      reply: `🚀 **Jose Rene Navarro's 5 Production App Deployments**:\n\n1. **The Manpower Solution (Level 1 App)**: 18 active commercial cleaners across the GTA. 100% eliminated buddy punching with Face Match 1.00 and photo task verification.\n2. **CFC Music Ministry App**: 135+ Catholic worship songs with live interactive chord transposing (change key in 1 click) and embedded practice audio.\n3. **Birthday Saint Finder**: 100% offline liturgical calendar with biographical saint profiles and feast day search.\n4. **Proofly Driving Academy Platform**: Dual-sided system for student lesson logging and driving instructor vehicle dispatch.\n5. **Joren Property Listings**: Mobile real estate catalog with automated buyer interest analytics.\n\nYou can view the full case studies on our **"Solutions & Work"** page. Which project would you like to know more about?`,
+      reply: `🚀 **Jose Rene Navarro's 5 Production App Deployments**:\n\n1. **The Manpower Solution (Level 1 App)**: 18 active commercial cleaners across the GTA. 100% eliminated buddy punching with Face Match 1.00 and photo task verification.\n2. **CFC Music Ministry App (100% Free Community App)**: 135+ Catholic worship songs with live interactive chord transposing (change key in 1 click) and embedded audio, available completely free.\n3. **Birthday Saint Finder**: 100% offline liturgical calendar with biographical saint profiles and feast day search.\n4. **Proofly Driving Academy Platform**: Dual-sided system for student lesson logging and driving instructor vehicle dispatch.\n5. **Joren Property Listings**: Mobile real estate catalog with automated buyer interest analytics.\n\nYou can view the full case studies on our **"Solutions & Work"** page. Which project would you like to know more about?`,
       suggestions: ['Tell me about Manpower Solution', 'Tell me about CFC Music', 'Book a discovery consultation']
     };
   }
@@ -257,7 +265,7 @@ function generateAiResponse(userMsg, history) {
   // 15. Pricing, Cost & Turnaround Time
   if (q.includes('price') || q.includes('cost') || q.includes('pricing') || q.includes('quote') || q.includes('how much') || q.includes('timeline') || q.includes('how long') || q.includes('fast') || q.includes('days') || q.includes('budget')) {
     return {
-      reply: `⚡ **Rapid Turnaround & Unmatched Cost Efficiency**:\n\n• **Delivery Speed**: Production-ready deployment in just **5 to 7 business days**!\n• **Up to 80% Cost Savings**: Traditional app agencies charge $25,000–$50,000+ and take 4 to 6 months. Jose builds custom Progressive Web Apps (PWAs) on Glide, reducing costs by up to 80% while delivering enterprise reliability.\n• **Zero App Store Approval Hassle**: No waiting 2 weeks for Apple or Google approval, and no 30% App Store fees. Staff install it directly to their home screen with 1 click.\n• **Measurable ROI**: Saves 10 to 25 hours per week in eliminated timesheet disputes and manual paperwork.\n\nLeave your email or phone here, and Jose will provide an exact quote and scope within 24 hours!`,
+      reply: `⚡ **Rapid Turnaround & Unmatched Cost Efficiency**:\n\n• **Delivery Speed**: Production-ready deployment in just **5 to 7 business days**!\n• **Up to 80% Cost Savings**: Traditional app agencies charge $25,000–$50,000+ and take 4 to 6 months. Jose builds custom Progressive Web Apps (PWAs) on Glide, reducing costs by up to 80% while delivering enterprise reliability.\n• **Instant Web & Mobile Deployment**: Rapid distribution directly to employee smartphones and desktop browsers with 1 click, ensuring rapid rollout across your entire organization.\n• **Measurable ROI**: Saves 10 to 25 hours per week in eliminated timesheet disputes and manual paperwork.\n\nLeave your email or phone here, and Jose will provide an exact quote and scope within 24 hours!`,
       suggestions: ['Book a 30-min discovery call', 'What is Proofly Level 1?', 'Call Jose: (437) 423-3456']
     };
   }
@@ -271,9 +279,9 @@ function generateAiResponse(userMsg, history) {
   }
 
   // 17. Technology / Glide / PWA / Devices (iPhone, Android, Desktop)
-  if (q.includes('glide') || q.includes('pwa') || q.includes('progressive web') || q.includes('iphone') || q.includes('android') || q.includes('ios') || q.includes('store') || q.includes('tablet') || q.includes('desktop')) {
+  if (q.includes('glide') || q.includes('pwa') || q.includes('progressive web') || q.includes('iphone') || q.includes('android') || q.includes('ios') || q.includes('tablet') || q.includes('desktop')) {
     return {
-      reply: `📲 **Cross-Platform Architecture (Glide Progressive Web Apps)**:\n\n• **Universal Device Compatibility**: Proofly apps run smoothly on iPhone (iOS), Android smartphones, iPads, tablets, and desktop web browsers.\n• **Instant Home Screen Install**: Users simply tap "Add to Home Screen". It opens as a full-screen standalone application with its own app icon, splash screen, and offline capabilities.\n• **Zero Friction**: No need to search the Apple App Store or Google Play Store, no passwords or downloads, and no update delays.\n• **Real-Time Cloud Sync**: Every clock-in, photo upload, and task checklist syncs instantly to management web dashboards.\n\nWould you like to build an app for your team?`,
+      reply: `📲 **Cross-Platform Architecture (Glide Progressive Web Apps)**:\n\n• **Universal Device Compatibility**: Proofly apps run smoothly on iPhone (iOS), Android smartphones, iPads, tablets, and desktop web browsers.\n• **Instant Home Screen Install**: Users simply tap "Add to Home Screen". It opens as a full-screen standalone application with its own app icon, splash screen, and offline capabilities.\n• **Zero Friction**: Instant access via secure web link or QR code, with zero download hurdles or manual update delays.\n• **Real-Time Cloud Sync**: Every clock-in, photo upload, and task checklist syncs instantly to management web dashboards.\n\nWould you like to build an app for your team?`,
       suggestions: ['How fast can you build our app?', 'What is Proofly Level 1?', 'Book a discovery consultation']
     };
   }

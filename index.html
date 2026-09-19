@@ -332,24 +332,26 @@
           'Real-time web admin monitoring dashboard for field managers',
           'Instant shift reports and CSV exports ready for Canadian payroll',
           'Eliminates buddy punching and time theft across 18 staff members',
-          'Zero app store download required (Progressive Web App)'
+          'Direct home screen install on iOS & Android (Progressive Web App)'
         ],
         techStack: ['Glide PWA', 'Web Admin Portal', 'Biometric AI', 'Cloud Database']
       },
       {
         id: 'project-cfc-music',
         title: 'The CFC Music Ministry Scarborough South Mobile App',
-        shortTitle: 'CFC Music Ministry App',
+        shortTitle: 'CFC Music Ministry App (100% Free App)',
         category: 'Faith & Community',
-        platformType: 'Mobile & Tablet Web App',
+        platformType: '100% Free Mobile & Tablet Web App',
         filterCategory: 'community',
         client: 'CFC Music Ministry (Scarborough South)',
-        activeMetric: '135+ Worship Songs',
-        badge: 'Community & Worship Platform',
+        activeMetric: '100% Free App · 135+ Worship Songs',
+        badge: '100% Free Community Worship App',
+        isFreeApp: true,
         flyerImg: 'assets/project-cfc-music.webp',
-        excerpt: 'Mobile & web app providing easy access to 135+ worship songs, song selection for services, latest service schedules, and announcements.',
-        fullDocDescription: 'The CFC Music Ministry Scarborough South Mobile App was successfully launched and is currently used by its members. The app provides easy access to 135+ worship songs, song selection for services, latest service schedules, and announcements. It simplifies rehearsal preparation and keeps the entire ministry connected and aligned anytime, anywhere.',
+        excerpt: 'Available 100% free of charge: mobile & web worship resource with 135+ Catholic songs, interactive chord transposing, and rehearsal schedules.',
+        fullDocDescription: 'The CFC Music Ministry Scarborough South Mobile App was successfully launched and is available 100% free of charge for ministry members, choir leaders, and community worship teams. The app provides easy access to 135+ worship songs, song selection for services, latest service schedules, and announcements. It simplifies rehearsal preparation and keeps the entire ministry connected and aligned anytime, anywhere with zero fees or subscriptions.',
         keyFeatures: [
+          '100% Free community worship platform with zero subscription or licensing fees',
           'Searchable digital songbook containing 135+ worship songs with chords and lyrics',
           'Curated weekly service song selection tool for music directors',
           'Real-time service rehearsal schedules and event calendar sync',
@@ -357,7 +359,7 @@
           'Simplifies rehearsal preparation for all musicians and vocalists',
           'Accessible on phones, iPads, laptops, and desktop browsers'
         ],
-        techStack: ['Glide Mobile & Web', 'Song Indexing Engine', 'Calendar Sync', 'Broadcast Hub']
+        techStack: ['100% Free App', 'Glide Mobile & Web', 'Song Indexing Engine', 'Calendar Sync', 'Broadcast Hub']
       },
       {
         id: 'project-saint-finder',
@@ -517,26 +519,61 @@
             
             {/* Controls Panel */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-800 text-xs font-semibold shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-blue-600 animate-ping"></span>
-                <span className="font-mono text-[11px] uppercase tracking-wider font-bold">Proofly Studio · Solutions That Work</span>
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-blue-50 to-cyan-50 border border-cyan-300/80 text-blue-900 text-xs font-semibold shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
+                <span className="font-mono text-[11px] uppercase tracking-wider font-bold">Featured Core Architecture: AI Face Verification · 1.00 Match Score</span>
               </div>
 
               <div className="space-y-3">
-                <div className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-500 font-mono">
-                  AI Workforce Platform · Custom Mobile & Web Apps · 20-Year Software QA
+                <div className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-500 font-mono flex items-center gap-2 flex-wrap">
+                  <span className="text-blue-600 font-extrabold">100% Anti-Buddy Punching</span>
+                  <span>·</span>
+                  <span>AI Workforce Platform</span>
+                  <span>·</span>
+                  <span>20-Year Software QA</span>
                 </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.08]">
-                  Custom Mobile & <br />
+                  AI Face Verification & <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500">
-                    Web Applications Built for Reliability.
+                    Custom Mobile & Web Apps.
                   </span>
                 </h1>
               </div>
 
               <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
-                Combining <strong>20+ years of Software Quality Assurance rigor</strong> with rapid <strong>Glide mobile & web development</strong>. Custom Progressive Web Apps and administrative portals for cleaners, field crews, and growing businesses — running seamlessly on <strong>phones, tablets, and desktop browsers</strong> in <strong>5 to 7 business days</strong>.
+                Eliminate buddy punching and disputed timesheets forever with <strong>AI Biometric Face Verification (1.00 Match Score)</strong>. Custom mobile PWAs and real-time management web dashboards built by Jose Rene Navarro with <strong>20+ years of Software QA rigor</strong> on Glide — ready for your field team in just <strong>5 to 7 business days</strong>.
               </p>
+
+              {/* 3-Pillar Feature Spotlight */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+                <div className="p-3 rounded-2xl bg-white border border-slate-200/90 shadow-xs flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-blue-50 border border-blue-200 text-blue-600 flex items-center justify-center shrink-0">
+                    <SvgIcon name="scan-face" className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-slate-900 leading-tight">AI Face Biometrics</div>
+                    <div className="text-[10px] text-cyan-600 font-mono font-bold">1.00 Match Score</div>
+                  </div>
+                </div>
+                <div className="p-3 rounded-2xl bg-white border border-slate-200/90 shadow-xs flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center shrink-0">
+                    <SvgIcon name="shield-check" className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-slate-900 leading-tight">Zero Buddy Punching</div>
+                    <div className="text-[10px] text-emerald-600 font-mono font-bold">100% Anti-Fraud</div>
+                  </div>
+                </div>
+                <div className="p-3 rounded-2xl bg-white border border-slate-200/90 shadow-xs flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-cyan-50 border border-cyan-200 text-cyan-600 flex items-center justify-center shrink-0">
+                    <SvgIcon name="clock" className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-slate-900 leading-tight">Rapid Deployment</div>
+                    <div className="text-[10px] text-slate-500 font-mono">5–7 Business Days</div>
+                  </div>
+                </div>
+              </div>
 
               {/* Interactive Studio Controls Box */}
               <div className="p-5 sm:p-6 rounded-3xl border border-slate-200/80 bg-white/90 backdrop-blur-md space-y-5 shadow-lg shadow-slate-100">
@@ -654,106 +691,158 @@
                 </span>
               </div>
 
-              {/* iPhone 16 Pro Titanium Frame */}
-              <div className="iphone-pro-frame w-[310px] sm:w-[330px]">
+              {/* iPhone 16 Pro Titanium Frame - Authentic Modern Smartphone Ratio */}
+              <div className="iphone-pro-frame w-[330px] sm:w-[360px] md:w-[370px]">
+                {/* Physical Hardware Buttons on Chassis */}
+                <div className="iphone-btn-action" />
+                <div className="iphone-btn-vol-up" />
+                <div className="iphone-btn-vol-down" />
+                <div className="iphone-btn-power" />
+                <div className="iphone-speaker-slit" />
+
                 <div className="iphone-inner-screen">
+                  {/* Glass Sheen specular reflection */}
+                  <div className="iphone-glass-glare" />
+
                   {/* Dynamic Island */}
                   <div className="dynamic-island">
-                    <span className="w-2.5 h-2.5 rounded-full bg-slate-900 border border-slate-700/60" />
-                    <span className="text-[8px] text-slate-400 font-mono">09:41</span>
-                    <div className="flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                      <span className="text-[7px] text-cyan-400 font-mono font-bold">5G</span>
+                    <span className="island-camera-lens" />
+                    <span className="text-[9px] text-slate-300 font-mono font-medium tracking-tight">09:41</span>
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      <span className="text-[8px] text-cyan-400 font-mono font-bold">5G</span>
                     </div>
                   </div>
 
-                  <div className="pt-11 p-4 flex flex-col h-[520px] text-slate-900 text-xs overflow-y-auto">
+                  {/* Screen Content - Realistic 19.5:9 Phone Screen Height */}
+                  <div className="pt-11 px-4 pb-2 flex flex-col min-h-[670px] h-[690px] text-slate-900 text-xs overflow-y-auto">
                     
                     {/* Phone Header */}
-                    <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+                    <div className="flex items-center justify-between pb-3 border-b border-slate-800/80">
                       <div>
-                        <div className="font-extrabold text-sm text-white leading-tight">
-                          {selectedIndustry.shortName} Operations
+                        <div className="flex items-center gap-1.5">
+                          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                          <span className="font-extrabold text-sm text-white leading-tight font-heading tracking-tight">
+                            {selectedIndustry.shortName} Operations
+                          </span>
                         </div>
-                        <div className="text-[10px] text-slate-400 flex items-center gap-1 mt-0.5">
-                          <SvgIcon name="map-pin" className="w-3 h-3 text-cyan-400" />
-                          <span className="truncate max-w-[150px]">{selectedIndustry.site}</span>
+                        <div className="text-[10px] text-slate-400 flex items-center gap-1 mt-0.5 font-mono">
+                          <SvgIcon name="map-pin" className="w-3 h-3 text-cyan-400 shrink-0" />
+                          <span className="truncate max-w-[160px]">{selectedIndustry.site}</span>
                         </div>
                       </div>
-                      <span className="text-[9px] font-bold font-mono bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 px-2 py-0.5 rounded uppercase">
+                      <span className="text-[9px] font-bold font-mono bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 px-2 py-0.5 rounded-md uppercase tracking-wider">
                         {selectedTier.phoneBadge}
                       </span>
                     </div>
 
                     {/* Staff / Operator Card */}
-                    <div className="mt-2.5 p-2.5 bg-slate-900/90 rounded-xl border border-slate-800 shadow-sm flex items-center justify-between text-white">
-                      <div>
-                        <div className="text-[11px] font-bold text-white">{selectedIndustry.worker}</div>
-                        <div className="text-[9px] text-slate-400">{selectedIndustry.workerRole}</div>
+                    <div className="mt-2.5 p-2.5 bg-slate-900/90 rounded-2xl border border-slate-800/80 shadow-sm flex items-center justify-between text-white">
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center font-bold text-xs text-white shadow-xs">
+                          {selectedIndustry.worker.charAt(0)}
+                        </div>
+                        <div>
+                          <div className="text-[11px] font-bold text-white leading-tight">{selectedIndustry.worker}</div>
+                          <div className="text-[9px] text-slate-400 font-mono">{selectedIndustry.workerRole}</div>
+                        </div>
                       </div>
-                      <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full ${isSimClockedIn ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-slate-800 text-slate-400'}`}>
-                        {isSimClockedIn ? 'ON DUTY' : 'NOT STARTED'}
-                      </span>
+                      <div className="text-right">
+                        <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full font-mono ${isSimClockedIn ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40' : 'bg-slate-800 text-slate-400'}`}>
+                          {isSimClockedIn ? '● ON DUTY' : '○ STANDBY'}
+                        </span>
+                        <div className="text-[8px] text-slate-500 font-mono mt-0.5">GPS: Geofence Active</div>
+                      </div>
                     </div>
 
-                    {/* Feature: Biometric Selfie Verification */}
-                    <div className="mt-2.5 p-2.5 bg-slate-900/90 rounded-xl border border-slate-800 shadow-sm text-center">
-                      <div className="text-[9px] font-bold uppercase tracking-wider text-slate-400 mb-1 flex items-center justify-center gap-1">
-                        <SvgIcon name="scan-face" className="w-3 h-3 text-cyan-400" />
-                        <span>AI Face Verification (1.00 Match)</span>
+                    {/* Feature: AI Biometric Selfie Verification (Hero Architecture) */}
+                    <div className="mt-2.5 p-3 bg-gradient-to-b from-slate-900/95 to-slate-950/95 rounded-2xl border border-cyan-500/30 shadow-md text-center relative overflow-hidden">
+                      <div className="text-[9px] font-bold uppercase tracking-wider text-cyan-300 mb-2 flex items-center justify-between font-mono">
+                        <span className="flex items-center gap-1.5">
+                          <SvgIcon name="scan-face" className="w-3.5 h-3.5 text-cyan-400" />
+                          <span>AI Face Biometrics</span>
+                        </span>
+                        <span className="text-[8px] bg-cyan-500/20 text-cyan-300 px-1.5 py-0.5 rounded border border-cyan-400/30">
+                          1.00 Match Engine
+                        </span>
                       </div>
-                      <div className="relative w-20 h-20 mx-auto my-1.5 rounded-2xl bg-slate-950 flex flex-col items-center justify-center text-white overflow-hidden border border-slate-800 shadow-inner">
+
+                      {/* Biometric Camera Viewport with Corner Reticles */}
+                      <div className="relative w-full h-28 mx-auto rounded-xl bg-slate-950/90 flex flex-col items-center justify-center text-white overflow-hidden border border-slate-800 shadow-inner">
+                        {/* 4 Corner Reticles (Face ID Style) */}
+                        <div className="absolute top-2 left-2 w-3.5 h-3.5 border-t-2 border-l-2 border-cyan-400 rounded-tl pointer-events-none" />
+                        <div className="absolute top-2 right-2 w-3.5 h-3.5 border-t-2 border-r-2 border-cyan-400 rounded-tr pointer-events-none" />
+                        <div className="absolute bottom-2 left-2 w-3.5 h-3.5 border-b-2 border-l-2 border-cyan-400 rounded-bl pointer-events-none" />
+                        <div className="absolute bottom-2 right-2 w-3.5 h-3.5 border-b-2 border-r-2 border-cyan-400 rounded-br pointer-events-none" />
+
                         {simScanning ? (
-                          <div className="space-y-1 text-[9px]">
-                            <div className="w-7 h-7 rounded-full border-2 border-t-cyan-400 border-slate-700 animate-spin mx-auto"></div>
-                            <span className="text-cyan-400 font-mono text-[8px]">Scanning 108 Landmarks...</span>
+                          <div className="space-y-1.5 text-center relative z-10 p-2">
+                            <div className="face-scanline" />
+                            <div className="w-10 h-10 rounded-full border-2 border-t-cyan-400 border-r-cyan-400/50 border-b-slate-700 border-l-slate-700 animate-spin mx-auto shadow-lg shadow-cyan-500/30"></div>
+                            <div className="text-cyan-400 font-mono text-[9px] font-bold">Scanning 108 Facial Landmarks...</div>
+                            <div className="text-[8px] text-slate-400 font-mono">Anti-Spoofing: PASSED</div>
                           </div>
                         ) : isSimClockedIn ? (
-                          <div className="text-center p-1">
-                            <div className="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center mx-auto mb-0.5 shadow-lg shadow-emerald-500/30">
-                              <SvgIcon name="check" className="w-4 h-4" />
+                          <div className="text-center p-2 relative z-10 pulse-ring-glow">
+                            <div className="w-9 h-9 rounded-full bg-emerald-500 text-white flex items-center justify-center mx-auto mb-1 shadow-lg shadow-emerald-500/40">
+                              <SvgIcon name="check" className="w-5 h-5 stroke-[2.5]" />
                             </div>
-                            <div className="text-[9px] font-bold text-emerald-400">Score: 1.00</div>
-                            <div className="text-[7px] text-slate-400 font-mono">Face Similar: TRUE</div>
+                            <div className="text-[11px] font-bold text-emerald-400 font-mono">Verified Match Score: 1.00</div>
+                            <div className="text-[8px] text-slate-300 font-mono mt-0.5">
+                              Zero Buddy Punching Guaranteed · Cloud Synced
+                            </div>
                           </div>
                         ) : (
-                          <div className="text-slate-400">
-                            <SvgIcon name="camera" className="w-7 h-7 mx-auto mb-0.5 text-slate-500" />
-                            <span className="text-[8px] font-mono">Tap Below</span>
+                          <div className="text-slate-400 text-center p-2 relative z-10">
+                            <div className="w-9 h-9 rounded-full bg-slate-900 border border-slate-700/80 flex items-center justify-center mx-auto mb-1 text-slate-400">
+                              <SvgIcon name="scan-face" className="w-5 h-5 text-cyan-400" />
+                            </div>
+                            <span className="text-[9px] font-mono text-slate-200 font-semibold block">Position Face in Reticle</span>
+                            <span className="text-[7.5px] font-mono text-slate-500">Live Camera Only · No Gallery Uploads</span>
                           </div>
                         )}
                       </div>
+
+                      {/* Clock In / End Shift Action Button */}
                       <button
                         type="button"
                         onClick={handleSimClock}
-                        className={`w-full py-2 rounded-xl font-bold text-[10px] text-white transition shadow-md ${
-                          isSimClockedIn ? 'bg-amber-600 hover:bg-amber-700 shadow-amber-600/30' : 'bg-blue-600 hover:bg-blue-700 shadow-blue-600/30'
+                        className={`w-full mt-2.5 py-2.5 rounded-xl font-bold text-[11px] text-white transition active:scale-98 shadow-md flex items-center justify-center gap-1.5 ${
+                          isSimClockedIn
+                            ? 'bg-amber-600 hover:bg-amber-500 shadow-amber-600/30'
+                            : 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-blue-600/40'
                         }`}
                       >
-                        {isSimClockedIn ? 'End Shift (Clock Out)' : 'Verify Face & Clock In'}
+                        <SvgIcon name={isSimClockedIn ? 'clock' : 'scan-face'} className="w-3.5 h-3.5" />
+                        <span>{isSimClockedIn ? 'Clock Out (Complete Shift)' : 'Verify Face & Clock In'}</span>
                       </button>
                     </div>
 
                     {/* Feature: Mandatory Checklist Tasks */}
-                    <div className="mt-2.5 p-2.5 bg-slate-900/90 rounded-xl border border-slate-800 shadow-sm flex-1 overflow-y-auto">
-                      <div className="text-[9px] font-bold uppercase tracking-wider text-slate-400 mb-1.5 flex justify-between">
-                        <span>Task Verification & Photo Proof</span>
-                        <span className="text-cyan-400 font-semibold font-mono">Mandatory</span>
+                    <div className="mt-2.5 p-3 bg-slate-900/90 rounded-2xl border border-slate-800/80 shadow-sm flex-1">
+                      <div className="text-[9px] font-bold uppercase tracking-wider text-slate-400 mb-2 flex justify-between font-mono">
+                        <span>Task Checklist & Photo Proof</span>
+                        <span className="text-cyan-400 font-semibold">Mandatory</span>
                       </div>
-                      <div className="space-y-1">
+                      <div className="space-y-1.5">
                         {selectedIndustry.tasks.map((task, idx) => (
                           <div
                             key={task}
                             onClick={() => setTaskCompletion({ ...taskCompletion, [idx]: !taskCompletion[idx] })}
-                            className={`p-1.5 rounded-lg border flex items-center justify-between cursor-pointer transition text-[9px] ${
-                              taskCompletion[idx] ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-300' : 'bg-slate-950/80 border-slate-800 text-slate-300'
+                            className={`p-2 rounded-xl border flex items-center justify-between cursor-pointer transition text-[9.5px] ${
+                              taskCompletion[idx] ? 'bg-emerald-500/10 border-emerald-500/40 text-emerald-300' : 'bg-slate-950/80 border-slate-800/90 text-slate-300 hover:border-slate-700'
                             }`}
                           >
-                            <span className={`leading-tight font-medium ${taskCompletion[idx] ? 'line-through text-slate-500' : 'text-slate-200'}`}>
-                              {task}
-                            </span>
-                            <span className={`text-[8px] font-bold px-1.5 py-0.2 rounded shrink-0 ml-1 font-mono ${taskCompletion[idx] ? 'bg-emerald-400 text-slate-950' : 'bg-slate-800 text-slate-400'}`}>
-                              {taskCompletion[idx] ? 'DONE' : 'UPLOAD'}
+                            <div className="flex items-center gap-1.5 pr-1">
+                              <span className={`w-3.5 h-3.5 rounded-md flex items-center justify-center text-[8px] font-bold ${taskCompletion[idx] ? 'bg-emerald-500 text-slate-950' : 'border border-slate-700 text-transparent'}`}>
+                                ✓
+                              </span>
+                              <span className={`leading-tight font-medium ${taskCompletion[idx] ? 'line-through text-slate-500' : 'text-slate-200'}`}>
+                                {task}
+                              </span>
+                            </div>
+                            <span className={`text-[8px] font-bold px-1.5 py-0.5 rounded shrink-0 font-mono uppercase ${taskCompletion[idx] ? 'bg-emerald-400 text-slate-950' : 'bg-blue-600/30 text-cyan-300 border border-cyan-500/30'}`}>
+                              {taskCompletion[idx] ? 'VERIFIED' : 'PHOTO'}
                             </span>
                           </div>
                         ))}
@@ -762,23 +851,23 @@
 
                     {/* Level 2+: In-App Team Messaging Banner */}
                     {selectedTier.hasChat && (
-                      <div className="mt-2 p-2 bg-blue-950/60 border border-blue-500/30 rounded-xl text-[9px] text-blue-200 flex items-start gap-1.5">
-                        <SvgIcon name="message-square" className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                      <div className="mt-2.5 p-2.5 bg-blue-950/70 border border-blue-500/30 rounded-2xl text-[9.5px] text-blue-200 flex items-start gap-2 shadow-xs">
+                        <SvgIcon name="message-square" className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                         <div>
-                          <div className="font-bold text-[8px] uppercase tracking-wider text-cyan-300 font-mono">Team Announcement</div>
-                          <div className="leading-tight text-slate-300">{selectedIndustry.chatMsg}</div>
+                          <div className="font-bold text-[8.5px] uppercase tracking-wider text-cyan-300 font-mono">Team Announcement</div>
+                          <div className="leading-tight text-slate-300 mt-0.5">{selectedIndustry.chatMsg}</div>
                         </div>
                       </div>
                     )}
 
                     {/* Level 3+: CRA-Ready Payroll Sync */}
                     {selectedTier.hasPayroll && (
-                      <div className="mt-2 p-2 bg-slate-950 border border-slate-800 text-white rounded-xl flex items-center justify-between text-[9px]">
+                      <div className="mt-2.5 p-2.5 bg-slate-950 border border-slate-800 text-white rounded-2xl flex items-center justify-between text-[9.5px] shadow-xs">
                         <div>
-                          <div className="text-[8px] text-slate-400 uppercase font-mono">CRA Payroll Web Sync</div>
-                          <div className="font-bold text-cyan-400">38.5 Regular · 2.5 Overtime (Ontario ESA)</div>
+                          <div className="text-[8.5px] text-slate-400 uppercase font-mono">CRA Payroll Web Sync</div>
+                          <div className="font-bold text-cyan-400 mt-0.5">38.5 Regular · 2.5 Overtime (Ontario ESA)</div>
                         </div>
-                        <span className="text-[8px] font-mono bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 px-1.5 py-0.5 rounded">
+                        <span className="text-[8px] font-mono bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 px-2 py-0.5 rounded">
                           CSV Ready
                         </span>
                       </div>
@@ -786,16 +875,19 @@
 
                     {/* Level 4: Smart Scheduler Card */}
                     {selectedTier.hasScheduling && (
-                      <div className="mt-2 p-2 bg-indigo-950/80 border border-indigo-500/30 text-white rounded-xl flex items-center justify-between text-[9px]">
+                      <div className="mt-2.5 p-2.5 bg-indigo-950/80 border border-indigo-500/30 text-white rounded-2xl flex items-center justify-between text-[9.5px] shadow-xs">
                         <div>
-                          <div className="text-[8px] text-indigo-300 uppercase font-mono">Smart Dispatcher</div>
-                          <div className="font-bold text-white">Tomorrow: 08:00 - 16:30 Confirmed</div>
+                          <div className="text-[8.5px] text-indigo-300 uppercase font-mono">Smart Dispatcher</div>
+                          <div className="font-bold text-white mt-0.5">Tomorrow: 08:00 - 16:30 Confirmed</div>
                         </div>
-                        <span className="text-[8px] font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-1.5 py-0.5 rounded">
+                        <span className="text-[8px] font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-2 py-0.5 rounded">
                           No Conflicts
                         </span>
                       </div>
                     )}
+
+                    {/* iOS Home Indicator Bar */}
+                    <div className="iphone-home-indicator" />
 
                   </div>
                 </div>
@@ -898,7 +990,7 @@
     // =========================================================================
     // DEDICATED SEPARATE PAGE: Work Done / Live Projects
     // =========================================================================
-    function WorkDonePage({ onOpenFlyer, onOpenContactWithProject, onNavigate }) {
+    function WorkDonePage({ onOpenFlyer, onOpenContactWithProject, onOpenContactWithFreeApp, onNavigate }) {
       const [filter, setFilter] = useState('all');
 
       const filteredProjects = useMemo(() => {
@@ -980,7 +1072,7 @@
                       </span>
                     </div>
                     <p className="text-xs text-slate-600 mt-1 leading-relaxed max-w-4xl">
-                      Every application displayed below is <strong>not just a phone app</strong> — each runs seamlessly as a <strong>full-featured Web App on desktop computers, laptops, iPads, tablets, and smartphones</strong> (Chrome, Safari, Edge). Frontline workers use their phones in the field, while managers and business owners operate complete administration dashboards, dispatch tables, and CRA payroll tools on big screens with <strong>zero app store downloads or installations required</strong>.
+                      Every application displayed below is <strong>not just a phone app</strong> — each runs seamlessly as a <strong>full-featured Web App on desktop computers, laptops, iPads, tablets, and smartphones</strong> (Chrome, Safari, Edge). Frontline workers use their phones in the field, while managers and business owners operate complete administration dashboards, dispatch tables, and CRA payroll tools on big screens with <strong>direct browser access and zero complex installations required</strong>.
                     </p>
                   </div>
                 </div>
@@ -1126,14 +1218,25 @@
 
                       {/* Action Bar */}
                       <div className="pt-4 border-t border-slate-200 flex flex-wrap items-center gap-3">
-                        <button
-                          type="button"
-                          onClick={() => onOpenContactWithProject(project.title, project.id)}
-                          className="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-md transition flex items-center gap-2 active:scale-98 shimmer-trigger"
-                        >
-                          <SvgIcon name="mail" className="w-4 h-4" />
-                          <span>Request Similar App for Your Organization</span>
-                        </button>
+                        {project.isFreeApp ? (
+                          <button
+                            type="button"
+                            onClick={() => (onOpenContactWithFreeApp ? onOpenContactWithFreeApp(project.title, project.id) : onOpenContactWithProject(project.title, project.id))}
+                            className="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md transition flex items-center gap-2 active:scale-98 shimmer-trigger"
+                          >
+                            <SvgIcon name="sparkles" className="w-4 h-4 text-emerald-200" />
+                            <span>Contact Me to Get the Free App</span>
+                          </button>
+                        ) : (
+                          <button
+                            type="button"
+                            onClick={() => onOpenContactWithProject(project.title, project.id)}
+                            className="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-md transition flex items-center gap-2 active:scale-98 shimmer-trigger"
+                          >
+                            <SvgIcon name="mail" className="w-4 h-4" />
+                            <span>Request Similar App for Your Organization</span>
+                          </button>
+                        )}
                         <a
                           href="tel:437-423-3456"
                           className="px-4 py-3 rounded-xl bg-white border border-slate-200 hover:border-slate-300 text-slate-800 font-bold text-xs transition flex items-center gap-1.5"
@@ -1157,7 +1260,7 @@
                 Have an idea for a business mobile app, web portal, or workflow?
               </h3>
               <p className="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
-                Jose Rene Navarro takes you from discovery to live deployment in 5 to 7 business days with zero app store delays, backed by 20+ years of Software QA rigor.
+                Jose Rene Navarro takes you from discovery to live deployment in 5 to 7 business days with rapid web and mobile distribution, backed by 20+ years of Software QA rigor.
               </p>
               <div className="pt-2 flex flex-wrap justify-center gap-4">
                 <button
@@ -1188,12 +1291,29 @@
     function CoreServicesSection({ onNavigate }) {
       const services = [
         {
+          id: 'ai-face-workforce',
+          icon: 'scan-face',
+          title: 'AI Face Verification & Mobile Workforce Platforms',
+          tag: 'Core Flagship Architecture',
+          highlight: '1.00 Face Match Score, Zero Buddy Punching & Custom PWAs',
+          desc: 'Our premier engineering specialty: AI biometric facial verification engines integrated directly into custom mobile and web applications. Eliminate time theft, proxy clock-ins, and disputed hours with live camera matching on any smartphone or browser.',
+          points: [
+            'Strict 1.00 AI Face Match Score prevents buddy punching 100%',
+            'Live anti-spoofing camera with GPS coordinates & tamper-proof timestamps',
+            'Mandatory before/after photo shift checklists for cleaning & field services',
+            'Progressive Web Apps (PWAs) with instant browser access and 1-tap install',
+            '1-Click automated regular vs. overtime CRA payroll export'
+          ],
+          targetSection: 'proofly-suite',
+          cta: 'Deploy AI Face Verification App'
+        },
+        {
           id: 'website-qa',
           icon: 'shield-check',
-          title: 'Website Quality Assurance Testing',
+          title: 'Website Quality Assurance & Rigorous Testing',
           tag: '20+ Yrs QA Engineering',
-          highlight: 'Detailed testing for UX, performance & reliability',
-          desc: 'A website should work smoothly, load fast, and give visitors confidence in your brand. I identify broken links, navigation issues, form errors, mobile responsiveness bugs, and usability concerns before they cost you clients.',
+          highlight: 'Detailed testing for UX, performance, data integrity & reliability',
+          desc: 'A website or app should work smoothly, load fast, and give visitors complete confidence in your brand. Leveraging over two decades of Software QA engineering, I identify broken links, navigation defects, form errors, mobile responsiveness bugs, and usability flaws before they cost you clients.',
           points: [
             'Broken link & 404 navigation defect detection',
             'Contact form submission & lead capture verification',
@@ -1205,29 +1325,12 @@
           cta: 'Request Website QA Audit'
         },
         {
-          id: 'mobile-web-apps',
-          icon: 'smartphone',
-          title: 'Mobile & Web Application Solutions (Glide PWAs & Portals)',
-          tag: 'Cross-Platform Apps',
-          highlight: 'AI-verified attendance, shift checklists, web portals & payroll reporting',
-          desc: 'Simple, practical AI-powered mobile & web applications for daily business operations. Combining biometric attendance, team messaging, scheduling, and before/after photo proof in one organized system accessible on any smartphone, tablet, or desktop browser.',
-          points: [
-            'AI selfie facial verification (Face score 1.00 anti-buddy punching)',
-            'Before/after photo evidence for cleaning & field maintenance',
-            'In-app shift messaging & team broadcast announcements',
-            'Automated regular vs. overtime CRA payroll exports',
-            'Progressive Web Apps (PWAs) with zero App Store download friction'
-          ],
-          targetSection: 'proofly-suite',
-          cta: 'Build Custom Mobile/Web App'
-        },
-        {
           id: 'process-improvement',
           icon: 'zap',
-          title: 'Business Process Improvement & Web Analysis',
-          tag: 'Workflow Modernization',
-          highlight: 'Turn paper chaos into clean, audit-proof digital systems',
-          desc: 'Designed for commercial cleaning services, field teams, and growing businesses struggling with lost paperwork, illegible handwriting, and disputed client hours. I streamline daily operations to save time and eliminate errors.',
+          title: 'Business Process Improvement & Workflow Modernization',
+          tag: 'Digital Transformation',
+          highlight: 'Turn paper chaos and messy spreadsheets into audit-proof digital systems',
+          desc: 'Designed for commercial cleaning services, contractors, and growing businesses struggling with lost paperwork, illegible handwriting, and disputed client hours. I streamline daily operations to save 15+ hours weekly.',
           points: [
             'Eliminate paper clipboards & fragile spreadsheets',
             'Real-time managerial web visibility over field crews',
@@ -1435,7 +1538,7 @@
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-emerald-400 font-bold">✓</span>
-                        <span><strong>Instant Multi-Device Adoption:</strong> Workers open a link on any smartphone or browser without app store friction.</span>
+                        <span><strong>Instant Multi-Device Adoption:</strong> Workers open a link on any smartphone or browser with immediate, direct browser access.</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-emerald-400 font-bold">✓</span>
@@ -1716,7 +1819,7 @@
     // =========================================================================
     // FEATURE: Live Apps Showcase on Home (Apple / Linear Bento Grid)
     // =========================================================================
-    function PortfolioHomeSection({ onOpenFlyer, onNavigate }) {
+    function PortfolioHomeSection({ onOpenFlyer, onOpenContactWithFreeApp, onNavigate }) {
       return (
         <section id="portfolio" className="py-20 px-5 sm:px-8 bg-slate-50 border-t border-slate-200">
           <div className="max-w-7xl mx-auto">
@@ -1772,8 +1875,8 @@
                         <span className="text-[10px] font-bold uppercase tracking-wider text-blue-600 font-mono">
                           {app.category}
                         </span>
-                        <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-mono">
-                          {app.activeMetric}
+                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded font-mono ${app.isFreeApp ? 'bg-emerald-600 text-white shadow-xs' : 'bg-emerald-100 text-emerald-800'}`}>
+                          {app.isFreeApp ? '100% Free App' : app.activeMetric}
                         </span>
                       </div>
 
@@ -1798,14 +1901,25 @@
                     </div>
 
                     <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-                      <button
-                        type="button"
-                        onClick={() => onOpenFlyer(app.flyerImg, app.title, app.client)}
-                        className="text-xs font-bold text-blue-600 hover:underline flex items-center gap-1"
-                      >
-                        <SvgIcon name="zoom-in" className="w-3.5 h-3.5" />
-                        <span>Inspect Flyer</span>
-                      </button>
+                      {app.isFreeApp ? (
+                        <button
+                          type="button"
+                          onClick={() => (onOpenContactWithFreeApp ? onOpenContactWithFreeApp(app.title, app.id) : onNavigate('work-done', app.id))}
+                          className="text-xs font-bold text-emerald-600 hover:text-emerald-700 flex items-center gap-1.5"
+                        >
+                          <SvgIcon name="sparkles" className="w-3.5 h-3.5 text-emerald-500" />
+                          <span>Contact Me to Get the Free App →</span>
+                        </button>
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={() => onOpenFlyer(app.flyerImg, app.title, app.client)}
+                          className="text-xs font-bold text-blue-600 hover:underline flex items-center gap-1"
+                        >
+                          <SvgIcon name="zoom-in" className="w-3.5 h-3.5" />
+                          <span>Inspect Flyer</span>
+                        </button>
+                      )}
                       <button
                         type="button"
                         onClick={() => onNavigate('work-done', app.id)}
@@ -1990,8 +2104,8 @@
           a: 'Proofly is an AI-verified workforce management system built by Jose Rene Navarro. Field staff use their phones for biometric face check-in and photo task proof, while supervisors and dispatchers manage scheduling and CRA payroll from any web browser or tablet.'
         },
         {
-          q: 'Do workers need to download anything from the Apple App Store or Google Play?',
-          a: 'No! Proofly apps run as modern Progressive Web Apps (PWAs). Employees simply scan a QR code or tap a secure link to add the app icon directly to their smartphone home screen in 5 seconds without App Store passwords or updates.'
+          q: 'Do workers need to install complex software or download third-party files?',
+          a: 'No! Proofly apps run as modern Progressive Web Apps (PWAs). Employees simply scan a QR code or tap a secure link to add the app icon directly to their smartphone home screen in 5 seconds with zero download hurdles or complex updates.'
         },
         {
           q: 'Why does 20+ years of Software QA matter for a mobile & web app?',
@@ -2045,7 +2159,7 @@
     // FEATURE: Consultation Intake & 100% Automated Backend Email Dispatch
     // (Zero user redirect - Email is sent automatically by the server)
     // =========================================================================
-    function ContactSection({ initialTier, initialIndustry, initialMessage }) {
+    function ContactSection({ initialTier, initialIndustry, initialMessage, isAiFaceEmphasis, isFreeAppEmphasis }) {
       const [name, setName] = useState('');
       const [businessName, setBusinessName] = useState('');
       const [email, setEmail] = useState('');
@@ -2063,6 +2177,9 @@
         if (initialIndustry) setIndustry(initialIndustry);
         if (initialMessage) setMessage(initialMessage);
       }, [initialTier, initialIndustry, initialMessage]);
+
+      const showAiFace = isAiFaceEmphasis || (projectType && (projectType.includes('Face Verification') || projectType.includes('Similar App') || projectType.includes('Level 1')));
+      const showFreeApp = isFreeAppEmphasis || (projectType && (projectType.includes('Free App') || projectType.includes('CFC Music')));
 
       const handleSubmit = async (e) => {
         e.preventDefault();
@@ -2104,6 +2221,77 @@
       return (
         <section id="contact" className="py-20 px-5 sm:px-8 bg-white border-t border-slate-200 scroll-mt-16">
           <div className="max-w-6xl mx-auto">
+
+            {/* AI Face Verification High-Priority Callout Banner */}
+            {showAiFace && !showFreeApp && (
+              <div className="mb-10 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 border-2 border-cyan-400 shadow-2xl text-white relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 relative z-10">
+                  <div className="space-y-3 max-w-3xl">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 font-mono text-[11px] font-bold uppercase tracking-wider">
+                      <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                      <span>Primary Core Feature: AI Biometric Face Engine</span>
+                    </div>
+                    <h3 className="text-2xl sm:text-3xl font-extrabold text-white flex flex-wrap items-center gap-3">
+                      <span>AI Face Verification & Anti-Buddy Punching</span>
+                      <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                        1.00 Face Match Score
+                      </span>
+                    </h3>
+                    <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                      You are requesting a custom application engineered around <strong>AI Face Biometrics</strong>. When your field staff clock in, Proofly's camera engine compares their live facial geometry against their registered employee profile. Old gallery uploads are blocked, preventing buddy punching and time theft 100%.
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                      <div className="flex items-center gap-2 text-xs text-slate-200">
+                        <SvgIcon name="shield-check" className="w-4 h-4 text-cyan-400 shrink-0" />
+                        <span>Zero Buddy Punching Guaranteed</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs text-slate-200">
+                        <SvgIcon name="check" className="w-4 h-4 text-emerald-400 shrink-0" />
+                        <span>GPS Geofence + Live Timestamp</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs text-slate-200">
+                        <SvgIcon name="sparkles" className="w-4 h-4 text-cyan-400 shrink-0" />
+                        <span>5–7 Day Custom Delivery</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="shrink-0 bg-slate-900/90 p-5 rounded-2xl border border-cyan-500/40 text-center w-full lg:w-48 shadow-lg">
+                    <div className="text-3xl font-black text-cyan-400 font-mono">1.00</div>
+                    <div className="text-[10px] uppercase font-mono text-slate-400 mt-0.5">Match Accuracy</div>
+                    <div className="text-xs font-bold text-emerald-400 mt-1.5 flex items-center justify-center gap-1">
+                      <SvgIcon name="check" className="w-3.5 h-3.5 text-emerald-400" />
+                      <span>Verified Active</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* 100% Free App Access Callout Banner */}
+            {showFreeApp && (
+              <div className="mb-10 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-emerald-950 via-slate-950 to-emerald-900 border-2 border-emerald-400 shadow-2xl text-white relative overflow-hidden">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 relative z-10">
+                  <div className="space-y-2 max-w-3xl">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 font-mono text-[11px] font-bold uppercase tracking-wider">
+                      <SvgIcon name="sparkles" className="w-3.5 h-3.5 text-emerald-400" />
+                      <span>100% Free Community Resource</span>
+                    </div>
+                    <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
+                      Request Free Access: CFC Music Ministry App
+                    </h3>
+                    <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                      The CFC Music Ministry Scarborough South App is provided 100% free of charge for community members, worship leaders, and vocalists. Fill out your details below and Jose Rene Navarro will provide your team with the direct access link and setup guide within 24 hours at zero cost.
+                    </p>
+                  </div>
+                  <div className="shrink-0 bg-emerald-900/60 p-5 rounded-2xl border border-emerald-400/40 text-center w-full sm:w-auto">
+                    <div className="text-3xl font-black text-emerald-400 font-mono">FREE</div>
+                    <div className="text-[10px] uppercase font-mono text-emerald-200 mt-0.5">Zero Subscription</div>
+                  </div>
+                </div>
+              </div>
+            )}
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
               
@@ -2140,10 +2328,20 @@
                   </div>
                 </div>
 
-                <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-950 flex items-center gap-2.5">
-                  <SvgIcon name="shield-check" className="w-5 h-5 text-emerald-600 shrink-0" />
-                  <span><strong>20-Year QA Rigor Guarantee:</strong> Clear engineering advice on whether Glide mobile/web app is the right fit.</span>
-                </div>
+                {showAiFace ? (
+                  <div className="p-4 rounded-xl bg-blue-50 border border-cyan-300 text-xs text-slate-900 flex items-start gap-2.5">
+                    <SvgIcon name="shield-check" className="w-5 h-5 text-cyan-600 shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="text-blue-900 block font-bold">AI Biometric Face Engine Included:</strong>
+                      <span>Guarantees 1.00 face match accuracy, GPS timestamps, and eliminates buddy punching across all mobile field operations.</span>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-950 flex items-center gap-2.5">
+                    <SvgIcon name="shield-check" className="w-5 h-5 text-emerald-600 shrink-0" />
+                    <span><strong>20-Year QA Rigor Guarantee:</strong> Clear engineering advice on whether Glide mobile/web app is the right fit.</span>
+                  </div>
+                )}
               </div>
 
               {/* Consultation Form / Confirmation (Zero User Redirection) */}
@@ -2248,12 +2446,26 @@
                           onChange={(e) => setProjectType(e.target.value)}
                           className="w-full h-10 px-3 rounded-xl border border-slate-300 bg-white text-slate-900 focus:ring-2 focus:ring-blue-600 focus:outline-none"
                         >
+                          <option>AI Face Verification & Mobile Attendance App (Anti-Buddy Punching)</option>
                           <option>Proofly Level 1: Attendance & Tasks</option>
                           <option>Proofly Level 2: Team Messaging</option>
                           <option>Proofly Level 3: CRA-Ready Payroll</option>
                           <option>Proofly Level 4: Smart Scheduling</option>
+                          <option>Free App Access: CFC Music Ministry</option>
                           <option>Custom Mobile & Web Application</option>
                           <option>Website QA & Usability Audit</option>
+                          {projectType && ![
+                            'AI Face Verification & Mobile Attendance App (Anti-Buddy Punching)',
+                            'Proofly Level 1: Attendance & Tasks',
+                            'Proofly Level 2: Team Messaging',
+                            'Proofly Level 3: CRA-Ready Payroll',
+                            'Proofly Level 4: Smart Scheduling',
+                            'Free App Access: CFC Music Ministry',
+                            'Custom Mobile & Web Application',
+                            'Website QA & Usability Audit'
+                          ].includes(projectType) && (
+                            <option value={projectType}>{projectType}</option>
+                          )}
                         </select>
                       </div>
                       <div>
@@ -2441,9 +2653,9 @@
       }
 
       // 9. Comparisons: PWA vs Native App / Glide vs Traditional Agencies
-      if (q.includes('pwa vs') || q.includes('native') || q.includes('app store') || q.includes('flutter') || q.includes('react native') || q.includes('traditional') || q.includes('agency')) {
+      if (q.includes('pwa vs') || q.includes('native') || q.includes('pwa') || q.includes('flutter') || q.includes('react native') || q.includes('traditional') || q.includes('agency')) {
         return {
-          reply: `📱 **PWA (Progressive Web App) vs. Traditional Native App**:\n\n• **Speed to Market**: Glide PWAs deploy in **5 to 7 business days**. Traditional native apps take **4 to 6 months**.\n• **Cost**: Glide PWAs save up to **80% in development fees** ($25k–$50k+ traditional vs. accessible high-ROI custom Glide apps).\n• **Zero App Store Friction**: No waiting 2 weeks for Apple or Google approval, and no 30% App Store cuts. Employees install it directly to their home screen with 1 tap.\n• **Universal Device Support**: One single codebase works on iPhone, Android, iPad, and desktop web browsers with real-time cloud data sync.\n\nWould you like to see how a Glide PWA works for your team?`,
+          reply: `📱 **PWA (Progressive Web App) vs. Traditional Native App**:\n\n• **Speed to Market**: Glide PWAs deploy in **5 to 7 business days**. Traditional native apps take **4 to 6 months**.\n• **Cost**: Glide PWAs save up to **80% in development fees** ($25k–$50k+ traditional vs. accessible high-ROI custom Glide apps).\n• **Direct Web & Mobile Distribution**: Instant direct rollout via web link or QR code with zero complex installations. Employees install it directly to their home screen with 1 tap.\n• **Universal Device Support**: One single codebase works on iPhone, Android, iPad, and desktop web browsers with real-time cloud data sync.\n\nWould you like to see how a Glide PWA works for your team?`,
           suggestions: ['Show me case studies', 'How much does it cost?', 'Book a discovery call']
         };
       }
@@ -2512,7 +2724,7 @@
       // 14. Case Studies & Previous Work
       if (q.includes('case stud') || q.includes('work done') || q.includes('portfolio') || q.includes('previous') || q.includes('apps') || q.includes('manpower') || q.includes('cfc') || q.includes('saint') || q.includes('driving') || q.includes('joren')) {
         return {
-          reply: `🚀 **Jose Rene Navarro's 5 Production App Deployments**:\n\n1. **The Manpower Solution (Level 1 App)**: 18 active commercial cleaners across the GTA. 100% eliminated buddy punching with Face Match 1.00 and photo task verification.\n2. **CFC Music Ministry App**: 135+ Catholic worship songs with live interactive chord transposing (change key in 1 click) and embedded practice audio.\n3. **Birthday Saint Finder**: 100% offline liturgical calendar with biographical saint profiles and feast day search.\n4. **Proofly Driving Academy Platform**: Dual-sided system for student lesson logging and driving instructor vehicle dispatch.\n5. **Joren Property Listings**: Mobile real estate catalog with automated buyer interest analytics.\n\nYou can view the full case studies on our **"Solutions & Work"** page. Which project would you like to know more about?`,
+          reply: `🚀 **Jose Rene Navarro's 5 Production App Deployments**:\n\n1. **The Manpower Solution (Level 1 App)**: 18 active commercial cleaners across the GTA. 100% eliminated buddy punching with Face Match 1.00 and photo task verification.\n2. **CFC Music Ministry App (100% Free Community App)**: 135+ Catholic worship songs with live interactive chord transposing (change key in 1 click) and embedded practice audio. Available completely free of charge.\n3. **Birthday Saint Finder**: 100% offline liturgical calendar with biographical saint profiles and feast day search.\n4. **Proofly Driving Academy Platform**: Dual-sided system for student lesson logging and driving instructor vehicle dispatch.\n5. **Joren Property Listings**: Mobile real estate catalog with automated buyer interest analytics.\n\nYou can view the full case studies on our **"Solutions & Work"** page. Which project would you like to know more about?`,
           suggestions: ['Tell me about Manpower Solution', 'Tell me about CFC Music', 'Book a discovery consultation']
         };
       }
@@ -2520,7 +2732,7 @@
       // 15. Pricing, Cost & Turnaround Time
       if (q.includes('price') || q.includes('cost') || q.includes('pricing') || q.includes('quote') || q.includes('how much') || q.includes('timeline') || q.includes('how long') || q.includes('fast') || q.includes('days') || q.includes('budget')) {
         return {
-          reply: `⚡ **Rapid Turnaround & Unmatched Cost Efficiency**:\n\n• **Delivery Speed**: Production-ready deployment in just **5 to 7 business days**!\n• **Up to 80% Cost Savings**: Traditional app agencies charge $25,000–$50,000+ and take 4 to 6 months. Jose builds custom Progressive Web Apps (PWAs) on Glide, reducing costs by up to 80% while delivering enterprise reliability.\n• **Zero App Store Approval Hassle**: No waiting 2 weeks for Apple or Google approval, and no 30% App Store fees. Staff install it directly to their home screen with 1 click.\n• **Measurable ROI**: Saves 10 to 25 hours per week in eliminated timesheet disputes and manual paperwork.\n\nLeave your email or phone here, and Jose will provide an exact quote and scope within 24 hours!`,
+          reply: `⚡ **Rapid Turnaround & Unmatched Cost Efficiency**:\n\n• **Delivery Speed**: Production-ready deployment in just **5 to 7 business days**!\n• **Up to 80% Cost Savings**: Traditional app agencies charge $25,000–$50,000+ and take 4 to 6 months. Jose builds custom Progressive Web Apps (PWAs) on Glide, reducing costs by up to 80% while delivering enterprise reliability.\n• **Instant Web & Mobile Deployment**: Rapid distribution directly to employee smartphones and desktop browsers with 1 click, ensuring rapid rollout across your entire organization.\n• **Measurable ROI**: Saves 10 to 25 hours per week in eliminated timesheet disputes and manual paperwork.\n\nLeave your email or phone here, and Jose will provide an exact quote and scope within 24 hours!`,
           suggestions: ['Book a 30-min discovery call', 'What is Proofly Level 1?', 'Call Jose: (437) 423-3456']
         };
       }
@@ -2534,9 +2746,9 @@
       }
 
       // 17. Technology / Glide / PWA / Devices (iPhone, Android, Desktop)
-      if (q.includes('glide') || q.includes('pwa') || q.includes('progressive web') || q.includes('iphone') || q.includes('android') || q.includes('ios') || q.includes('store') || q.includes('tablet') || q.includes('desktop')) {
+      if (q.includes('glide') || q.includes('pwa') || q.includes('progressive web') || q.includes('iphone') || q.includes('android') || q.includes('ios') || q.includes('tablet') || q.includes('desktop')) {
         return {
-          reply: `📲 **Cross-Platform Architecture (Glide Progressive Web Apps)**:\n\n• **Universal Device Compatibility**: Proofly apps run smoothly on iPhone (iOS), Android smartphones, iPads, tablets, and desktop web browsers.\n• **Instant Home Screen Install**: Users simply tap "Add to Home Screen". It opens as a full-screen standalone application with its own app icon, splash screen, and offline capabilities.\n• **Zero Friction**: No need to search the Apple App Store or Google Play Store, no passwords or downloads, and no update delays.\n• **Real-Time Cloud Sync**: Every clock-in, photo upload, and task checklist syncs instantly to management web dashboards.\n\nWould you like to build an app for your team?`,
+          reply: `📲 **Cross-Platform Architecture (Glide Progressive Web Apps)**:\n\n• **Universal Device Compatibility**: Proofly apps run smoothly on iPhone (iOS), Android smartphones, iPads, tablets, and desktop web browsers.\n• **Instant Home Screen Install**: Users simply tap "Add to Home Screen". It opens as a full-screen standalone application with its own app icon, splash screen, and offline capabilities.\n• **Zero Friction**: Instant access via secure web link or QR code, with zero download hurdles or manual update delays.\n• **Real-Time Cloud Sync**: Every clock-in, photo upload, and task checklist syncs instantly to management web dashboards.\n\nWould you like to build an app for your team?`,
           suggestions: ['How fast can you build our app?', 'What is Proofly Level 1?', 'Book a discovery consultation']
         };
       }
@@ -2968,6 +3180,8 @@
       const [prefillTier, setPrefillTier] = useState('');
       const [prefillIndustry, setPrefillIndustry] = useState('');
       const [prefillMessage, setPrefillMessage] = useState('');
+      const [focusAiFace, setFocusAiFace] = useState(false);
+      const [focusFreeApp, setFocusFreeApp] = useState(false);
       const [solutionsMenuOpen, setSolutionsMenuOpen] = useState(false);
       const [logoActive, setLogoActive] = useState(false);
 
@@ -3069,6 +3283,8 @@
       };
 
       const handleOpenContactWithTier = (tierName, industryName) => {
+        setFocusAiFace(tierName.includes('Level 1') || tierName.includes('Face'));
+        setFocusFreeApp(tierName.includes('Free') || tierName.includes('CFC'));
         setPrefillTier(tierName);
         if (industryName) setPrefillIndustry(industryName);
         setPrefillMessage(`Hello Jose,\n\nI would like to discuss deploying ${tierName} for our team in ${industryName || 'our industry'}.\n\nPlease let me know your availability for a discovery call.`);
@@ -3076,9 +3292,21 @@
       };
 
       const handleOpenContactWithProject = (projectTitle, projectId) => {
-        setPrefillTier('Custom App: ' + projectTitle);
+        setFocusAiFace(true);
+        setFocusFreeApp(false);
+        setPrefillTier('AI Face Verification & Custom App: ' + projectTitle);
         setPrefillMessage(
-          `Hello Jose,\n\nI reviewed your live deployment of "${projectTitle}" on the Work Done page and would like to build a similar custom mobile & web application for our organization.\n\nKey Requirements:\n- Team / User Size: \n- Preferred Timeline: 5-7 business days\n\nPlease contact me to discuss feasibility and pricing.`
+          `Hello Jose,\n\nI clicked "Request Similar App for Your Organization" after reviewing your live deployment of "${projectTitle}".\n\nCore Architecture Requested: AI Biometric Face Verification (1.00 Face Match Score & Anti-Buddy Punching).\n\nKey Requirements:\n- Target Industry / Organization: \n- Team / Field Staff Size: \n- Essential Features: AI Biometric Attendance, Photo Shift Checklists, Web Admin Portal\n- Preferred Timeline: 5-7 business days\n\nPlease contact me to discuss feasibility, demo, and deployment.`
+        );
+        navigateTo('home', 'contact');
+      };
+
+      const handleOpenContactWithFreeApp = (projectTitle, projectId) => {
+        setFocusAiFace(false);
+        setFocusFreeApp(true);
+        setPrefillTier('Free App Access: ' + projectTitle);
+        setPrefillMessage(
+          `Hello Jose,\n\nI would like to request free access to "${projectTitle}" for our community/worship ministry.\n\nPlease share the direct app access link and instructions on how our team can install and use the app.\n\nThank you!`
         );
         navigateTo('home', 'contact');
       };
@@ -3087,7 +3315,7 @@
         <div className="min-h-screen flex flex-col bg-white">
           
           {/* Header - Clean, Minimalist & Uncluttered */}
-          <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/70 transition-all">
+          <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/70 transition-all">
             <div className="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
               
               {/* Brand Logo & Name */}
@@ -3178,6 +3406,7 @@
               <WorkDonePage
                 onOpenFlyer={openFlyerLightbox}
                 onOpenContactWithProject={handleOpenContactWithProject}
+                onOpenContactWithFreeApp={handleOpenContactWithFreeApp}
                 onNavigate={navigateTo}
               />
             ) : (
@@ -3196,13 +3425,19 @@
                 <PaperVsGlideSection />
                 <ProoflyLevelsSection onOpenTierFlyer={openFlyerLightbox} onNavigate={navigateTo} />
                 <QaTerminalSection />
-                <PortfolioHomeSection onOpenFlyer={openFlyerLightbox} onNavigate={navigateTo} />
+                <PortfolioHomeSection
+                  onOpenFlyer={openFlyerLightbox}
+                  onOpenContactWithFreeApp={handleOpenContactWithFreeApp}
+                  onNavigate={navigateTo}
+                />
                 <FounderSection />
                 <FaqSection />
                 <ContactSection
                   initialTier={prefillTier}
                   initialIndustry={prefillIndustry}
                   initialMessage={prefillMessage}
+                  isAiFaceEmphasis={focusAiFace}
+                  isFreeAppEmphasis={focusFreeApp}
                 />
               </React.Fragment>
             )}
