@@ -117,7 +117,7 @@ function generateAiResponse(userMsg, history) {
         phone: phoneMatch ? phoneMatch[0] : '',
         details: raw
       },
-      suggestions: ['Tell me about Proofly Level 1', 'How does delivery work in 5-7 days?', 'Call Jose: (437) 423-3456']
+      suggestions: ['Tell me about Level 1 App Tier', 'How does delivery work in 5-7 days?', 'Call Jose: (437) 423-3456']
     };
   }
 
@@ -162,7 +162,7 @@ function generateAiResponse(userMsg, history) {
     const total = parseFloat(percentMatch[2]);
     const res = (pct / 100) * total;
     return {
-      reply: `🔢 **Calculation Result**:\n\n**${pct}% of ${total} = ${res}**\n\nNeed to calculate payroll hours, overtime rates, or cost savings for your team? Proofly Level 3 automates regular vs. overtime calculations under Ontario ESA regulations automatically!`,
+      reply: `🔢 **Calculation Result**:\n\n**${pct}% of ${total} = ${res}**\n\nNeed to calculate payroll hours, overtime rates, or cost savings for your team? Our Level 3 Suite automates regular vs. overtime calculations under Ontario ESA regulations automatically!`,
       suggestions: ['Explain Level 3 CRA Payroll', 'How much does an app cost?', 'Book a discovery call']
     };
   } else if (mathMatch) {
@@ -180,8 +180,8 @@ function generateAiResponse(userMsg, history) {
 
     if (result !== null) {
       return {
-        reply: `🔢 **Calculation Result**:\n\n**${num1} ${opSymbol} ${num2} = ${result}**\n\nJust like ChatGPT, I can handle calculations, timesheet arithmetic, and operational logic. Proofly apps use this same precision for automated CRA payroll hours and overtime calculations!`,
-        suggestions: ['Calculate overtime for 44+ hrs', 'What is Proofly Level 3?', 'Book a consultation']
+        reply: `🔢 **Calculation Result**:\n\n**${num1} ${opSymbol} ${num2} = ${result}**\n\nJust like ChatGPT, I can handle calculations, timesheet arithmetic, and operational logic. My Mobile Apps uses this same precision for automated CRA payroll hours and overtime calculations!`,
+        suggestions: ['Calculate overtime for 44+ hrs', 'What is Level 3?', 'Book a consultation']
       };
     }
   }
@@ -189,8 +189,8 @@ function generateAiResponse(userMsg, history) {
   // 7. Ontario Overtime / ESA Calculation Questions
   if (q.includes('overtime') || q.includes('esa') || q.includes('44 hour') || q.includes('payroll rule')) {
     return {
-      reply: `⚖️ **Ontario Employment Standards Act (ESA) Overtime Calculation**:\n\nIn Ontario, overtime must be paid after an employee works **44 hours** in a work week:\n\n• **Regular Hours**: Up to 44 hours per week (paid at standard hourly wage).\n• **Overtime Hours**: Every hour beyond 44 is paid at **1.5× the regular rate** ("time and a half").\n• **Example**: If an employee works 48 hours at $20/hr:\n  - Regular: 44 hrs × $20 = $880\n  - Overtime: 4 hrs × $30 (1.5×) = $120\n  - Total Gross: **$1,000**\n\n📊 **Proofly Level 3** automatically computes this split down to the exact minute and outputs 1-click CRA-ready CSV spreadsheets!`,
-      suggestions: ['Explain Proofly Level 3', 'How fast can you build our app?', 'Schedule a consultation']
+      reply: `⚖️ **Ontario Employment Standards Act (ESA) Overtime Calculation**:\n\nIn Ontario, overtime must be paid after an employee works **44 hours** in a work week:\n\n• **Regular Hours**: Up to 44 hours per week (paid at standard hourly wage).\n• **Overtime Hours**: Every hour beyond 44 is paid at **1.5× the regular rate** ("time and a half").\n• **Example**: If an employee works 48 hours at $20/hr:\n  - Regular: 44 hrs × $20 = $880\n  - Overtime: 4 hrs × $30 (1.5×) = $120\n  - Total Gross: **$1,000**\n\n📊 **Level 3 Suite** automatically computes this split down to the exact minute and outputs 1-click CRA-ready CSV spreadsheets!`,
+      suggestions: ['Explain Level 3 Suite', 'How fast can you build our app?', 'Schedule a consultation']
     };
   }
 
@@ -211,8 +211,8 @@ function generateAiResponse(userMsg, history) {
     }
 
     return {
-      reply: `💻 **Here is your ${language} code sample:**\n\n\`\`\`${language.toLowerCase().split(' ')[0]}\n${sampleCode}\n\`\`\`\n\nAt Proofly, Jose Rene Navarro applies **20+ years of Software QA Engineering rigor** to all software architectures, ensuring clean code, zero crashes, and enterprise performance.\n\nWould you like this logic built into a custom mobile/web application for your business?`,
-      suggestions: ['Can you build an app for my team?', 'What is Proofly Level 1?', 'Book a consultation']
+      reply: `💻 **Here is your ${language} code sample:**\n\n\`\`\`${language.toLowerCase().split(' ')[0]}\n${sampleCode}\n\`\`\`\n\nAt My Mobile Apps, Jose Rene Navarro applies **20+ years of Software QA Engineering rigor** to all software architectures, ensuring clean code, zero crashes, and enterprise performance.\n\nWould you like this logic built into a custom mobile/web application for your business?`,
+      suggestions: ['Can you build an app for my team?', 'What is Level 1?', 'Book a consultation']
     };
   }
 
@@ -224,11 +224,11 @@ function generateAiResponse(userMsg, history) {
     };
   }
 
-  // 10. Paper / Excel vs. Digital Proofly
+  // 10. Paper / Excel vs. Digital Systems
   if (q.includes('excel') || q.includes('spreadsheet') || q.includes('paper') || q.includes('manual') || q.includes('whatsapp') || q.includes('text message')) {
     return {
-      reply: `📑 **Why Spreadsheets & Paper Fall Apart for Field Teams**:\n\n• **Buddy Punching & Dishonest Hours**: Paper timesheets and WhatsApp check-ins cannot verify identity or location.\n• **Lost Documentation**: Paper inspection checklists get stained, lost, or forged. Proofly requires live photo evidence before clocking out.\n• **Endless Payroll Disputes**: Managers spend 15+ hours every pay period deciphering messy handwriting and arguing over missing hours.\n• **The Proofly Fix**: AI Face Biometrics (1.00 match score), GPS timestamping, and 1-click CRA payroll export.\n\nReady to ditch the paper clipboard for good?`,
-      suggestions: ['Explain Proofly Level 1', 'How fast is delivery?', 'Book a 30-min discovery call']
+      reply: `📑 **Why Spreadsheets & Paper Fall Apart for Field Teams**:\n\n• **Buddy Punching & Dishonest Hours**: Paper timesheets and WhatsApp check-ins cannot verify identity or location.\n• **Lost Documentation**: Paper inspection checklists get stained, lost, or forged. Our apps require live photo evidence before clocking out.\n• **Endless Payroll Disputes**: Managers spend 15+ hours every pay period deciphering messy handwriting and arguing over missing hours.\n• **The Digital Fix**: AI Face Biometrics (1.00 match score), GPS timestamping, and 1-click CRA payroll export.\n\nReady to ditch the paper clipboard for good?`,
+      suggestions: ['Explain Level 1 App', 'How fast is delivery?', 'Book a 30-min discovery call']
     };
   }
 
@@ -244,35 +244,35 @@ function generateAiResponse(userMsg, history) {
 
     return {
       reply: `🏢 **Custom Mobile & Web App Scoping for ${industry}**:\n\nJose Rene Navarro specializes in building rapid, high-impact operational apps for field and service teams. Here is a recommended architecture for your team:\n\n• **Frontline Mobile PWA**: Staff clock in on their smartphones using **AI Biometric Face Verification** (eliminates buddy punching) with GPS geofencing at client job sites.\n• **Task Checklists & Photo Evidence**: Mandatory shift checklist requiring before/after photos of finished work before clocking out.\n• **Real-Time Web Portal**: Managers and dispatchers see live team attendance, instant photo proof, and automated alerts for late arrivals.\n• **1-Click CRA Payroll**: Automatically compiles regular vs. overtime hours compliant with Ontario ESA standards.\n\n⏱️ **Timeline**: Ready for production deployment in just **5 to 7 business days**!\n\nWould you like to book a 30-minute discovery call with Jose to review your requirements?`,
-      suggestions: ['Book a discovery call', 'How much does it cost?', 'What is Proofly Level 1?']
+      suggestions: ['Book a discovery call', 'How much does it cost?', 'What is Level 1?']
     };
   }
 
-  // 12. Proofly Levels 1 to 4
+  // 12. Modular Tiers (Levels 1 to 4)
   if (q.includes('level 1') || q.includes('foundation') || (q.includes('level') && q.includes('1'))) {
     return {
-      reply: `📱 **Proofly Level 1: Foundation Suite (Attendance + Task Verification)**\n\nEngineered specifically to solve the #1 problem in field operations: unverified hours and incomplete jobs.\n\n• **AI Biometric Face Verification**: Strict Face Score 1.00 match prevents buddy punching 100%.\n• **Late Arrival & Missing Checkout Alerts**: Real-time push notifications when staff miss shifts.\n• **Mandatory Shift Task Lists**: Field staff upload photo evidence of completed work.\n• **Manager Web Dashboard**: Live visibility over all shifts across multiple client locations.\n• **Turnaround**: 5 to 7 business days.\n• **Admin Savings**: 10+ hours per week in eliminated timesheet disputes.\n\nWould you like to see how Level 1 deploys for your team?`,
-      suggestions: ['What is Proofly Level 2?', 'How does face verification work?', 'Book a consultation']
+      reply: `📱 **Level 1: Foundation Suite (Attendance + Task Verification)**\n\nEngineered specifically to solve the #1 problem in field operations: unverified hours and incomplete jobs.\n\n• **AI Biometric Face Verification**: Strict Face Score 1.00 match prevents buddy punching 100%.\n• **Late Arrival & Missing Checkout Alerts**: Real-time push notifications when staff miss shifts.\n• **Mandatory Shift Task Lists**: Field staff upload photo evidence of completed work.\n• **Manager Web Dashboard**: Live visibility over all shifts across multiple client locations.\n• **Turnaround**: 5 to 7 business days.\n• **Admin Savings**: 10+ hours per week in eliminated timesheet disputes.\n\nWould you like to see how Level 1 deploys for your team?`,
+      suggestions: ['What is Level 2?', 'How does face verification work?', 'Book a consultation']
     };
   }
 
   if (q.includes('level 2') || q.includes('communication') || (q.includes('level') && q.includes('2'))) {
     return {
-      reply: `💬 **Proofly Level 2: Communication Suite (Attendance + Tasks + Team Chat)**\n\nCentralizes team operations and eliminates chaotic personal WhatsApp and SMS text threads.\n\n• **Everything in Level 1**: Full AI biometric attendance & photo-verified task checklists.\n• **Direct In-App Staff Messaging**: 1-on-1 and group communication between management and field crew.\n• **Broadcast Announcements**: Company-wide notices, safety updates, and shift reminders with read receipts.\n• **Turnaround**: 5 to 7 business days.\n• **Admin Savings**: 15+ hours per week in streamlined team communication.\n\nWould you like to explore Level 3 with CRA payroll automation?`,
+      reply: `💬 **Level 2: Communication Suite (Attendance + Tasks + Team Chat)**\n\nCentralizes team operations and eliminates chaotic personal WhatsApp and SMS text threads.\n\n• **Everything in Level 1**: Full AI biometric attendance & photo-verified task checklists.\n• **Direct In-App Staff Messaging**: 1-on-1 and group communication between management and field crew.\n• **Broadcast Announcements**: Company-wide notices, safety updates, and shift reminders with read receipts.\n• **Turnaround**: 5 to 7 business days.\n• **Admin Savings**: 15+ hours per week in streamlined team communication.\n\nWould you like to explore Level 3 with CRA payroll automation?`,
       suggestions: ['Tell me about Level 3 Payroll', 'What is Level 1?', 'Book a discovery consultation']
     };
   }
 
   if (q.includes('level 3') || q.includes('payroll') || q.includes('cra') || (q.includes('level') && q.includes('3'))) {
     return {
-      reply: `💰 **Proofly Level 3: Workforce Management & CRA Payroll Suite**\n\nTransforms messy handwriting and disputed timesheets into audit-proof payroll exports.\n\n• **Everything in Levels 1 & 2**: AI facial attendance, task photo proof, and team messaging.\n• **Automated Hours & Overtime**: Calculates regular vs. overtime hours compliant with Ontario ESA regulations.\n• **1-Click CRA Payroll Exports**: Generates clean CSV/Excel spreadsheets ready for your accountant or payroll software.\n• **Turnaround**: 5 to 7 business days.\n• **Admin Savings**: 20+ hours per week in eliminated manual bookkeeping.\n\nWould you like Jose to review your current payroll calculation workflow?`,
+      reply: `💰 **Level 3: Workforce Management & CRA Payroll Suite**\n\nTransforms messy handwriting and disputed timesheets into audit-proof payroll exports.\n\n• **Everything in Levels 1 & 2**: AI facial attendance, task photo proof, and team messaging.\n• **Automated Hours & Overtime**: Calculates regular vs. overtime hours compliant with Ontario ESA regulations.\n• **1-Click CRA Payroll Exports**: Generates clean CSV/Excel spreadsheets ready for your accountant or payroll software.\n• **Turnaround**: 5 to 7 business days.\n• **Admin Savings**: 20+ hours per week in eliminated manual bookkeeping.\n\nWould you like Jose to review your current payroll calculation workflow?`,
       suggestions: ['What is Level 4 Scheduling?', 'What apps has Jose built?', 'Book a consultation']
     };
   }
 
   if (q.includes('level 4') || q.includes('schedul') || q.includes('dispatch') || q.includes('calendar') || (q.includes('level') && q.includes('4'))) {
     return {
-      reply: `🗓️ **Proofly Level 4: Enterprise Orchestration & Smart Scheduling**\n\nThe ultimate end-to-end management platform for growing field service enterprises.\n\n• **Everything in Levels 1, 2 & 3**: Full attendance, photo proof, chat, and payroll exports.\n• **Drag-and-Drop Shift Dispatch**: Assign crews to client locations with instant mobile shift notifications.\n• **Conflict & Overlap Prevention**: Automatically blocks double-booking and unauthorized overtime.\n• **Real-Time GPS Crew Verification**: Map visibility over staff arrival times and location accuracy.\n• **Turnaround**: 5 to 7 business days.\n\nWould you like to discuss deploying Level 4 for your business?`,
+      reply: `🗓️ **Level 4: Enterprise Orchestration & Smart Scheduling**\n\nThe ultimate end-to-end management platform for growing field service enterprises.\n\n• **Everything in Levels 1, 2 & 3**: Full attendance, photo proof, chat, and payroll exports.\n• **Drag-and-Drop Shift Dispatch**: Assign crews to client locations with instant mobile shift notifications.\n• **Conflict & Overlap Prevention**: Automatically blocks double-booking and unauthorized overtime.\n• **Real-Time GPS Crew Verification**: Map visibility over staff arrival times and location accuracy.\n• **Turnaround**: 5 to 7 business days.\n\nWould you like to discuss deploying Level 4 for your business?`,
       suggestions: ['Show me case studies', 'How fast can you build our app?', 'Schedule a consultation']
     };
   }
@@ -280,15 +280,15 @@ function generateAiResponse(userMsg, history) {
   // 13. Biometric Face Verification & Anti-Buddy Punching
   if (q.includes('face') || q.includes('biometric') || q.includes('buddy') || q.includes('punching') || q.includes('cheat') || q.includes('fake') || q.includes('ghost')) {
     return {
-      reply: `🛡️ **How Proofly AI Face Verification Eliminates Buddy Punching 100%**:\n\n• **Strict 1.00 Face Match Score**: When an employee arrives at a job site, they snap a live selfie in the app. Proofly's AI biometric engine compares their facial landmark geometry against their registered employee profile.\n• **Anti-Spoofing & Live Camera**: Staff cannot upload old photos or pictures of pictures from their camera roll; the photo must be taken live with active timestamp and GPS coordinates.\n• **Zero Buddy Punching**: It is physically impossible for a coworker to clock in for an absent friend.\n• **Verified Case Study**: In *The Manpower Solution* app, 18 cleaning staff achieved 100% verified attendance with zero buddy punching since day one.\n\nWould you like to try a demo or see the case study?`,
-      suggestions: ['Tell me about Manpower Solution', 'What is Proofly Level 1?', 'Book a discovery consultation']
+      reply: `🛡️ **How Our AI Face Verification Eliminates Buddy Punching 100%**:\n\n• **Strict 1.00 Face Match Score**: When an employee arrives at a job site, they snap a live selfie in the app. Our AI biometric engine compares their facial landmark geometry against their registered employee profile.\n• **Anti-Spoofing & Live Camera**: Staff cannot upload old photos or pictures of pictures from their camera roll; the photo must be taken live with active timestamp and GPS coordinates.\n• **Zero Buddy Punching**: It is physically impossible for a coworker to clock in for an absent friend.\n• **Verified Case Study**: In *The Manpower Solution* app, 18 cleaning staff achieved 100% verified attendance with zero buddy punching since day one.\n\nWould you like to try a demo or see the case study?`,
+      suggestions: ['Tell me about Manpower Solution', 'What is Level 1?', 'Book a discovery consultation']
     };
   }
 
   // 14. Case Studies & Previous Work
   if (q.includes('case stud') || q.includes('work done') || q.includes('portfolio') || q.includes('previous') || q.includes('apps') || q.includes('manpower') || q.includes('cfc') || q.includes('saint') || q.includes('driving') || q.includes('joren')) {
     return {
-      reply: `🚀 **Jose Rene Navarro's 5 Production App Deployments**:\n\n1. **The Manpower Solution (Level 1 App)**: 18 active commercial cleaners across the GTA. 100% eliminated buddy punching with Face Match 1.00 and photo task verification.\n2. **CFC Music Ministry App (100% Free Community App)**: 135+ Catholic worship songs with live interactive chord transposing (change key in 1 click) and embedded audio, available completely free.\n3. **Birthday Saint Finder**: 100% offline liturgical calendar with biographical saint profiles and feast day search.\n4. **Proofly Driving Academy Platform**: Dual-sided system for student lesson logging and driving instructor vehicle dispatch.\n5. **Joren Property Listings**: Mobile real estate catalog with automated buyer interest analytics.\n\nYou can view the full case studies on our **"Solutions & Work"** page. Which project would you like to know more about?`,
+      reply: `🚀 **Jose Rene Navarro's 5 Production App Deployments**:\n\n1. **The Manpower Solution (Level 1 App)**: 18 active commercial cleaners across the GTA. 100% eliminated buddy punching with Face Match 1.00 and photo task verification.\n2. **CFC Music Ministry App (100% Free Community App)**: 135+ Catholic worship songs with live interactive chord transposing (change key in 1 click) and embedded audio, available completely free.\n3. **Birthday Saint Finder**: 100% offline liturgical calendar with biographical saint profiles and feast day search.\n4. **Driving Academy Management Platform**: Dual-sided system for student lesson logging and driving instructor vehicle dispatch.\n5. **Joren Property Listings**: Mobile real estate catalog with automated buyer interest analytics.\n\nYou can view the full case studies on our **"Solutions & Work"** page. Which project would you like to know more about?`,
       suggestions: ['Tell me about Manpower Solution', 'Tell me about CFC Music', 'Book a discovery consultation']
     };
   }
@@ -297,7 +297,7 @@ function generateAiResponse(userMsg, history) {
   if (q.includes('price') || q.includes('cost') || q.includes('pricing') || q.includes('quote') || q.includes('how much') || q.includes('timeline') || q.includes('how long') || q.includes('fast') || q.includes('days') || q.includes('budget')) {
     return {
       reply: `⚡ **Rapid Turnaround & Unmatched Cost Efficiency**:\n\n• **Delivery Speed**: Production-ready deployment in just **5 to 7 business days**!\n• **Up to 80% Cost Savings**: Traditional app agencies charge $25,000–$50,000+ and take 4 to 6 months. Jose builds custom Progressive Web Apps (PWAs) on Glide, reducing costs by up to 80% while delivering enterprise reliability.\n• **Instant Web & Mobile Deployment**: Rapid distribution directly to employee smartphones and desktop browsers with 1 click, ensuring rapid rollout across your entire organization.\n• **Measurable ROI**: Saves 10 to 25 hours per week in eliminated timesheet disputes and manual paperwork.\n\nLeave your email or phone here, and Jose will provide an exact quote and scope within 24 hours!`,
-      suggestions: ['Book a 30-min discovery call', 'What is Proofly Level 1?', 'Call Jose: (437) 423-3456']
+      suggestions: ['Book a 30-min discovery call', 'What is Level 1?', 'Call Jose: (437) 423-3456']
     };
   }
 
@@ -312,8 +312,8 @@ function generateAiResponse(userMsg, history) {
   // 17. Technology / Glide / PWA / Devices (iPhone, Android, Desktop)
   if (q.includes('glide') || q.includes('pwa') || q.includes('progressive web') || q.includes('iphone') || q.includes('android') || q.includes('ios') || q.includes('tablet') || q.includes('desktop')) {
     return {
-      reply: `📲 **Cross-Platform Architecture (Glide Progressive Web Apps)**:\n\n• **Universal Device Compatibility**: Proofly apps run smoothly on iPhone (iOS), Android smartphones, iPads, tablets, and desktop web browsers.\n• **Instant Home Screen Install**: Users simply tap "Add to Home Screen". It opens as a full-screen standalone application with its own app icon, splash screen, and offline capabilities.\n• **Zero Friction**: Instant access via secure web link or QR code, with zero download hurdles or manual update delays.\n• **Real-Time Cloud Sync**: Every clock-in, photo upload, and task checklist syncs instantly to management web dashboards.\n\nWould you like to build an app for your team?`,
-      suggestions: ['How fast can you build our app?', 'What is Proofly Level 1?', 'Book a discovery consultation']
+      reply: `📲 **Cross-Platform Architecture (Glide Progressive Web Apps)**:\n\n• **Universal Device Compatibility**: My Mobile Apps run smoothly on iPhone (iOS), Android smartphones, iPads, tablets, and desktop web browsers.\n• **Instant Home Screen Install**: Users simply tap "Add to Home Screen". It opens as a full-screen standalone application with its own app icon, splash screen, and offline capabilities.\n• **Zero Friction**: Instant access via secure web link or QR code, with zero download hurdles or manual update delays.\n• **Real-Time Cloud Sync**: Every clock-in, photo upload, and task checklist syncs instantly to management web dashboards.\n\nWould you like to build an app for your team?`,
+      suggestions: ['How fast can you build our app?', 'What is Level 1?', 'Book a discovery consultation']
     };
   }
 
@@ -336,14 +336,14 @@ function generateAiResponse(userMsg, history) {
   // 20. Jokes / Humor
   if (q.includes('joke') || q.includes('funny') || q.includes('humor')) {
     const jokes = [
-      `😄 **Here's a developer joke for you:**\n\nWhy do programmers prefer dark mode?\n*Because light attracts bugs!*\n\nSpeaking of bugs—with Jose Rene Navarro's **20+ years of Software QA experience**, Proofly apps are thoroughly tested so your business runs bug-free! Can I help you with an app for your team?`,
-      `😄 **Here's another one:**\n\nThere are only 10 types of people in the world:\n*Those who understand binary, and those who don't!*\n\nAnd when it comes to attendance tracking, there are only 2 types of systems: paper timesheets that invite buddy punching, and Proofly AI biometric verification that eliminates it 100%!`,
+      `😄 **Here's a developer joke for you:**\n\nWhy do programmers prefer dark mode?\n*Because light attracts bugs!*\n\nSpeaking of bugs—with Jose Rene Navarro's **20+ years of Software QA experience**, our apps are thoroughly tested so your business runs bug-free! Can I help you with an app for your team?`,
+      `😄 **Here's another one:**\n\nThere are only 10 types of people in the world:\n*Those who understand binary, and those who don't!*\n\nAnd when it comes to attendance tracking, there are only 2 types of systems: paper timesheets that invite buddy punching, and AI biometric verification that eliminates it 100%!`,
       `😄 **A QA engineer walks into a bar:**\n\nOrders a beer. Orders 0 beers. Orders 999999999 beers. Orders a lizard. Orders -1 beers. Orders a sfdeljknesv.\n\nFirst real customer walks in and asks where the bathroom is. The bar burns down!\n\nThat's why Jose Rene Navarro tests **real user scenarios** across 20+ years of QA practice!`
     ];
     const picked = jokes[Math.floor(Math.random() * jokes.length)];
     return {
       reply: picked,
-      suggestions: ['Tell me another joke', 'Tell me about Proofly Level 1', 'Book a consultation']
+      suggestions: ['Tell me another joke', 'Tell me about Level 1 App', 'Book a consultation']
     };
   }
 
@@ -351,15 +351,15 @@ function generateAiResponse(userMsg, history) {
   if (q.includes('contact') || q.includes('book') || q.includes('call') || q.includes('consult') || q.includes('email') || q.includes('phone') || q.includes('reach') || q.includes('meet') || q.includes('schedule')) {
     return {
       reply: `📅 **Connect Directly with Jose Rene Navarro**:\n\n• **Direct Phone**: (437) 423-3456\n• **Email**: navarrojoserene.ca@gmail.com\n• **Location**: Toronto, Ontario, Canada\n• **Discovery Consultation**: Free 30-minute operational review of your workflow\n\nYou can also simply **type your name, email, or phone right here in this chat**, and I will automatically dispatch your inquiry to Jose's inbox!`,
-      suggestions: ['Book consultation', 'What is Proofly Level 1?', 'How fast is delivery?']
+      suggestions: ['Book consultation', 'What is Level 1?', 'How fast is delivery?']
     };
   }
 
   // 22. Conversational Intelligent Fallback
   return {
-    reply: `💡 **Regarding "${raw}":**\n\nAs the Proofly AI Concierge, I can assist you with:\n1. **App Architecture & Scoping**: Translating your business workflow into a clean Glide mobile & web app.\n2. **Eliminating Buddy Punching**: AI Biometric Face Verification with 1.00 match score.\n3. **Task Checklists**: Mandatory before/after photo verification for field staff.\n4. **Ontario ESA & CRA Payroll**: Calculating regular and overtime hours with 1-click export.\n5. **Calculations & Logic**: Just ask me any arithmetic or workflow questions!\n\nIf you have a specific requirement or want a custom proposal, you can reach **Jose Rene Navarro** directly at **navarrojoserene.ca@gmail.com** or **(437) 423-3456**.\n\nWhat would you like to explore next?`,
+    reply: `💡 **Regarding "${raw}":**\n\nAs the My Mobile Apps AI Assistant, I can assist you with:\n1. **App Architecture & Scoping**: Translating your business workflow into a clean Glide mobile & web app.\n2. **Eliminating Buddy Punching**: AI Biometric Face Verification with 1.00 match score.\n3. **Task Checklists**: Mandatory before/after photo verification for field staff.\n4. **Ontario ESA & CRA Payroll**: Calculating regular and overtime hours with 1-click export.\n5. **Calculations & Logic**: Just ask me any arithmetic or workflow questions!\n\nIf you have a specific requirement or want a custom proposal, you can reach **Jose Rene Navarro** directly at **navarrojoserene.ca@gmail.com** or **(437) 423-3456**.\n\nWhat would you like to explore next?`,
     suggestions: [
-      'Explain Proofly Level 1',
+      'Explain Level 1 App',
       'What apps has Jose built?',
       'How fast can you build our app?',
       'Book a discovery consultation'
@@ -458,7 +458,99 @@ const server = http.createServer((req, res) => {
   }
 
   let reqPath = decodeURIComponent(req.url.split('?')[0]);
-  if (reqPath === '/') reqPath = '/index.html';
+  if (reqPath.endsWith('/') && reqPath.length > 1) {
+    reqPath = reqPath.slice(0, -1);
+  }
+
+  // Define SEO metadata for all clean SPA routes
+  const ROUTE_SEO = {
+    '/': {
+      title: 'My Mobile Apps | Custom Business Mobile & Web App Development Toronto',
+      description: 'My Mobile Apps builds custom mobile PWAs, web applications, and AI face verification systems for field service businesses across Toronto & Canada. Rapid 5–7 day delivery.',
+      canonical: 'https://www.my-mobileapps.com/'
+    },
+    '/index.html': {
+      title: 'My Mobile Apps | Custom Business Mobile & Web App Development Toronto',
+      description: 'My Mobile Apps builds custom mobile PWAs, web applications, and AI face verification systems for field service businesses across Toronto & Canada. Rapid 5–7 day delivery.',
+      canonical: 'https://www.my-mobileapps.com/'
+    },
+    '/mobile-app-development': {
+      title: 'Custom Mobile App Development Toronto & Canada | Rapid 5–7 Day PWAs',
+      description: 'Get custom mobile Progressive Web Apps (PWAs) built on Glide and deployed for your business in 5-7 business days. 20+ years of Software QA rigor by Jose Rene Navarro.',
+      canonical: 'https://www.my-mobileapps.com/mobile-app-development'
+    },
+    '/website-development': {
+      title: 'Custom Business Web Portals & Dashboard Development | Toronto & Canada',
+      description: 'Custom business web portals, operations management dashboards, and automated CRA payroll export systems built fast for Toronto and Ontario businesses.',
+      canonical: 'https://www.my-mobileapps.com/website-development'
+    },
+    '/qa-testing': {
+      title: 'Website & Software QA Testing Services Toronto | 20+ Yrs QA Engineering',
+      description: 'Professional Software Quality Assurance testing by Jose Rene Navarro. Eliminate broken workflows, usability flaws, and UI bugs across desktop and mobile.',
+      canonical: 'https://www.my-mobileapps.com/qa-testing'
+    },
+    '/ai-solutions': {
+      title: 'AI Biometric Face Verification & Business Solutions | Anti-Buddy Punching',
+      description: 'Stop buddy punching 100% with AI Face Match biometrics, anti-spoofing cameras, and GPS geofenced mobile attendance for Canadian field service teams.',
+      canonical: 'https://www.my-mobileapps.com/ai-solutions'
+    },
+    '/industries/field-services': {
+      title: 'Field Service, Cleaning & Construction Apps Toronto | My Mobile Apps',
+      description: 'Custom mobile apps for commercial cleaning, construction, HVAC, and trades. Digital before/after photo checklists, live shift tracking, and CRA payroll.',
+      canonical: 'https://www.my-mobileapps.com/industries/field-services'
+    },
+    '/field-services': {
+      title: 'Field Service, Cleaning & Construction Apps Toronto | My Mobile Apps',
+      description: 'Custom mobile apps for commercial cleaning, construction, HVAC, and trades. Digital before/after photo checklists, live shift tracking, and CRA payroll.',
+      canonical: 'https://www.my-mobileapps.com/industries/field-services'
+    },
+    '/work-done': {
+      title: 'Verified Client Work Done & Live Apps Portfolio | My Mobile Apps',
+      description: 'Explore 5 live production apps built by Jose Rene Navarro: Manpower Solution, Driving Academy, Property Listings, CFC Music Ministry, and Saint Finder.',
+      canonical: 'https://www.my-mobileapps.com/work-done'
+    },
+    '/case-studies': {
+      title: 'Production App Case Studies & Portfolio | My Mobile Apps Toronto',
+      description: 'Explore 5 live production apps built by Jose Rene Navarro: Manpower Solution, Driving Academy, Property Listings, CFC Music Ministry, and Saint Finder.',
+      canonical: 'https://www.my-mobileapps.com/work-done'
+    },
+    '/contact': {
+      title: 'Contact Jose Rene Navarro | Free App Discovery Consultation Toronto',
+      description: 'Book a free 30-minute consultation or call (437) 423-3456. Get your custom mobile or web app scoped and delivered in 5 to 7 days.',
+      canonical: 'https://www.my-mobileapps.com/contact'
+    }
+  };
+
+  // Check if requested path is a known clean SPA route
+  if (ROUTE_SEO[reqPath]) {
+    const seo = ROUTE_SEO[reqPath];
+    const indexPath = path.join(PUBLIC_DIR, 'index.html');
+    fs.readFile(indexPath, 'utf8', (err, htmlContent) => {
+      if (err) {
+        res.writeHead(500, { 'Content-Type': 'text/plain' });
+        res.end('500 Server Error');
+        return;
+      }
+
+      // Pre-render route-specific SEO tags into <head> for Googlebot and users
+      let modifiedHtml = htmlContent
+        .replace(/<title>.*?<\/title>/i, `<title>${seo.title}</title>`)
+        .replace(/<meta name="description" content=".*?" \/>/i, `<meta name="description" content="${seo.description}" />`)
+        .replace(/<link rel="canonical" href=".*?" \/>/i, `<link rel="canonical" href="${seo.canonical}" />`)
+        .replace(/<meta property="og:title" content=".*?" \/>/i, `<meta property="og:title" content="${seo.title}" />`)
+        .replace(/<meta property="og:description" content=".*?" \/>/i, `<meta property="og:description" content="${seo.description}" />`)
+        .replace(/<meta property="og:url" content=".*?" \/>/i, `<meta property="og:url" content="${seo.canonical}" />`)
+        .replace(/<meta name="twitter:title" content=".*?" \/>/i, `<meta name="twitter:title" content="${seo.title}" />`)
+        .replace(/<meta name="twitter:description" content=".*?" \/>/i, `<meta name="twitter:description" content="${seo.description}" />`);
+
+      res.writeHead(200, {
+        'Content-Type': 'text/html; charset=UTF-8',
+        'Cache-Control': 'no-cache'
+      });
+      res.end(modifiedHtml);
+    });
+    return;
+  }
 
   const filePath = path.normalize(path.join(PUBLIC_DIR, reqPath));
 

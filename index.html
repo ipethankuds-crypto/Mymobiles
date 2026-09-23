@@ -505,8 +505,8 @@
       },
       {
         id: 'project-driving-academy',
-        title: 'Proofly Driving Academy',
-        shortTitle: 'Proofly Driving Academy',
+        title: 'Driving Academy Management Platform',
+        shortTitle: 'Driving Academy Platform',
         category: 'Portals & Fleet Management',
         platformType: 'Dual Web Portal & Mobile App',
         filterCategory: 'portals',
@@ -515,7 +515,7 @@
         badge: 'Fleet & Driving School Platform',
         flyerImg: 'assets/project-driving-academy.webp',
         excerpt: 'All-in-one driving school management platform with dedicated Administrator and Instructor Dashboards.',
-        fullDocDescription: 'The Proofly Driving Academy is an all-in-one driving school management platform with dedicated Administrator and Instructor Dashboards. It manages students, packages, road tests, and vehicles, with conflict-free scheduling and real-time lesson tracking. Designed to eliminate double-bookings and streamline driving school operations, the platform was successfully launched.',
+        fullDocDescription: 'The Driving Academy Management Platform is an all-in-one driving school management system with dedicated Administrator and Instructor Dashboards. It manages students, packages, road tests, and vehicles, with conflict-free scheduling and real-time lesson tracking. Designed to eliminate double-bookings and streamline driving school operations, the platform was successfully launched.',
         keyFeatures: [
           'Dedicated Administrator web portal dashboard for driving school owners',
           'Dedicated mobile field dashboard for in-car instructors',
@@ -697,11 +697,11 @@
               {/* Interactive Studio Controls Box */}
               <div className="p-5 sm:p-6 rounded-3xl border border-slate-200/80 bg-white/90 backdrop-blur-md space-y-5 shadow-lg shadow-slate-100">
                 
-                {/* Step 1: Select Proofly Level */}
+                {/* Step 1: Select Modular App Level */}
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-500 font-mono">
-                      1. Select Proofly System Level (Mobile & Web):
+                      1. Select Modular App Tier (Mobile & Web):
                     </label>
                     <button
                       type="button"
@@ -806,7 +806,7 @@
               <div className="text-center mb-3">
                 <span className="text-[11px] font-bold text-slate-500 font-mono uppercase tracking-wider flex items-center justify-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                  Interactive Proofly App Simulator (Mobile + Web Sync)
+                  Interactive Mobile App Simulator (Mobile + Web Sync)
                 </span>
               </div>
 
@@ -1090,11 +1090,11 @@
 
             <div className="mt-6 pt-5 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
               <span className="text-slate-400 text-xs">
-                Ready to deploy Proofly for your team of <strong>{crewCount} staff</strong>?
+                Ready to deploy custom mobile & web apps for your team of <strong>{crewCount} staff</strong>?
               </span>
               <button
                 type="button"
-                onClick={() => onOpenContactWithTier(`Proofly for ${crewCount} Staff`, selectedIndustry.name)}
+                onClick={() => onOpenContactWithTier(`Custom App for ${crewCount} Staff`, selectedIndustry.name)}
                 className="w-full sm:w-auto px-7 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 font-bold text-white shadow-lg shadow-blue-500/25 transition-all active:scale-95 cursor-pointer"
               >
                 Request Quote for {crewCount} Staff →
@@ -1405,6 +1405,935 @@
     }
 
     // =========================================================================
+    // DEDICATED SEO PAGE: Custom Mobile App Development (Toronto & Canada)
+    // =========================================================================
+    function MobileAppDevPage({ onNavigate, onOpenContactWithTier }) {
+      const [activeFaq, setActiveFaq] = useState(0);
+
+      const faqs = [
+        {
+          q: 'What is a Progressive Web App (PWA) and why is it better for business operations?',
+          a: 'A Progressive Web App runs directly in modern mobile browsers (Safari on iOS, Chrome on Android) while feeling identical to a native app. Staff can install it on their home screen in 5 seconds via QR code. There are zero App Store downloads, zero 30% Apple/Google tax, and instant live updates whenever changes are deployed.'
+        },
+        {
+          q: 'How can you deliver a production-ready mobile app in just 5 to 7 business days?',
+          a: 'By leveraging Glide’s modular cloud architecture combined with 20+ years of software QA experience, we bypass redundant backend infrastructure setup. We configure pre-tested, battle-proven components for authentication, GPS, camera photo proof, and CRA payroll calculations.'
+        },
+        {
+          q: 'Will the mobile app work if my staff are in a basement or area with no cell reception?',
+          a: 'Yes. Our mobile apps cache clock-ins, checklist submissions, and offline records locally on the device. As soon as the device reconnects to Wi-Fi or cellular signal, all data syncs seamlessly to the cloud database within milliseconds.'
+        },
+        {
+          q: 'How does pricing compare to hiring a traditional mobile app development agency?',
+          a: 'Traditional Toronto agencies charge $25,000 to $100,000+ with 3 to 6-month timelines. My Mobile Apps delivers custom business PWAs at a fraction of the cost ($$) with no bloated overhead or surprise maintenance invoices.'
+        }
+      ];
+
+      return (
+        <div className="py-10 px-5 sm:px-8 bg-white min-h-screen">
+          <div className="max-w-7xl mx-auto space-y-12">
+            
+            {/* Breadcrumb & Navigation */}
+            <div className="flex items-center justify-between border-b border-slate-200 pb-4">
+              <div className="flex items-center gap-2 text-xs font-mono text-blue-600 uppercase tracking-wider">
+                <button
+                  type="button"
+                  onClick={() => onNavigate('home')}
+                  className="hover:underline flex items-center gap-1 font-bold text-slate-700 hover:text-blue-600"
+                >
+                  <span>← Home</span>
+                </button>
+                <span className="text-slate-300">/</span>
+                <span className="text-slate-500">Services</span>
+                <span className="text-slate-300">/</span>
+                <span className="text-blue-600 font-bold">Mobile App Development</span>
+              </div>
+              <button
+                type="button"
+                onClick={() => onOpenContactWithTier('Custom Mobile App Development (Toronto/Canada)', 'General')}
+                className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow transition flex items-center gap-1.5"
+              >
+                <SvgIcon name="mail" className="w-3.5 h-3.5" />
+                <span>Get a Quote</span>
+              </button>
+            </div>
+
+            {/* Hero Section */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              <div className="lg:col-span-7 space-y-6">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 font-mono text-xs font-bold uppercase tracking-wider">
+                  <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+                  <span>Toronto & Canada · Rapid 5–7 Day PWA Turnaround</span>
+                </div>
+                <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-950 tracking-tight leading-tight">
+                  Custom Mobile App Development for Fast-Moving Businesses
+                </h1>
+                <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                  Say goodbye to paper chaos, unreadable handwriting, and $50k agency retainers. We build custom, production-grade Progressive Web Apps (PWAs) tailored to your exact business workflow—live in <strong>5 to 7 business days</strong>.
+                </p>
+                <div className="flex flex-wrap items-center gap-4 pt-2">
+                  <button
+                    type="button"
+                    onClick={() => onNavigate('home', 'phone-simulator')}
+                    className="px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm shadow-lg shadow-blue-500/25 transition active:scale-95 flex items-center gap-2"
+                  >
+                    <SvgIcon name="smartphone" className="w-4 h-4" />
+                    <span>Try Interactive Phone Simulator</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => onOpenContactWithTier('Custom Mobile App Development', 'Field Services')}
+                    className="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm transition flex items-center gap-2"
+                  >
+                    <SvgIcon name="sparkles" className="w-4 h-4 text-cyan-400" />
+                    <span>Book 30-Min Discovery</span>
+                  </button>
+                </div>
+              </div>
+
+              <div className="lg:col-span-5 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 p-8 rounded-3xl border border-blue-500/30 text-white shadow-2xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div className="relative z-10 space-y-4">
+                  <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider">The My Mobile Apps Guarantee</span>
+                  <h3 className="text-2xl font-bold text-white">Why Canadian Businesses Choose Us</h3>
+                  <div className="space-y-3 pt-2 text-xs text-slate-300">
+                    <div className="flex items-start gap-3 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
+                      <SvgIcon name="check" className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                      <div><strong>5 to 7 Day Delivery:</strong> Tested and handed over in under a week.</div>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
+                      <SvgIcon name="check" className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                      <div><strong>1-Tap Home Screen Install:</strong> Works on all iOS & Android phones with zero app store delays.</div>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
+                      <SvgIcon name="check" className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                      <div><strong>20+ Years Software QA:</strong> Zero crashes, robust offline caching, and bug-free payroll logic.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 4 Core Pillars Grid */}
+            <div className="space-y-6 pt-6">
+              <div className="text-center max-w-3xl mx-auto">
+                <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200 font-mono">
+                  Full Feature Architecture
+                </span>
+                <h2 className="mt-3 text-3xl font-extrabold text-slate-950">
+                  Built for Speed, Accuracy, and Zero Frustration
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="p-6 rounded-2xl border border-slate-200 bg-slate-50 hover:bg-white hover:border-blue-400 hover:shadow-lg transition">
+                  <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center mb-4">
+                    <SvgIcon name="zap" className="w-5 h-5" />
+                  </div>
+                  <h3 className="font-bold text-slate-900 text-base">Rapid 5–7 Day Launch</h3>
+                  <p className="mt-2 text-xs text-slate-600 leading-relaxed">
+                    Start eliminating payroll errors and lost paperwork by next week instead of waiting 6 months for an agency.
+                  </p>
+                </div>
+
+                <div className="p-6 rounded-2xl border border-slate-200 bg-slate-50 hover:bg-white hover:border-blue-400 hover:shadow-lg transition">
+                  <div className="w-10 h-10 rounded-xl bg-cyan-600 text-white flex items-center justify-center mb-4">
+                    <SvgIcon name="scan-face" className="w-5 h-5" />
+                  </div>
+                  <h3 className="font-bold text-slate-900 text-base">Biometric Face Matching</h3>
+                  <p className="mt-2 text-xs text-slate-600 leading-relaxed">
+                    1.00 Face Match verification prevents buddy punching, time fraud, and fake clock-ins across all job sites.
+                  </p>
+                </div>
+
+                <div className="p-6 rounded-2xl border border-slate-200 bg-slate-50 hover:bg-white hover:border-blue-400 hover:shadow-lg transition">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center mb-4">
+                    <SvgIcon name="database" className="w-5 h-5" />
+                  </div>
+                  <h3 className="font-bold text-slate-900 text-base">Offline Smart Caching</h3>
+                  <p className="mt-2 text-xs text-slate-600 leading-relaxed">
+                    Field crews in basements or remote sites can record tasks and timestamps; data syncs immediately when signal returns.
+                  </p>
+                </div>
+
+                <div className="p-6 rounded-2xl border border-slate-200 bg-slate-50 hover:bg-white hover:border-blue-400 hover:shadow-lg transition">
+                  <div className="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center mb-4">
+                    <SvgIcon name="file-text" className="w-5 h-5" />
+                  </div>
+                  <h3 className="font-bold text-slate-900 text-base">CRA-Ready Payroll</h3>
+                  <p className="mt-2 text-xs text-slate-600 leading-relaxed">
+                    Automated overtime calculation compliant with Ontario Employment Standards Act (ESA) exported straight to CSV.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Comparison Table */}
+            <div className="p-8 rounded-3xl bg-slate-950 text-white border border-slate-800 space-y-6 shadow-xl">
+              <div className="max-w-2xl">
+                <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider">Strategic Comparison</span>
+                <h3 className="text-2xl font-bold text-white mt-1">Traditional Agencies vs. SaaS vs. My Mobile Apps</h3>
+                <p className="text-xs text-slate-400 mt-1">See how custom Glide PWAs engineered with 20+ years of QA give you maximum speed and ROI.</p>
+              </div>
+
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-xs border-collapse">
+                  <thead>
+                    <tr className="border-b border-slate-800 text-slate-400 font-mono">
+                      <th className="py-3 px-4">Dimension</th>
+                      <th className="py-3 px-4">Traditional App Agency</th>
+                      <th className="py-3 px-4">Generic SaaS (Jobber, etc.)</th>
+                      <th className="py-3 px-4 text-cyan-300 font-bold bg-blue-950/40 rounded-t-lg">My Mobile Apps</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-800/60">
+                    <tr>
+                      <td className="py-3 px-4 font-bold text-white">Upfront Investment</td>
+                      <td className="py-3 px-4 text-slate-400">$25,000 – $100,000+</td>
+                      <td className="py-3 px-4 text-slate-400">Low upfront ($0–$500)</td>
+                      <td className="py-3 px-4 font-bold text-cyan-300 bg-blue-950/40">Affordable Flat Setup ($$)</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-4 font-bold text-white">Monthly Cost per User</td>
+                      <td className="py-3 px-4 text-slate-400">High server maintenance</td>
+                      <td className="py-3 px-4 text-slate-400">$50–$200/mo/user ($15k+/yr)</td>
+                      <td className="py-3 px-4 font-bold text-cyan-300 bg-blue-950/40">Low, predictable Glide hosting</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-4 font-bold text-white">Delivery Timeline</td>
+                      <td className="py-3 px-4 text-slate-400">3 to 6 Months</td>
+                      <td className="py-3 px-4 text-slate-400">Immediate (Generic)</td>
+                      <td className="py-3 px-4 font-bold text-emerald-400 bg-blue-950/40">5 to 7 Business Days</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-4 font-bold text-white">Workflow Customization</td>
+                      <td className="py-3 px-4 text-slate-400">Custom (Expensive updates)</td>
+                      <td className="py-3 px-4 text-slate-400">Rigid / Cannot customize</td>
+                      <td className="py-3 px-4 font-bold text-cyan-300 bg-blue-950/40">100% Tailored to Your Process</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-4 font-bold text-white">Anti-Buddy Punching</td>
+                      <td className="py-3 px-4 text-slate-400">Extra $10k+ addon</td>
+                      <td className="py-3 px-4 text-slate-400">None / Basic PIN code</td>
+                      <td className="py-3 px-4 font-bold text-emerald-400 bg-blue-950/40">Built-in 1.00 Face Match AI</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* FAQs */}
+            <div className="space-y-4 max-w-4xl mx-auto">
+              <div className="text-center mb-6">
+                <span className="text-xs font-mono font-bold text-blue-600 uppercase tracking-wider">Got Questions?</span>
+                <h3 className="text-2xl font-bold text-slate-950 mt-1">Mobile App Development FAQ</h3>
+              </div>
+              {faqs.map((f, i) => (
+                <div key={i} className="rounded-2xl border border-slate-200 bg-slate-50/70 p-5">
+                  <button
+                    type="button"
+                    onClick={() => setActiveFaq(activeFaq === i ? -1 : i)}
+                    className="w-full text-left font-bold text-xs sm:text-sm text-slate-900 flex items-center justify-between"
+                  >
+                    <span>{f.q}</span>
+                    <span className="text-blue-600 font-mono text-base">{activeFaq === i ? '−' : '+'}</span>
+                  </button>
+                  {activeFaq === i && (
+                    <p className="mt-3 text-xs text-slate-600 leading-relaxed border-t border-slate-200 pt-3">
+                      {f.a}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Bottom Action */}
+            <div className="p-8 sm:p-10 rounded-3xl bg-blue-600 text-white text-center space-y-4 shadow-xl">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
+                Ready to build your custom business mobile app?
+              </h3>
+              <p className="text-blue-100 text-xs sm:text-sm max-w-xl mx-auto">
+                Schedule a quick 30-minute discovery call with Jose Rene Navarro. We'll outline your app requirements and give you a clear 5–7 day delivery timeline.
+              </p>
+              <div className="pt-2 flex flex-wrap justify-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => onOpenContactWithTier('Custom Mobile App Development (5-7 Days)', 'Commercial')}
+                  className="px-8 py-3.5 rounded-xl bg-white text-blue-900 font-bold text-xs uppercase tracking-wider shadow-md hover:bg-blue-50 transition"
+                >
+                  Book Free Consultation
+                </button>
+                <a
+                  href="tel:437-423-3456"
+                  className="px-6 py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs transition flex items-center gap-1.5"
+                >
+                  <SvgIcon name="phone" className="w-4 h-4" />
+                  <span>Call (437) 423-3456</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      );
+    }
+
+    // =========================================================================
+    // DEDICATED SEO PAGE: Website Development & Web Portals (Toronto & Canada)
+    // =========================================================================
+    function WebsiteDevPage({ onNavigate, onOpenContactWithTier }) {
+      return (
+        <div className="py-10 px-5 sm:px-8 bg-white min-h-screen">
+          <div className="max-w-7xl mx-auto space-y-12">
+            
+            {/* Breadcrumb */}
+            <div className="flex items-center justify-between border-b border-slate-200 pb-4">
+              <div className="flex items-center gap-2 text-xs font-mono text-blue-600 uppercase tracking-wider">
+                <button
+                  type="button"
+                  onClick={() => onNavigate('home')}
+                  className="hover:underline flex items-center gap-1 font-bold text-slate-700 hover:text-blue-600"
+                >
+                  <span>← Home</span>
+                </button>
+                <span className="text-slate-300">/</span>
+                <span className="text-slate-500">Services</span>
+                <span className="text-slate-300">/</span>
+                <span className="text-blue-600 font-bold">Business Website & Web Portals</span>
+              </div>
+              <button
+                type="button"
+                onClick={() => onOpenContactWithTier('Custom Web Portal Development', 'General')}
+                className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow transition flex items-center gap-1.5"
+              >
+                <SvgIcon name="mail" className="w-3.5 h-3.5" />
+                <span>Get a Quote</span>
+              </button>
+            </div>
+
+            {/* Hero */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              <div className="lg:col-span-7 space-y-6">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 font-mono text-xs font-bold uppercase tracking-wider">
+                  <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+                  <span>Web Portals & Centralized Cloud Dashboards</span>
+                </div>
+                <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-950 tracking-tight leading-tight">
+                  Custom Business Web Portals & Real-Time Management Hubs
+                </h1>
+                <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                  Connect your office staff, field supervisors, and business owners with high-speed web application dashboards. Manage live attendance, view task before/after photos, and export CRA-compliant payroll in 1 click from any browser.
+                </p>
+                <div className="flex flex-wrap items-center gap-4 pt-2">
+                  <button
+                    type="button"
+                    onClick={() => onOpenContactWithTier('Custom Web Portal & Management Hub', 'Commercial')}
+                    className="px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm shadow-lg shadow-blue-500/25 transition active:scale-95 flex items-center gap-2"
+                  >
+                    <SvgIcon name="sparkles" className="w-4 h-4 text-cyan-300" />
+                    <span>Request Web Portal Scope</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => onNavigate('work-done')}
+                    className="px-6 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs sm:text-sm transition flex items-center gap-2"
+                  >
+                    <span>View 5 Production Apps →</span>
+                  </button>
+                </div>
+              </div>
+
+              <div className="lg:col-span-5 bg-slate-950 p-8 rounded-3xl border border-slate-800 text-white shadow-2xl space-y-4">
+                <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider">Core Capabilities</span>
+                <h3 className="text-xl font-bold text-white">Full-Featured Web App Architecture</h3>
+                <ul className="space-y-2.5 text-xs text-slate-300">
+                  <li className="flex items-start gap-2">
+                    <SvgIcon name="check" className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <span><strong>1-Click CRA Payroll:</strong> Formatted regular vs overtime calculations ready for QuickBooks or ADP.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <SvgIcon name="check" className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <span><strong>Role-Based Access:</strong> Secure admin, supervisor, and field technician privilege tiers.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <SvgIcon name="check" className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <span><strong>Real-Time Synchronization:</strong> Zero lag between field smartphone submissions and office dashboards.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <SvgIcon name="check" className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <span><strong>Zero Installation Required:</strong> Instant desktop, laptop, and iPad browser access.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Bottom CTA */}
+            <div className="p-8 rounded-3xl bg-slate-900 text-white flex flex-col md:flex-row items-center justify-between gap-6 border border-slate-800">
+              <div>
+                <h3 className="text-xl font-bold text-white">Need a custom business web portal built in 5–7 days?</h3>
+                <p className="text-xs text-slate-400 mt-1">Talk directly with Jose Rene Navarro to map out your operations dashboard.</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => onOpenContactWithTier('Custom Business Web Portal', 'General')}
+                className="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shrink-0"
+              >
+                Schedule Free Consultation
+              </button>
+            </div>
+
+          </div>
+        </div>
+      );
+    }
+
+    // =========================================================================
+    // DEDICATED SEO PAGE: Software QA & Testing Services (Toronto & Canada)
+    // =========================================================================
+    function QaTestingPage({ onNavigate, onOpenContactWithTier }) {
+      return (
+        <div className="py-10 px-5 sm:px-8 bg-white min-h-screen">
+          <div className="max-w-7xl mx-auto space-y-12">
+            
+            {/* Breadcrumb */}
+            <div className="flex items-center justify-between border-b border-slate-200 pb-4">
+              <div className="flex items-center gap-2 text-xs font-mono text-blue-600 uppercase tracking-wider">
+                <button
+                  type="button"
+                  onClick={() => onNavigate('home')}
+                  className="hover:underline flex items-center gap-1 font-bold text-slate-700 hover:text-blue-600"
+                >
+                  <span>← Home</span>
+                </button>
+                <span className="text-slate-300">/</span>
+                <span className="text-slate-500">Services</span>
+                <span className="text-slate-300">/</span>
+                <span className="text-blue-600 font-bold">Software QA Testing & Audits</span>
+              </div>
+              <button
+                type="button"
+                onClick={() => onOpenContactWithTier('Website & Software QA Testing Audit', 'General')}
+                className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow transition flex items-center gap-1.5"
+              >
+                <SvgIcon name="shield-check" className="w-3.5 h-3.5" />
+                <span>Book QA Audit</span>
+              </button>
+            </div>
+
+            {/* Hero */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              <div className="lg:col-span-7 space-y-6">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-mono text-xs font-bold uppercase tracking-wider">
+                  <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                  <span>20+ Years Software QA Engineering Rigor</span>
+                </div>
+                <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-950 tracking-tight leading-tight">
+                  Website & Software Quality Assurance Testing Services
+                </h1>
+                <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                  A buggy application or broken website costs you clients, wasted payroll hours, and brand credibility. Senior QA Consultant <strong>Jose Rene Navarro</strong> provides rigorous manual and automated test audits to ensure zero defects, smooth user flows, and flawless performance across all mobile and desktop devices.
+                </p>
+                <div className="flex flex-wrap items-center gap-4 pt-2">
+                  <button
+                    type="button"
+                    onClick={() => onNavigate('home', 'qa-terminal')}
+                    className="px-6 py-3.5 rounded-xl bg-slate-950 hover:bg-slate-900 text-white font-bold text-xs sm:text-sm shadow-md transition flex items-center gap-2"
+                  >
+                    <SvgIcon name="terminal" className="w-4 h-4 text-cyan-400" />
+                    <span>Run Live QA Terminal Simulator</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => onOpenContactWithTier('Software QA & Usability Audit', 'General')}
+                    className="px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm transition flex items-center gap-2"
+                  >
+                    <span>Request QA Audit Quote</span>
+                  </button>
+                </div>
+              </div>
+
+              <div className="lg:col-span-5 bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 p-8 rounded-3xl border border-slate-800 text-white shadow-2xl space-y-4">
+                <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider">The 4-Step QA Methodology</span>
+                <h3 className="text-xl font-bold text-white">Engineering Quality Guarantee</h3>
+                <div className="space-y-3 pt-1 text-xs text-slate-300">
+                  <div className="p-3 bg-slate-900/90 rounded-xl border border-slate-800">
+                    <strong className="text-white block">1. Functional & Form Validation Testing:</strong>
+                    <span>Ensuring every field, calculation rule, and edge case works correctly without errors.</span>
+                  </div>
+                  <div className="p-3 bg-slate-900/90 rounded-xl border border-slate-800">
+                    <strong className="text-white block">2. Cross-Device & Browser Matrix:</strong>
+                    <span>Tested across Safari, Chrome, iOS iPhones, iPads, Android devices, and Windows desktops.</span>
+                  </div>
+                  <div className="p-3 bg-slate-900/90 rounded-xl border border-slate-800">
+                    <strong className="text-white block">3. Usability & Conversion Leak Audit:</strong>
+                    <span>Identifying friction points, confusing navigation, and dead ends that cause visitor drop-offs.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom CTA */}
+            <div className="p-8 rounded-3xl bg-slate-950 text-white flex flex-col md:flex-row items-center justify-between gap-6 border border-slate-800">
+              <div>
+                <h3 className="text-xl font-bold text-white">Have an existing website or app that needs testing?</h3>
+                <p className="text-xs text-slate-400 mt-1">Get an actionable defect report with reproduction steps and UX optimization advice.</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => onOpenContactWithTier('Software QA Audit for Existing App/Website', 'General')}
+                className="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shrink-0"
+              >
+                Book QA Consultation
+              </button>
+            </div>
+
+          </div>
+        </div>
+      );
+    }
+
+    // =========================================================================
+    // DEDICATED SEO PAGE: AI Biometrics & Face Verification Solutions
+    // =========================================================================
+    function AiSolutionsPage({ onNavigate, onOpenContactWithTier }) {
+      return (
+        <div className="py-10 px-5 sm:px-8 bg-white min-h-screen">
+          <div className="max-w-7xl mx-auto space-y-12">
+            
+            {/* Breadcrumb */}
+            <div className="flex items-center justify-between border-b border-slate-200 pb-4">
+              <div className="flex items-center gap-2 text-xs font-mono text-cyan-600 uppercase tracking-wider">
+                <button
+                  type="button"
+                  onClick={() => onNavigate('home')}
+                  className="hover:underline flex items-center gap-1 font-bold text-slate-700 hover:text-cyan-600"
+                >
+                  <span>← Home</span>
+                </button>
+                <span className="text-slate-300">/</span>
+                <span className="text-slate-500">Solutions</span>
+                <span className="text-slate-300">/</span>
+                <span className="text-cyan-600 font-bold">AI Biometric Face Verification</span>
+              </div>
+              <button
+                type="button"
+                onClick={() => onOpenContactWithTier('AI Face Verification System', 'Field Services')}
+                className="px-4 py-2 rounded-xl bg-slate-950 hover:bg-slate-900 text-cyan-400 border border-cyan-500/40 font-bold text-xs shadow transition flex items-center gap-1.5"
+              >
+                <SvgIcon name="scan-face" className="w-3.5 h-3.5" />
+                <span>Deploy AI Engine</span>
+              </button>
+            </div>
+
+            {/* Hero */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              <div className="lg:col-span-7 space-y-6">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-300 text-cyan-900 font-mono text-xs font-bold uppercase tracking-wider">
+                  <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
+                  <span>1.00 Match Precision · Anti-Buddy Punching System</span>
+                </div>
+                <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-950 tracking-tight leading-tight">
+                  AI Biometric Face Verification & Anti-Buddy Punching
+                </h1>
+                <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                  Stop timesheet fraud, buddy punching, and proxy clock-ins 100%. Our proprietary AI biometric camera engine scans 108 facial landmarks with strict 1.00 match precision, live anti-spoofing defense, and tamper-proof GPS coordinates.
+                </p>
+                <div className="flex flex-wrap items-center gap-4 pt-2">
+                  <button
+                    type="button"
+                    onClick={() => onNavigate('home', 'phone-simulator')}
+                    className="px-6 py-3.5 rounded-xl bg-slate-950 hover:bg-slate-900 text-cyan-300 border border-cyan-400/40 font-bold text-xs sm:text-sm shadow-xl transition flex items-center gap-2"
+                  >
+                    <SvgIcon name="scan-face" className="w-4 h-4" />
+                    <span>Test Biometric Scanner Live</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => onOpenContactWithTier('AI Face Verification System (1.00 Match)', 'Commercial')}
+                    className="px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm transition flex items-center gap-2"
+                  >
+                    <span>Get AI Biometrics for Your Team</span>
+                  </button>
+                </div>
+              </div>
+
+              <div className="lg:col-span-5 bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950 p-8 rounded-3xl border-2 border-cyan-400 shadow-2xl text-white space-y-4">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider">Biometric Security Standard</span>
+                  <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">1.00 Accuracy</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white">How the Anti-Buddy Punch Engine Works</h3>
+                <div className="space-y-3 pt-2 text-xs text-slate-300">
+                  <div className="p-3 bg-slate-900/90 rounded-xl border border-slate-800">
+                    <strong className="text-white block">1. Live Anti-Spoofing Camera:</strong>
+                    <span>Blocks photo-of-photo, static image gallery uploads, or screen replays.</span>
+                  </div>
+                  <div className="p-3 bg-slate-900/90 rounded-xl border border-slate-800">
+                    <strong className="text-white block">2. Strict 1.00 Face Match Score:</strong>
+                    <span>Compares facial geometry against the registered employee master profile in under 400ms.</span>
+                  </div>
+                  <div className="p-3 bg-slate-900/90 rounded-xl border border-slate-800">
+                    <strong className="text-white block">3. Instant Mismatch Alert & Geotag:</strong>
+                    <span>Any mismatch immediately blocks clock-in and notifies the operations supervisor.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom CTA */}
+            <div className="p-8 rounded-3xl bg-slate-950 text-white flex flex-col md:flex-row items-center justify-between gap-6 border border-cyan-500/30 shadow-xl">
+              <div>
+                <h3 className="text-xl font-bold text-white">Ready to eliminate buddy punching from your field operations?</h3>
+                <p className="text-xs text-slate-400 mt-1">Get custom AI Face Verification deployed for your workforce in 5–7 business days.</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => onOpenContactWithTier('AI Face Verification System Deployment', 'Field Services')}
+                className="px-6 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-extrabold text-xs shrink-0"
+              >
+                Schedule AI Demo
+              </button>
+            </div>
+
+          </div>
+        </div>
+      );
+    }
+
+    // =========================================================================
+    // DEDICATED SEO PAGE: Field Services & Industry Hub (Toronto & Canada)
+    // =========================================================================
+    function FieldServicesPage({ onNavigate, onOpenContactWithTier }) {
+      const [activeCategory, setActiveCategory] = useState('all');
+
+      const industries = [
+        {
+          id: 'cleaning',
+          name: 'Commercial Cleaning & Janitorial',
+          category: 'cleaning-facilities',
+          badge: 'High Demand',
+          desc: 'Mandatory before/after photo shift checklists, restroom sanitation verification, chemical supply logs, and strict biometric face check-in for cleaning staff.',
+          tasks: ['High-Touch Sanitation Verification', 'Restroom Par-Level Restock Log', 'Floor Buffing Photo Upload'],
+          appRole: 'Lead Commercial Cleaner'
+        },
+        {
+          id: 'construction',
+          name: 'Construction Teams & General Contractors',
+          category: 'trades-construction',
+          badge: 'CRA-Ready',
+          desc: 'Multi-site crew attendance, mandatory morning PPE safety check sign-offs, tool & equipment staging logs, and Ontario ESA overtime math.',
+          tasks: ['Morning PPE Safety Checklist', 'Heavy Tool Staging Log', 'End-of-Day Lockup Verification'],
+          appRole: 'Site Foreman & Crew'
+        },
+        {
+          id: 'security',
+          name: 'Security Guard & Mobile Patrols',
+          category: 'security-facilities',
+          badge: 'Tamper-Proof',
+          desc: 'GPS guard tour checkpoints, loading dock NFC scans, perimeter inspection records, and incident logging with timestamped photo uploads.',
+          tasks: ['Gate & Dock NFC Checkpoint Scan', 'Perimeter Fence & CCTV Log', 'Incident Photo Evidence'],
+          appRole: 'Night Patrol Officer'
+        },
+        {
+          id: 'landscaping',
+          name: 'Landscaping & Snow Removal',
+          category: 'trades-construction',
+          badge: 'Seasonal Ops',
+          desc: 'Commercial mower safety checks, turf irrigation/fertilizer treatment records, before & after property photo evidence, and winter snow route logs.',
+          tasks: ['Commercial Mower Safety Check', 'Turf Irrigation & Fertilizer Log', 'Before & After Property Photo'],
+          appRole: 'Grounds Supervisor'
+        },
+        {
+          id: 'delivery',
+          name: 'Delivery, Courier & Logistics',
+          category: 'logistics-fleet',
+          badge: 'Fleet Tracking',
+          desc: 'Vehicle pre-trip inspections, odometer logs, package manifest barcode scans, and customer proof-of-delivery signature capture.',
+          tasks: ['Pre-Trip Vehicle Inspection', 'Package Manifest Barcode Scan', 'Proof of Delivery Signature'],
+          appRole: 'Route Driver & Dispatch'
+        },
+        {
+          id: 'healthcare',
+          name: 'Healthcare, Dental & Specialized Clinics',
+          category: 'specialty-services',
+          badge: 'Compliance',
+          desc: 'Exam room disinfection logs, autoclave sterilization cycle verification, daily medical inventory counts, and staff shift check-in.',
+          tasks: ['Exam Room Disinfection Log', 'Autoclave Cycle Verification', 'Medical Supply Par-Level Count'],
+          appRole: 'Clinical Operations Assistant'
+        },
+        {
+          id: 'driving-school',
+          name: 'Driving Schools & Fleet Instruction',
+          category: 'logistics-fleet',
+          badge: 'Live Case Study',
+          desc: 'In-car instructor scheduling, student driving lesson progress checklists, dual-control vehicle safety inspections, and automated student certificates.',
+          tasks: ['In-Car Student Progress Log', 'Instructor Schedule Synchronization', 'Dual-Control Safety Inspection'],
+          appRole: 'Certified Driving Instructor'
+        },
+        {
+          id: 'property-management',
+          name: 'Property Management & Facilities',
+          category: 'cleaning-facilities',
+          badge: 'Live Case Study',
+          desc: 'Tenant maintenance ticket dispatch, unit turnover inspection checklists, photo defect logs, and vendor contractor work sign-offs.',
+          tasks: ['Unit Turnover Inspection Log', 'Defect Photo Documentation', 'Contractor Sign-Off & Receipt'],
+          appRole: 'Property Operations Lead'
+        },
+        {
+          id: 'faith-ministry',
+          name: 'Faith Communities & Ministries',
+          category: 'specialty-services',
+          badge: 'Community Resource',
+          desc: 'Worship team directories, music repertoire databases, audio asset sharing, volunteer scheduling, and event rehearsal check-in.',
+          tasks: ['Volunteer Rehearsal Roster', 'Song & Audio Repertoire Directory', 'Event Ministry Coordination'],
+          appRole: 'Ministry Director & Volunteers'
+        },
+        {
+          id: 'hvac-plumbing',
+          name: 'HVAC, Plumbing & Electrical Contractors',
+          category: 'trades-construction',
+          badge: 'Fast Dispatch',
+          desc: 'Job dispatch, digital work order completion, equipment serial number logging, diagnostic before/after photo capture, and instant customer sign-offs.',
+          tasks: ['Work Order Dispatch & Routing', 'Equipment Serial Number Log', 'Customer Digital Signature'],
+          appRole: 'Licensed Field Technician'
+        },
+        {
+          id: 'roofing-exterior',
+          name: 'Roofing, Siding & Exterior Contracting',
+          category: 'trades-construction',
+          badge: 'Safety Critical',
+          desc: 'Fall protection & safety harness verification, high-resolution roof inspection photo uploads, material delivery receipt logging, and job sign-offs.',
+          tasks: ['Fall Protection Safety Check', 'Roof Inspection Photo Upload', 'Material Receipt & Sign-Off'],
+          appRole: 'Exterior Project Lead'
+        },
+        {
+          id: 'pest-control',
+          name: 'Pest Control & Extermination Services',
+          category: 'cleaning-facilities',
+          badge: 'Audit-Proof',
+          desc: 'Trap inspection & bait station status logs, chemical application compliance records, technician GPS check-in, and digital customer receipts.',
+          tasks: ['Bait Station Checkpoints', 'Chemical Application Log', 'Customer Digital Service Slip'],
+          appRole: 'Licensed Exterminator'
+        },
+        {
+          id: 'waste-junk',
+          name: 'Waste Management & Junk Removal',
+          category: 'logistics-fleet',
+          badge: 'Route Logistics',
+          desc: 'Bin placement & pickup geotagging, landfill disposal receipt scans, volume estimation photo logs, and truck route completion records.',
+          tasks: ['Bin Geotag & Drop-Off Log', 'Disposal Weight Receipt Scan', 'Truck Route Completion Check'],
+          appRole: 'Route Driver & Crew'
+        },
+        {
+          id: 'catering-hospitality',
+          name: 'Catering, Hospitality & Event Services',
+          category: 'specialty-services',
+          badge: 'Event Ops',
+          desc: 'Event banquet setup checklists, food safety temperature logs, banquet staff biometric check-in, and catering equipment return counts.',
+          tasks: ['Banquet Hall Setup Checklist', 'Food Safety Temp Compliance', 'Banquet Staff Biometric Check-In'],
+          appRole: 'Event Operations Lead'
+        }
+      ];
+
+      const filteredIndustries = useMemo(() => {
+        if (activeCategory === 'all') return industries;
+        return industries.filter(ind => ind.category === activeCategory);
+      }, [activeCategory]);
+
+      return (
+        <div className="py-10 px-5 sm:px-8 bg-white min-h-screen">
+          <div className="max-w-7xl mx-auto space-y-12">
+            
+            {/* Breadcrumb */}
+            <div className="flex items-center justify-between border-b border-slate-200 pb-4">
+              <div className="flex items-center gap-2 text-xs font-mono text-blue-600 uppercase tracking-wider">
+                <button
+                  type="button"
+                  onClick={() => onNavigate('home')}
+                  className="hover:underline flex items-center gap-1 font-bold text-slate-700 hover:text-blue-600"
+                >
+                  <span>← Home</span>
+                </button>
+                <span className="text-slate-300">/</span>
+                <span className="text-slate-500">Industries</span>
+                <span className="text-slate-300">/</span>
+                <span className="text-blue-600 font-bold">Field Services & Trade Operations</span>
+              </div>
+              <button
+                type="button"
+                onClick={() => onOpenContactWithTier('Industry App for Field Services', 'Commercial Cleaning')}
+                className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow transition flex items-center gap-1.5"
+              >
+                <SvgIcon name="mail" className="w-3.5 h-3.5" />
+                <span>Get Industry Quote</span>
+              </button>
+            </div>
+
+            {/* Hero */}
+            <div className="text-center max-w-3xl mx-auto space-y-4">
+              <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-200 font-mono">
+                Field Workforce Systems · Toronto & Canada
+              </span>
+              <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-950 tracking-tight leading-tight">
+                Custom Mobile Apps Built for Canadian Field Services & Operational Trades
+              </h1>
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                Ditch lost paper timesheets, disputed client bills, and messy clipboards. We build bespoke mobile PWAs & web portals tailored to your specific industry workflow in just <strong>5 to 7 business days</strong>.
+              </p>
+            </div>
+
+            {/* Industry Filter Tabs */}
+            <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
+              <button
+                type="button"
+                onClick={() => setActiveCategory('all')}
+                className={`px-4 py-2 rounded-xl text-xs font-bold transition ${activeCategory === 'all' ? 'bg-slate-950 text-white shadow' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
+              >
+                All Industries ({industries.length})
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveCategory('cleaning-facilities')}
+                className={`px-4 py-2 rounded-xl text-xs font-bold transition ${activeCategory === 'cleaning-facilities' ? 'bg-blue-600 text-white shadow' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
+              >
+                Cleaning & Facilities ({industries.filter(i => i.category === 'cleaning-facilities').length})
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveCategory('trades-construction')}
+                className={`px-4 py-2 rounded-xl text-xs font-bold transition ${activeCategory === 'trades-construction' ? 'bg-blue-600 text-white shadow' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
+              >
+                Trades & Construction ({industries.filter(i => i.category === 'trades-construction').length})
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveCategory('security-facilities')}
+                className={`px-4 py-2 rounded-xl text-xs font-bold transition ${activeCategory === 'security-facilities' ? 'bg-blue-600 text-white shadow' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
+              >
+                Security & Patrols ({industries.filter(i => i.category === 'security-facilities').length})
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveCategory('logistics-fleet')}
+                className={`px-4 py-2 rounded-xl text-xs font-bold transition ${activeCategory === 'logistics-fleet' ? 'bg-blue-600 text-white shadow' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
+              >
+                Logistics & Fleet ({industries.filter(i => i.category === 'logistics-fleet').length})
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveCategory('specialty-services')}
+                className={`px-4 py-2 rounded-xl text-xs font-bold transition ${activeCategory === 'specialty-services' ? 'bg-blue-600 text-white shadow' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
+              >
+                Healthcare & Specialty ({industries.filter(i => i.category === 'specialty-services').length})
+              </button>
+            </div>
+
+            {/* Comprehensive Industry Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredIndustries.map((ind) => (
+                <div key={ind.id} className="p-7 rounded-3xl border border-slate-200 bg-slate-50/70 hover:bg-white hover:border-blue-400 hover:shadow-xl transition space-y-4 flex flex-col justify-between group">
+                  <div>
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded bg-blue-100 text-blue-800 uppercase tracking-wider">{ind.badge}</span>
+                      <span className="text-[10px] font-mono text-emerald-600 font-bold">5–7 Day Turnaround</span>
+                    </div>
+
+                    <h3 className="text-lg font-bold text-slate-950 mt-3 group-hover:text-blue-600 transition-colors">{ind.name}</h3>
+                    <p className="text-xs text-slate-600 mt-2 leading-relaxed">{ind.desc}</p>
+
+                    {/* Previews of Key Tasks Built Into App */}
+                    <div className="mt-4 pt-3 border-t border-slate-200/80 space-y-1.5">
+                      <div className="text-[9px] font-mono uppercase font-bold text-slate-400">Sample Task Checklists:</div>
+                      {ind.tasks.map((task) => (
+                        <div key={task} className="flex items-center gap-1.5 text-[11px] text-slate-700">
+                          <span className="text-emerald-500 font-bold">✓</span>
+                          <span className="line-clamp-1">{task}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
+                    <button
+                      type="button"
+                      onClick={() => onOpenContactWithTier(`Custom App for ${ind.name}`, ind.name)}
+                      className="text-xs font-bold text-blue-600 hover:underline"
+                    >
+                      Request {ind.name.split('&')[0].trim()} App →
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => onNavigate('home', 'phone-simulator')}
+                      className="text-[11px] px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-blue-600 text-white transition font-medium"
+                    >
+                      Simulator
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Bottom Callout */}
+            <div className="p-8 sm:p-10 rounded-3xl bg-slate-950 text-white text-center space-y-4 shadow-xl border border-slate-800">
+              <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider">Custom Trade Architecture</span>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
+                Don't see your exact trade or business workflow?
+              </h3>
+              <p className="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
+                Jose Rene Navarro custom-engineers mobile & web apps for any operational business. If your team relies on field staff, checklists, timesheets, or dispatching, we can build your tailored solution in <strong>5 to 7 business days</strong>.
+              </p>
+              <div className="pt-2 flex flex-wrap justify-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => onOpenContactWithTier('Custom Industry Workflow App', 'Custom Trade')}
+                  className="px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-blue-600/30 transition"
+                >
+                  Book 30-Minute Trade Discovery Call
+                </button>
+                <a
+                  href="tel:437-423-3456"
+                  className="px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-700 hover:border-slate-500 text-slate-200 hover:text-white font-bold text-xs transition flex items-center gap-1.5"
+                >
+                  <SvgIcon name="phone" className="w-4 h-4 text-cyan-400" />
+                  <span>Call (437) 423-3456</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      );
+    }
+
+    // =========================================================================
+    // DEDICATED SEO PAGE: Contact & Consultation Booking
+    // =========================================================================
+    function ContactPage({ onNavigate, initialTier, initialIndustry }) {
+      return (
+        <div className="py-10 px-5 sm:px-8 bg-white min-h-screen">
+          <div className="max-w-7xl mx-auto space-y-8">
+            <div className="flex items-center gap-2 text-xs font-mono text-blue-600 uppercase tracking-wider border-b border-slate-200 pb-4">
+              <button
+                type="button"
+                onClick={() => onNavigate('home')}
+                className="hover:underline flex items-center gap-1 font-bold text-slate-700 hover:text-blue-600"
+              >
+                <span>← Home</span>
+              </button>
+              <span className="text-slate-300">/</span>
+              <span className="text-blue-600 font-bold">Contact & Discovery Consultation</span>
+            </div>
+
+            <ContactSection
+              initialTier={initialTier}
+              initialIndustry={initialIndustry}
+            />
+          </div>
+        </div>
+      );
+    }
+
+    // =========================================================================
     // FEATURE: What Jose Actually Does (3 Core Pillars from Blog)
     // =========================================================================
     function CoreServicesSection({ onNavigate }) {
@@ -1567,7 +2496,7 @@
                   onClick={() => setActiveTab('glide')}
                   className={`px-5 py-2 rounded-lg text-xs font-bold transition ${activeTab === 'glide' ? 'bg-blue-600 text-white shadow' : 'text-slate-700 hover:text-slate-900'}`}
                 >
-                  The Proofly & QA Way (Jose's System)
+                  The My Mobile Apps & QA Way (Jose's Architecture)
                 </button>
               </div>
             </div>
@@ -1621,7 +2550,7 @@
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                   <div className="md:col-span-5 bg-slate-900 border border-slate-700 p-6 rounded-2xl text-xs space-y-3 shadow-inner">
                     <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-                      <span className="font-bold text-cyan-400">Proofly Mobile & Web Engine</span>
+                      <span className="font-bold text-cyan-400">My Mobile Apps Engine</span>
                       <span className="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded font-mono">100% VERIFIED</span>
                     </div>
                     <div className="space-y-2">
@@ -1648,7 +2577,7 @@
                   </div>
 
                   <div className="md:col-span-7 space-y-4">
-                    <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider font-mono">The Proofly Advantage</span>
+                    <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider font-mono">The My Mobile Apps Advantage</span>
                     <h3 className="text-2xl font-bold text-white">Full accountability in 7 business days</h3>
                     <ul className="space-y-3 text-xs text-slate-300">
                       <li className="flex items-start gap-2">
@@ -1679,7 +2608,7 @@
     }
 
     // =========================================================================
-    // FEATURE: Proofly 4-Level Architecture Roadmap
+    // FEATURE: Modular Architecture Tiers Roadmap
     // =========================================================================
     function ProoflyLevelsSection({ onOpenTierFlyer, onNavigate }) {
       return (
@@ -1688,7 +2617,7 @@
             
             <div className="text-center max-w-3xl mx-auto mb-14">
               <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200 font-mono">
-                The Proofly Architecture (Pages 1 & 2 of PDF)
+                The 4 Modular Architecture Tiers (Levels 1 to 4)
               </span>
               <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-950">
                 A Modular Mobile & Web Workforce System That Grows With You
@@ -2192,7 +3121,7 @@
                     With more than <strong>20 years in software quality assurance</strong>, I have tested and supported mobile applications, enterprise websites, embedded systems, and business platforms across diverse industries.
                   </p>
                   <p>
-                    My expertise spans test planning, defect management, usability testing, cross-device verification, and release certification. Seeing businesses struggle with lost paper forms, unreadable handwriting, and fragile spreadsheets inspired me to create <strong>Proofly</strong>.
+                    My expertise spans test planning, defect management, usability testing, cross-device verification, and release certification. Seeing businesses struggle with lost paper forms, unreadable handwriting, and fragile spreadsheets inspired me to create <strong>My Mobile Apps</strong>.
                   </p>
                   <p>
                     Today, I combine this extensive testing experience with <strong>Glide no-code innovation</strong> to build practical, affordable, and dependable mobile and web apps that businesses can count on.
@@ -2219,20 +3148,20 @@
 
       const faqs = [
         {
-          q: 'What is Proofly and how does it work on mobile and web?',
-          a: 'Proofly is an AI-verified workforce management system built by Jose Rene Navarro. Field staff use their phones for biometric face check-in and photo task proof, while supervisors and dispatchers manage scheduling and CRA payroll from any web browser or tablet.'
+          q: 'What does My Mobile Apps build and how does it work on mobile and web?',
+          a: 'My Mobile Apps is a custom mobile and web application studio with AI verification built by Jose Rene Navarro. Field staff use their phones for biometric face check-in and photo task proof, while supervisors and dispatchers manage scheduling and CRA payroll from any web browser or tablet.'
         },
         {
           q: 'Do workers need to install complex software or download third-party files?',
-          a: 'No! Proofly apps run as modern Progressive Web Apps (PWAs). Employees simply scan a QR code or tap a secure link to add the app icon directly to their smartphone home screen in 5 seconds with zero download hurdles or complex updates.'
+          a: 'No! My Mobile Apps run as modern Progressive Web Apps (PWAs). Employees simply scan a QR code or tap a secure link to add the app icon directly to their smartphone home screen in 5 seconds with zero download hurdles or complex updates.'
         },
         {
           q: 'Why does 20+ years of Software QA matter for a mobile & web app?',
           a: 'Anyone can make a simple prototype. But ensuring an app does not crash when 40 workers clock in at once, correctly caches photos during basement signal blackouts, and calculates Ontario overtime math without human error requires engineering rigor.'
         },
         {
-          q: 'Can Proofly export hours directly to my payroll or accountant?',
-          a: 'Yes. Proofly formats verified shift hours into clean CSV spreadsheets broken down by employee, regular hours, overtime, and site tags, ready for QuickBooks, Sage, ADP, or your accountant.'
+          q: 'Can My Mobile Apps export hours directly to my payroll or accountant?',
+          a: 'Yes. My Mobile Apps formats verified shift hours into clean CSV spreadsheets broken down by employee, regular hours, overtime, and site tags, ready for QuickBooks, Sage, ADP, or your accountant.'
         },
         {
           q: 'How long does it take to launch our custom mobile or web app?',
@@ -2283,7 +3212,7 @@
       const [businessName, setBusinessName] = useState('');
       const [email, setEmail] = useState('');
       const [phone, setPhone] = useState('');
-      const [projectType, setProjectType] = useState(initialTier || 'Proofly Level 1: Attendance & Tasks');
+      const [projectType, setProjectType] = useState(initialTier || 'Level 1: Attendance & Tasks (Mobile & Web)');
       const [industry, setIndustry] = useState(initialIndustry || 'Commercial Cleaning');
       const [message, setMessage] = useState(initialMessage || '');
 
@@ -2368,7 +3297,7 @@
                       </span>
                     </h3>
                     <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                      You are requesting a custom application engineered around <strong>AI Face Biometrics</strong>. When your field staff clock in, Proofly's camera engine compares their live facial geometry against their registered employee profile. Old gallery uploads are blocked, preventing buddy punching and time theft 100%.
+                      You are requesting a custom application engineered around <strong>AI Face Biometrics</strong>. When your field staff clock in, our camera engine compares their live facial geometry against their registered employee profile. Old gallery uploads are blocked, preventing buddy punching and time theft 100%.
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
                       <div className="flex items-center gap-2 text-xs text-slate-200">
@@ -2576,19 +3505,19 @@
                           className="w-full h-10 px-3 rounded-xl border border-slate-300 bg-white text-slate-900 focus:ring-2 focus:ring-blue-600 focus:outline-none"
                         >
                           <option>AI Face Verification & Mobile Attendance App (Anti-Buddy Punching)</option>
-                          <option>Proofly Level 1: Attendance & Tasks</option>
-                          <option>Proofly Level 2: Team Messaging</option>
-                          <option>Proofly Level 3: CRA-Ready Payroll</option>
-                          <option>Proofly Level 4: Smart Scheduling</option>
+                          <option>Level 1: Attendance & Tasks (Mobile & Web)</option>
+                          <option>Level 2: Team Messaging & Announcements</option>
+                          <option>Level 3: CRA-Ready Payroll & Overtime Math</option>
+                          <option>Level 4: Smart Scheduling & GPS Dispatch</option>
                           <option>Free App Access: CFC Music Ministry</option>
                           <option>Custom Mobile & Web Application</option>
                           <option>Website QA & Usability Audit</option>
                           {projectType && ![
                             'AI Face Verification & Mobile Attendance App (Anti-Buddy Punching)',
-                            'Proofly Level 1: Attendance & Tasks',
-                            'Proofly Level 2: Team Messaging',
-                            'Proofly Level 3: CRA-Ready Payroll',
-                            'Proofly Level 4: Smart Scheduling',
+                            'Level 1: Attendance & Tasks (Mobile & Web)',
+                            'Level 2: Team Messaging & Announcements',
+                            'Level 3: CRA-Ready Payroll & Overtime Math',
+                            'Level 4: Smart Scheduling & GPS Dispatch',
                             'Free App Access: CFC Music Ministry',
                             'Custom Mobile & Web Application',
                             'Website QA & Usability Audit'
@@ -2688,7 +3617,7 @@
             phone: phoneMatch ? phoneMatch[0] : '',
             details: raw
           },
-          suggestions: ['Tell me about Proofly Level 1', 'How does delivery work in 5-7 days?', 'Call Jose: (437) 423-3456']
+          suggestions: ['Tell me about Level 1 App Tier', 'How does delivery work in 5-7 days?', 'Call Jose: (437) 423-3456']
         };
       }
 
@@ -2733,7 +3662,7 @@
         const total = parseFloat(percentMatch[2]);
         const res = (pct / 100) * total;
         return {
-          reply: `🔢 **Calculation Result**:\n\n**${pct}% of ${total} = ${res}**\n\nNeed to calculate payroll hours, overtime rates, or cost savings for your team? Proofly Level 3 automates regular vs. overtime calculations under Ontario ESA regulations automatically!`,
+          reply: `🔢 **Calculation Result**:\n\n**${pct}% of ${total} = ${res}**\n\nNeed to calculate payroll hours, overtime rates, or cost savings for your team? Our Level 3 Suite automates regular vs. overtime calculations under Ontario ESA regulations automatically!`,
           suggestions: ['Explain Level 3 CRA Payroll', 'How much does an app cost?', 'Book a discovery call']
         };
       } else if (mathMatch) {
@@ -2751,8 +3680,8 @@
 
         if (result !== null) {
           return {
-            reply: `🔢 **Calculation Result**:\n\n**${num1} ${opSymbol} ${num2} = ${result}**\n\nJust like ChatGPT, I can handle calculations, timesheet arithmetic, and operational logic. Proofly apps use this same precision for automated CRA payroll hours and overtime calculations!`,
-            suggestions: ['Calculate overtime for 44+ hrs', 'What is Proofly Level 3?', 'Book a consultation']
+            reply: `🔢 **Calculation Result**:\n\n**${num1} ${opSymbol} ${num2} = ${result}**\n\nJust like ChatGPT, I can handle calculations, timesheet arithmetic, and operational logic. My Mobile Apps uses this same precision for automated CRA payroll hours and overtime calculations!`,
+            suggestions: ['Calculate overtime for 44+ hrs', 'What is Level 3?', 'Book a consultation']
           };
         }
       }
@@ -2760,8 +3689,8 @@
       // 7. Ontario Overtime / ESA Calculation Questions
       if (q.includes('overtime') || q.includes('esa') || q.includes('44 hour') || q.includes('payroll rule')) {
         return {
-          reply: `⚖️ **Ontario Employment Standards Act (ESA) Overtime Calculation**:\n\nIn Ontario, overtime must be paid after an employee works **44 hours** in a work week:\n\n• **Regular Hours**: Up to 44 hours per week (paid at standard hourly wage).\n• **Overtime Hours**: Every hour beyond 44 is paid at **1.5× the regular rate** ("time and a half").\n• **Example**: If an employee works 48 hours at $20/hr:\n  - Regular: 44 hrs × $20 = $880\n  - Overtime: 4 hrs × $30 (1.5×) = $120\n  - Total Gross: **$1,000**\n\n📊 **Proofly Level 3** automatically computes this split down to the exact minute and outputs 1-click CRA-ready CSV spreadsheets!`,
-          suggestions: ['Explain Proofly Level 3', 'How fast can you build our app?', 'Schedule a consultation']
+          reply: `⚖️ **Ontario Employment Standards Act (ESA) Overtime Calculation**:\n\nIn Ontario, overtime must be paid after an employee works **44 hours** in a work week:\n\n• **Regular Hours**: Up to 44 hours per week (paid at standard hourly wage).\n• **Overtime Hours**: Every hour beyond 44 is paid at **1.5× the regular rate** ("time and a half").\n• **Example**: If an employee works 48 hours at $20/hr:\n  - Regular: 44 hrs × $20 = $880\n  - Overtime: 4 hrs × $30 (1.5×) = $120\n  - Total Gross: **$1,000**\n\n📊 **Level 3 Suite** automatically computes this split down to the exact minute and outputs 1-click CRA-ready CSV spreadsheets!`,
+          suggestions: ['Explain Level 3 Suite', 'How fast can you build our app?', 'Schedule a consultation']
         };
       }
 
@@ -2782,8 +3711,8 @@
         }
 
         return {
-          reply: `💻 **Here is your ${language} code sample:**\n\n\`\`\`${language.toLowerCase().split(' ')[0]}\n${sampleCode}\n\`\`\`\n\nAt Proofly, Jose Rene Navarro applies **20+ years of Software QA Engineering rigor** to all software architectures, ensuring clean code, zero crashes, and enterprise performance.\n\nWould you like this logic built into a custom mobile/web application for your business?`,
-          suggestions: ['Can you build an app for my team?', 'What is Proofly Level 1?', 'Book a consultation']
+          reply: `💻 **Here is your ${language} code sample:**\n\n\`\`\`${language.toLowerCase().split(' ')[0]}\n${sampleCode}\n\`\`\`\n\nAt My Mobile Apps, Jose Rene Navarro applies **20+ years of Software QA Engineering rigor** to all software architectures, ensuring clean code, zero crashes, and enterprise performance.\n\nWould you like this logic built into a custom mobile/web application for your business?`,
+          suggestions: ['Can you build an app for my team?', 'What is Level 1?', 'Book a consultation']
         };
       }
 
@@ -2795,11 +3724,11 @@
         };
       }
 
-      // 10. Paper / Excel vs. Digital Proofly
+      // 10. Paper / Excel vs. Digital Systems
       if (q.includes('excel') || q.includes('spreadsheet') || q.includes('paper') || q.includes('manual') || q.includes('whatsapp') || q.includes('text message')) {
         return {
-          reply: `📑 **Why Spreadsheets & Paper Fall Apart for Field Teams**:\n\n• **Buddy Punching & Dishonest Hours**: Paper timesheets and WhatsApp check-ins cannot verify identity or location.\n• **Lost Documentation**: Paper inspection checklists get stained, lost, or forged. Proofly requires live photo evidence before clocking out.\n• **Endless Payroll Disputes**: Managers spend 15+ hours every pay period deciphering messy handwriting and arguing over missing hours.\n• **The Proofly Fix**: AI Face Biometrics (1.00 match score), GPS timestamping, and 1-click CRA payroll export.\n\nReady to ditch the paper clipboard for good?`,
-          suggestions: ['Explain Proofly Level 1', 'How fast is delivery?', 'Book a 30-min discovery call']
+          reply: `📑 **Why Spreadsheets & Paper Fall Apart for Field Teams**:\n\n• **Buddy Punching & Dishonest Hours**: Paper timesheets and WhatsApp check-ins cannot verify identity or location.\n• **Lost Documentation**: Paper inspection checklists get stained, lost, or forged. Our apps require live photo evidence before clocking out.\n• **Endless Payroll Disputes**: Managers spend 15+ hours every pay period deciphering messy handwriting and arguing over missing hours.\n• **The Digital Fix**: AI Face Biometrics (1.00 match score), GPS timestamping, and 1-click CRA payroll export.\n\nReady to ditch the paper clipboard for good?`,
+          suggestions: ['Explain Level 1 App', 'How fast is delivery?', 'Book a 30-min discovery call']
         };
       }
 
@@ -2815,35 +3744,35 @@
 
         return {
           reply: `🏢 **Custom Mobile & Web App Scoping for ${industry}**:\n\nJose Rene Navarro specializes in building rapid, high-impact operational apps for field and service teams. Here is a recommended architecture for your team:\n\n• **Frontline Mobile PWA**: Staff clock in on their smartphones using **AI Biometric Face Verification** (eliminates buddy punching) with GPS geofencing at client job sites.\n• **Task Checklists & Photo Evidence**: Mandatory shift checklist requiring before/after photos of finished work before clocking out.\n• **Real-Time Web Portal**: Managers and dispatchers see live team attendance, instant photo proof, and automated alerts for late arrivals.\n• **1-Click CRA Payroll**: Automatically compiles regular vs. overtime hours compliant with Ontario ESA standards.\n\n⏱️ **Timeline**: Ready for production deployment in just **5 to 7 business days**!\n\nWould you like to book a 30-minute discovery call with Jose to review your requirements?`,
-          suggestions: ['Book a discovery call', 'How much does it cost?', 'What is Proofly Level 1?']
+          suggestions: ['Book a discovery call', 'How much does it cost?', 'What is Level 1?']
         };
       }
 
-      // 12. Proofly Levels 1 to 4
+      // 12. Modular Tiers (Levels 1 to 4)
       if (q.includes('level 1') || q.includes('foundation') || (q.includes('level') && q.includes('1'))) {
         return {
-          reply: `📱 **Proofly Level 1: Foundation Suite (Attendance + Task Verification)**\n\nEngineered specifically to solve the #1 problem in field operations: unverified hours and incomplete jobs.\n\n• **AI Biometric Face Verification**: Strict Face Score 1.00 match prevents buddy punching 100%.\n• **Late Arrival & Missing Checkout Alerts**: Real-time push notifications when staff miss shifts.\n• **Mandatory Shift Task Lists**: Field staff upload photo evidence of completed work.\n• **Manager Web Dashboard**: Live visibility over all shifts across multiple client locations.\n• **Turnaround**: 5 to 7 business days.\n• **Admin Savings**: 10+ hours per week in eliminated timesheet disputes.\n\nWould you like to see how Level 1 deploys for your team?`,
-          suggestions: ['What is Proofly Level 2?', 'How does face verification work?', 'Book a consultation']
+          reply: `📱 **Level 1: Foundation Suite (Attendance + Task Verification)**\n\nEngineered specifically to solve the #1 problem in field operations: unverified hours and incomplete jobs.\n\n• **AI Biometric Face Verification**: Strict Face Score 1.00 match prevents buddy punching 100%.\n• **Late Arrival & Missing Checkout Alerts**: Real-time push notifications when staff miss shifts.\n• **Mandatory Shift Task Lists**: Field staff upload photo evidence of completed work.\n• **Manager Web Dashboard**: Live visibility over all shifts across multiple client locations.\n• **Turnaround**: 5 to 7 business days.\n• **Admin Savings**: 10+ hours per week in eliminated timesheet disputes.\n\nWould you like to see how Level 1 deploys for your team?`,
+          suggestions: ['What is Level 2?', 'How does face verification work?', 'Book a consultation']
         };
       }
 
       if (q.includes('level 2') || q.includes('communication') || (q.includes('level') && q.includes('2'))) {
         return {
-          reply: `💬 **Proofly Level 2: Communication Suite (Attendance + Tasks + Team Chat)**\n\nCentralizes team operations and eliminates chaotic personal WhatsApp and SMS text threads.\n\n• **Everything in Level 1**: Full AI biometric attendance & photo-verified task checklists.\n• **Direct In-App Staff Messaging**: 1-on-1 and group communication between management and field crew.\n• **Broadcast Announcements**: Company-wide notices, safety updates, and shift reminders with read receipts.\n• **Turnaround**: 5 to 7 business days.\n• **Admin Savings**: 15+ hours per week in streamlined team communication.\n\nWould you like to explore Level 3 with CRA payroll automation?`,
+          reply: `💬 **Level 2: Communication Suite (Attendance + Tasks + Team Chat)**\n\nCentralizes team operations and eliminates chaotic personal WhatsApp and SMS text threads.\n\n• **Everything in Level 1**: Full AI biometric attendance & photo-verified task checklists.\n• **Direct In-App Staff Messaging**: 1-on-1 and group communication between management and field crew.\n• **Broadcast Announcements**: Company-wide notices, safety updates, and shift reminders with read receipts.\n• **Turnaround**: 5 to 7 business days.\n• **Admin Savings**: 15+ hours per week in streamlined team communication.\n\nWould you like to explore Level 3 with CRA payroll automation?`,
           suggestions: ['Tell me about Level 3 Payroll', 'What is Level 1?', 'Book a discovery consultation']
         };
       }
 
       if (q.includes('level 3') || q.includes('payroll') || q.includes('cra') || (q.includes('level') && q.includes('3'))) {
         return {
-          reply: `💰 **Proofly Level 3: Workforce Management & CRA Payroll Suite**\n\nTransforms messy handwriting and disputed timesheets into audit-proof payroll exports.\n\n• **Everything in Levels 1 & 2**: AI facial attendance, task photo proof, and team messaging.\n• **Automated Hours & Overtime**: Calculates regular vs. overtime hours compliant with Ontario ESA regulations.\n• **1-Click CRA Payroll Exports**: Generates clean CSV/Excel spreadsheets ready for your accountant or payroll software.\n• **Turnaround**: 5 to 7 business days.\n• **Admin Savings**: 20+ hours per week in eliminated manual bookkeeping.\n\nWould you like Jose to review your current payroll calculation workflow?`,
+          reply: `💰 **Level 3: Workforce Management & CRA Payroll Suite**\n\nTransforms messy handwriting and disputed timesheets into audit-proof payroll exports.\n\n• **Everything in Levels 1 & 2**: AI facial attendance, task photo proof, and team messaging.\n• **Automated Hours & Overtime**: Calculates regular vs. overtime hours compliant with Ontario ESA regulations.\n• **1-Click CRA Payroll Exports**: Generates clean CSV/Excel spreadsheets ready for your accountant or payroll software.\n• **Turnaround**: 5 to 7 business days.\n• **Admin Savings**: 20+ hours per week in eliminated manual bookkeeping.\n\nWould you like Jose to review your current payroll calculation workflow?`,
           suggestions: ['What is Level 4 Scheduling?', 'What apps has Jose built?', 'Book a consultation']
         };
       }
 
       if (q.includes('level 4') || q.includes('schedul') || q.includes('dispatch') || q.includes('calendar') || (q.includes('level') && q.includes('4'))) {
         return {
-          reply: `🗓️ **Proofly Level 4: Enterprise Orchestration & Smart Scheduling**\n\nThe ultimate end-to-end management platform for growing field service enterprises.\n\n• **Everything in Levels 1, 2 & 3**: Full attendance, photo proof, chat, and payroll exports.\n• **Drag-and-Drop Shift Dispatch**: Assign crews to client locations with instant mobile shift notifications.\n• **Conflict & Overlap Prevention**: Automatically blocks double-booking and unauthorized overtime.\n• **Real-Time GPS Crew Verification**: Map visibility over staff arrival times and location accuracy.\n• **Turnaround**: 5 to 7 business days.\n\nWould you like to discuss deploying Level 4 for your business?`,
+          reply: `🗓️ **Level 4: Enterprise Orchestration & Smart Scheduling**\n\nThe ultimate end-to-end management platform for growing field service enterprises.\n\n• **Everything in Levels 1, 2 & 3**: Full attendance, photo proof, chat, and payroll exports.\n• **Drag-and-Drop Shift Dispatch**: Assign crews to client locations with instant mobile shift notifications.\n• **Conflict & Overlap Prevention**: Automatically blocks double-booking and unauthorized overtime.\n• **Real-Time GPS Crew Verification**: Map visibility over staff arrival times and location accuracy.\n• **Turnaround**: 5 to 7 business days.\n\nWould you like to discuss deploying Level 4 for your business?`,
           suggestions: ['Show me case studies', 'How fast can you build our app?', 'Schedule a consultation']
         };
       }
@@ -2851,15 +3780,15 @@
       // 13. Biometric Face Verification & Anti-Buddy Punching
       if (q.includes('face') || q.includes('biometric') || q.includes('buddy') || q.includes('punching') || q.includes('cheat') || q.includes('fake') || q.includes('ghost')) {
         return {
-          reply: `🛡️ **How Proofly AI Face Verification Eliminates Buddy Punching 100%**:\n\n• **Strict 1.00 Face Match Score**: When an employee arrives at a job site, they snap a live selfie in the app. Proofly's AI biometric engine compares their facial landmark geometry against their registered employee profile.\n• **Anti-Spoofing & Live Camera**: Staff cannot upload old photos or pictures of pictures from their camera roll; the photo must be taken live with active timestamp and GPS coordinates.\n• **Zero Buddy Punching**: It is physically impossible for a coworker to clock in for an absent friend.\n• **Verified Case Study**: In *The Manpower Solution* app, 18 cleaning staff achieved 100% verified attendance with zero buddy punching since day one.\n\nWould you like to try a demo or see the case study?`,
-          suggestions: ['Tell me about Manpower Solution', 'What is Proofly Level 1?', 'Book a discovery consultation']
+          reply: `🛡️ **How Our AI Face Verification Eliminates Buddy Punching 100%**:\n\n• **Strict 1.00 Face Match Score**: When an employee arrives at a job site, they snap a live selfie in the app. Our AI biometric engine compares their facial landmark geometry against their registered employee profile.\n• **Anti-Spoofing & Live Camera**: Staff cannot upload old photos or pictures of pictures from their camera roll; the photo must be taken live with active timestamp and GPS coordinates.\n• **Zero Buddy Punching**: It is physically impossible for a coworker to clock in for an absent friend.\n• **Verified Case Study**: In *The Manpower Solution* app, 18 cleaning staff achieved 100% verified attendance with zero buddy punching since day one.\n\nWould you like to try a demo or see the case study?`,
+          suggestions: ['Tell me about Manpower Solution', 'What is Level 1?', 'Book a discovery consultation']
         };
       }
 
       // 14. Case Studies & Previous Work
       if (q.includes('case stud') || q.includes('work done') || q.includes('portfolio') || q.includes('previous') || q.includes('apps') || q.includes('manpower') || q.includes('cfc') || q.includes('saint') || q.includes('driving') || q.includes('joren')) {
         return {
-          reply: `🚀 **Jose Rene Navarro's 5 Production App Deployments**:\n\n1. **The Manpower Solution (Level 1 App)**: 18 active commercial cleaners across the GTA. 100% eliminated buddy punching with Face Match 1.00 and photo task verification.\n2. **CFC Music Ministry App (100% Free Community App)**: 135+ Catholic worship songs with live interactive chord transposing (change key in 1 click) and embedded practice audio. Available completely free of charge.\n3. **Birthday Saint Finder**: 100% offline liturgical calendar with biographical saint profiles and feast day search.\n4. **Proofly Driving Academy Platform**: Dual-sided system for student lesson logging and driving instructor vehicle dispatch.\n5. **Joren Property Listings**: Mobile real estate catalog with automated buyer interest analytics.\n\nYou can view the full case studies on our **"Solutions & Work"** page. Which project would you like to know more about?`,
+          reply: `🚀 **Jose Rene Navarro's 5 Production App Deployments**:\n\n1. **The Manpower Solution (Level 1 App)**: 18 active commercial cleaners across the GTA. 100% eliminated buddy punching with Face Match 1.00 and photo task verification.\n2. **CFC Music Ministry App (100% Free Community App)**: 135+ Catholic worship songs with live interactive chord transposing (change key in 1 click) and embedded practice audio. Available completely free of charge.\n3. **Birthday Saint Finder**: 100% offline liturgical calendar with biographical saint profiles and feast day search.\n4. **Driving Academy Management Platform**: Dual-sided system for student lesson logging and driving instructor vehicle dispatch.\n5. **Joren Property Listings**: Mobile real estate catalog with automated buyer interest analytics.\n\nYou can view the full case studies on our **"Solutions & Work"** page. Which project would you like to know more about?`,
           suggestions: ['Tell me about Manpower Solution', 'Tell me about CFC Music', 'Book a discovery consultation']
         };
       }
@@ -2868,7 +3797,7 @@
       if (q.includes('price') || q.includes('cost') || q.includes('pricing') || q.includes('quote') || q.includes('how much') || q.includes('timeline') || q.includes('how long') || q.includes('fast') || q.includes('days') || q.includes('budget')) {
         return {
           reply: `⚡ **Rapid Turnaround & Unmatched Cost Efficiency**:\n\n• **Delivery Speed**: Production-ready deployment in just **5 to 7 business days**!\n• **Up to 80% Cost Savings**: Traditional app agencies charge $25,000–$50,000+ and take 4 to 6 months. Jose builds custom Progressive Web Apps (PWAs) on Glide, reducing costs by up to 80% while delivering enterprise reliability.\n• **Instant Web & Mobile Deployment**: Rapid distribution directly to employee smartphones and desktop browsers with 1 click, ensuring rapid rollout across your entire organization.\n• **Measurable ROI**: Saves 10 to 25 hours per week in eliminated timesheet disputes and manual paperwork.\n\nLeave your email or phone here, and Jose will provide an exact quote and scope within 24 hours!`,
-          suggestions: ['Book a 30-min discovery call', 'What is Proofly Level 1?', 'Call Jose: (437) 423-3456']
+          suggestions: ['Book a 30-min discovery call', 'What is Level 1?', 'Call Jose: (437) 423-3456']
         };
       }
 
@@ -2883,38 +3812,38 @@
       // 17. Technology / Glide / PWA / Devices (iPhone, Android, Desktop)
       if (q.includes('glide') || q.includes('pwa') || q.includes('progressive web') || q.includes('iphone') || q.includes('android') || q.includes('ios') || q.includes('tablet') || q.includes('desktop')) {
         return {
-          reply: `📲 **Cross-Platform Architecture (Glide Progressive Web Apps)**:\n\n• **Universal Device Compatibility**: Proofly apps run smoothly on iPhone (iOS), Android smartphones, iPads, tablets, and desktop web browsers.\n• **Instant Home Screen Install**: Users simply tap "Add to Home Screen". It opens as a full-screen standalone application with its own app icon, splash screen, and offline capabilities.\n• **Zero Friction**: Instant access via secure web link or QR code, with zero download hurdles or manual update delays.\n• **Real-Time Cloud Sync**: Every clock-in, photo upload, and task checklist syncs instantly to management web dashboards.\n\nWould you like to build an app for your team?`,
-          suggestions: ['How fast can you build our app?', 'What is Proofly Level 1?', 'Book a discovery consultation']
+          reply: `📲 **Cross-Platform Architecture (Glide Progressive Web Apps)**:\n\n• **Universal Device Compatibility**: My Mobile Apps run smoothly on iPhone (iOS), Android smartphones, iPads, tablets, and desktop web browsers.\n• **Instant Home Screen Install**: Users simply tap "Add to Home Screen". It opens as a full-screen standalone application with its own app icon, splash screen, and offline capabilities.\n• **Zero Friction**: Instant access via secure web link or QR code, with zero download hurdles or manual update delays.\n• **Real-Time Cloud Sync**: Every clock-in, photo upload, and task checklist syncs instantly to management web dashboards.\n\nWould you like to build an app for your team?`,
+          suggestions: ['How fast can you build our app?', 'What is Level 1?', 'Book a discovery consultation']
         };
       }
 
       // 18. Identity & What are you / Who made you / ChatGPT comparisons
       if (q.includes('who are you') || q.includes('what are you') || q.includes('who made you') || q.includes('what can you do') || q.includes('chatgpt') || q.includes('your name')) {
         return {
-          reply: `I am the **Proofly AI Concierge**, an AI assistant built specifically for **Jose Rene Navarro's** custom software and workforce platform.\n\nJust like ChatGPT, I can converse in natural language, answer technical questions, write app specs, do calculations, and guide you through software architecture. My domain expertise covers:\n\n1. **Workforce Operations**: Eliminating buddy punching with AI Face Verification (1.00 match score), GPS check-ins, and mandatory before/after photo proof.\n2. **Cross-Platform Apps**: Building Progressive Web Apps (PWAs) on Glide that work seamlessly across iPhone, Android, and desktop browsers.\n3. **Quality Assurance Rigor**: Leveraging Jose's 20+ years of software QA experience to ensure zero-crash reliability.\n\nHow can I assist your business today?`,
-          suggestions: ['Tell me about Proofly Level 1', 'What apps has Jose built?', 'How much does an app cost?']
+          reply: `I am the **My Mobile Apps AI Assistant**, an AI assistant built specifically for **Jose Rene Navarro's** custom software and workforce platform.\n\nJust like ChatGPT, I can converse in natural language, answer technical questions, write app specs, do calculations, and guide you through software architecture. My domain expertise covers:\n\n1. **Workforce Operations**: Eliminating buddy punching with AI Face Verification (1.00 match score), GPS check-ins, and mandatory before/after photo proof.\n2. **Cross-Platform Apps**: Building Progressive Web Apps (PWAs) on Glide that work seamlessly across iPhone, Android, and desktop browsers.\n3. **Quality Assurance Rigor**: Leveraging Jose's 20+ years of software QA experience to ensure zero-crash reliability.\n\nHow can I assist your business today?`,
+          suggestions: ['Tell me about Level 1 App', 'What apps has Jose built?', 'How much does an app cost?']
         };
       }
 
-      // 19. Overview / Services / What is Proofly
-      if (q.includes('what is proofly') || q.includes('what do you do') || q.includes('what does proofly do') || q.includes('overview') || q.includes('services')) {
+      // 19. Overview / Services / What is My Mobile Apps
+      if (q.includes('what is my mobile apps') || q.includes('what is proofly') || q.includes('what do you do') || q.includes('what does proofly do') || q.includes('overview') || q.includes('services')) {
         return {
-          reply: `⭐ **Proofly Overview**: Proofly is an AI-powered workforce management platform and custom mobile/web application studio created by **Jose Rene Navarro**.\n\nWe specialize in turning chaotic, paper-based field operations into simple, audit-proof digital applications:\n\n• **AI Face Biometrics**: Guarantees zero buddy punching with 1.00 facial match score.\n• **Mandatory Shift Checklists**: Staff must upload before/after photos of finished work.\n• **In-App Messaging & Announcements**: Replaces messy WhatsApp/SMS chains.\n• **1-Click CRA Payroll**: Calculates regular vs. overtime hours under Ontario ESA.\n• **Fast Delivery**: Built on Glide Progressive Web Apps (PWAs) in just **5 to 7 business days**!\n\nWould you like to explore Proofly Level 1, or discuss an app for your team?`,
-          suggestions: ['Explain Proofly Level 1', 'How much does an app cost?', 'See Jose\'s 5 live apps', 'Book a discovery call']
+          reply: `⭐ **My Mobile Apps Overview**: My Mobile Apps is a custom mobile/web application studio and AI workforce solutions platform created by **Jose Rene Navarro** in Toronto, Ontario.\n\nWe specialize in turning chaotic, paper-based field operations into simple, audit-proof digital applications:\n\n• **AI Face Biometrics**: Guarantees zero buddy punching with 1.00 facial match score.\n• **Mandatory Shift Checklists**: Staff must upload before/after photos of finished work.\n• **In-App Messaging & Announcements**: Replaces messy WhatsApp/SMS chains.\n• **1-Click CRA Payroll**: Calculates regular vs. overtime hours under Ontario ESA.\n• **Fast Delivery**: Built on Glide Progressive Web Apps (PWAs) in just **5 to 7 business days**!\n\nWould you like to explore App Level 1, or discuss an app for your team?`,
+          suggestions: ['Explain Level 1 App', 'How much does an app cost?', 'See Jose\'s 5 live apps', 'Book a discovery call']
         };
       }
 
       // 20. Jokes / Humor
       if (q.includes('joke') || q.includes('funny') || q.includes('humor')) {
         const jokes = [
-          `😄 **Here's a developer joke for you:**\n\nWhy do programmers prefer dark mode?\n*Because light attracts bugs!*\n\nSpeaking of bugs—with Jose Rene Navarro's **20+ years of Software QA experience**, Proofly apps are thoroughly tested so your business runs bug-free! Can I help you with an app for your team?`,
-          `😄 **Here's another one:**\n\nThere are only 10 types of people in the world:\n*Those who understand binary, and those who don't!*\n\nAnd when it comes to attendance tracking, there are only 2 types of systems: paper timesheets that invite buddy punching, and Proofly AI biometric verification that eliminates it 100%!`,
+          `😄 **Here's a developer joke for you:**\n\nWhy do programmers prefer dark mode?\n*Because light attracts bugs!*\n\nSpeaking of bugs—with Jose Rene Navarro's **20+ years of Software QA experience**, our apps are thoroughly tested so your business runs bug-free! Can I help you with an app for your team?`,
+          `😄 **Here's another one:**\n\nThere are only 10 types of people in the world:\n*Those who understand binary, and those who don't!*\n\nAnd when it comes to attendance tracking, there are only 2 types of systems: paper timesheets that invite buddy punching, and AI biometric verification that eliminates it 100%!`,
           `😄 **A QA engineer walks into a bar:**\n\nOrders a beer. Orders 0 beers. Orders 999999999 beers. Orders a lizard. Orders -1 beers. Orders a sfdeljknesv.\n\nFirst real customer walks in and asks where the bathroom is. The bar burns down!\n\nThat's why Jose Rene Navarro tests **real user scenarios** across 20+ years of QA practice!`
         ];
         const picked = jokes[Math.floor(Math.random() * jokes.length)];
         return {
           reply: picked,
-          suggestions: ['Tell me another joke', 'Tell me about Proofly Level 1', 'Book a consultation']
+          suggestions: ['Tell me another joke', 'Tell me about Level 1 App', 'Book a consultation']
         };
       }
 
@@ -2922,15 +3851,15 @@
       if (q.includes('contact') || q.includes('book') || q.includes('call') || q.includes('consult') || q.includes('email') || q.includes('phone') || q.includes('reach') || q.includes('meet') || q.includes('schedule')) {
         return {
           reply: `📅 **Connect Directly with Jose Rene Navarro**:\n\n• **Direct Phone**: (437) 423-3456\n• **Email**: navarrojoserene.ca@gmail.com\n• **Location**: Toronto, Ontario, Canada\n• **Discovery Consultation**: Free 30-minute operational review of your workflow\n\nYou can also simply **type your name, email, or phone right here in this chat**, and I will automatically dispatch your inquiry to Jose's inbox!`,
-          suggestions: ['Book consultation', 'What is Proofly Level 1?', 'How fast is delivery?']
+          suggestions: ['Book consultation', 'What is Level 1?', 'How fast is delivery?']
         };
       }
 
       // 22. Conversational Intelligent Fallback
       return {
-        reply: `💡 **Regarding "${raw}":**\n\nAs the Proofly AI Concierge, I can assist you with:\n1. **App Architecture & Scoping**: Translating your business workflow into a clean Glide mobile & web app.\n2. **Eliminating Buddy Punching**: AI Biometric Face Verification with 1.00 match score.\n3. **Task Checklists**: Mandatory before/after photo verification for field staff.\n4. **Ontario ESA & CRA Payroll**: Calculating regular and overtime hours with 1-click export.\n5. **Calculations & Logic**: Just ask me any arithmetic or workflow questions!\n\nIf you have a specific requirement or want a custom proposal, you can reach **Jose Rene Navarro** directly at **navarrojoserene.ca@gmail.com** or **(437) 423-3456**.\n\nWhat would you like to explore next?`,
+        reply: `💡 **Regarding "${raw}":**\n\nAs the My Mobile Apps AI Assistant, I can assist you with:\n1. **App Architecture & Scoping**: Translating your business workflow into a clean Glide mobile & web app.\n2. **Eliminating Buddy Punching**: AI Biometric Face Verification with 1.00 match score.\n3. **Task Checklists**: Mandatory before/after photo verification for field staff.\n4. **Ontario ESA & CRA Payroll**: Calculating regular and overtime hours with 1-click export.\n5. **Calculations & Logic**: Just ask me any arithmetic or workflow questions!\n\nIf you have a specific requirement or want a custom proposal, you can reach **Jose Rene Navarro** directly at **navarrojoserene.ca@gmail.com** or **(437) 423-3456**.\n\nWhat would you like to explore next?`,
         suggestions: [
-          'Explain Proofly Level 1',
+          'Explain Level 1 App',
           'What apps has Jose built?',
           'How fast can you build our app?',
           'Book a discovery consultation'
@@ -2947,7 +3876,7 @@
       const [isTyping, setIsTyping] = useState(false);
       const [hasUnread, setHasUnread] = useState(true);
       const [suggestions, setSuggestions] = useState([
-        'Explain Proofly Level 1',
+        'Explain Level 1 App Tier',
         'What apps has Jose built?',
         'How fast can you build our app?',
         'Book a discovery consultation'
@@ -3308,103 +4237,143 @@
     // Master Application Layout & View Controller
     // =========================================================================
     function App() {
-      const [currentView, setCurrentView] = useState('home'); // 'home' or 'work-done'
+      const [currentView, setCurrentView] = useState('home'); 
       const [lightbox, setLightbox] = useState({ open: false, src: '', title: '', subtitle: '' });
       const [prefillTier, setPrefillTier] = useState('');
       const [prefillIndustry, setPrefillIndustry] = useState('');
       const [prefillMessage, setPrefillMessage] = useState('');
       const [focusAiFace, setFocusAiFace] = useState(false);
       const [focusFreeApp, setFocusFreeApp] = useState(false);
-      const [solutionsMenuOpen, setSolutionsMenuOpen] = useState(false);
+      const [servicesMenuOpen, setServicesMenuOpen] = useState(false);
       const [logoActive, setLogoActive] = useState(false);
+
+      const VIEW_TITLES = {
+        'home': 'My Mobile Apps | Custom Business Mobile & Web App Development Toronto',
+        'mobile-app-development': 'Custom Mobile App Development Toronto & Canada | Rapid 5–7 Day PWAs',
+        'website-development': 'Custom Business Web Portals & Dashboard Development | Toronto & Canada',
+        'qa-testing': 'Website & Software QA Testing Services Toronto | 20+ Yrs QA Engineering',
+        'ai-solutions': 'AI Biometric Face Verification & Business Solutions | Anti-Buddy Punching',
+        'field-services': 'Field Service, Cleaning & Construction Apps Toronto | My Mobile Apps',
+        'work-done': 'Verified Client Work Done & Live Apps Portfolio | My Mobile Apps',
+        'contact': 'Contact Jose Rene Navarro | Free App Discovery Consultation Toronto'
+      };
+
+      const syncUrl = (view, targetId = null) => {
+        let path = '/';
+        if (view === 'mobile-app-development') path = '/mobile-app-development';
+        else if (view === 'website-development') path = '/website-development';
+        else if (view === 'qa-testing') path = '/qa-testing';
+        else if (view === 'ai-solutions') path = '/ai-solutions';
+        else if (view === 'field-services') path = '/industries/field-services';
+        else if (view === 'work-done') path = targetId ? `#/work-done/${targetId}` : '/work-done';
+        else if (view === 'contact') path = '/contact';
+        else if (view === 'home' && targetId) path = `#${targetId}`;
+
+        try {
+          if (path.startsWith('#')) {
+            window.location.hash = path;
+          } else {
+            window.history.pushState(null, '', path);
+          }
+        } catch (e) {
+          window.location.hash = `#/${view}`;
+        }
+
+        if (VIEW_TITLES[view]) {
+          document.title = VIEW_TITLES[view];
+        }
+      };
 
       // Smooth Direct-to-Top Navigation on Logo Click with Animated Pulse
       const handleLogoClick = (e) => {
         if (e && e.preventDefault) e.preventDefault();
         setLogoActive(true);
         setTimeout(() => setLogoActive(false), 750);
+        setServicesMenuOpen(false);
 
-        setSolutionsMenuOpen(false);
-        if (currentView !== 'home') {
-          setCurrentView('home');
-        }
-        if (window.location.hash) {
-          try {
-            history.pushState(null, '', window.location.pathname);
-          } catch (err) {
-            window.location.hash = '#/';
-          }
-        }
+        setCurrentView('home');
+        syncUrl('home');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       };
 
       // Universal Navigation Router
       const navigateTo = (view, targetId = null) => {
-        setSolutionsMenuOpen(false);
-        if (view === 'home') {
-          setCurrentView('home');
-          if (targetId) {
-            window.location.hash = '#' + targetId;
-            setTimeout(() => {
-              const el = document.getElementById(targetId);
-              if (el) {
-                el.scrollIntoView({ behavior: 'smooth' });
-              } else {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }
-            }, 60);
-          } else {
-            handleLogoClick();
-          }
-        } else if (view === 'work-done') {
-          setCurrentView('work-done');
-          if (targetId) {
-            window.location.hash = '#/work-done/' + targetId;
-            setTimeout(() => {
-              const el = document.getElementById(targetId);
-              if (el) {
-                el.scrollIntoView({ behavior: 'smooth' });
+        setServicesMenuOpen(false);
+        setCurrentView(view);
+        syncUrl(view, targetId);
+
+        if (targetId) {
+          setTimeout(() => {
+            const el = document.getElementById(targetId);
+            if (el) {
+              el.scrollIntoView({ behavior: 'smooth' });
+              if (view === 'work-done') {
                 el.classList.add('ring-2', 'ring-blue-500', 'ring-offset-4');
                 setTimeout(() => el.classList.remove('ring-2', 'ring-blue-500', 'ring-offset-4'), 2500);
-              } else {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
               }
-            }, 90);
-          } else {
-            window.location.hash = '#/work-done';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }
+            } else {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }, 80);
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         }
       };
 
-      // URL Hash Router
+      // Initial Path & Popstate Router
       useEffect(() => {
-        const handleHash = () => {
-          const hash = window.location.hash;
-          if (hash.startsWith('#/work-done')) {
+        const parseRoute = () => {
+          const pathname = window.location.pathname.toLowerCase().replace(/\/$/, '') || '/';
+          const hash = window.location.hash.toLowerCase();
+
+          if (pathname === '/mobile-app-development' || hash.includes('mobile-app-development')) {
+            setCurrentView('mobile-app-development');
+            document.title = VIEW_TITLES['mobile-app-development'];
+          } else if (pathname === '/website-development' || hash.includes('website-development')) {
+            setCurrentView('website-development');
+            document.title = VIEW_TITLES['website-development'];
+          } else if (pathname === '/qa-testing' || hash.includes('qa-testing')) {
+            setCurrentView('qa-testing');
+            document.title = VIEW_TITLES['qa-testing'];
+          } else if (pathname === '/ai-solutions' || hash.includes('ai-solutions')) {
+            setCurrentView('ai-solutions');
+            document.title = VIEW_TITLES['ai-solutions'];
+          } else if (pathname === '/industries/field-services' || pathname === '/field-services' || hash.includes('field-services')) {
+            setCurrentView('field-services');
+            document.title = VIEW_TITLES['field-services'];
+          } else if (pathname === '/work-done' || pathname === '/case-studies' || hash.startsWith('#/work-done')) {
             setCurrentView('work-done');
+            document.title = VIEW_TITLES['work-done'];
             const parts = hash.split('#/work-done/');
             if (parts[1]) {
               setTimeout(() => {
                 const el = document.getElementById(parts[1]);
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
-              }, 100);
+              }, 120);
             }
+          } else if (pathname === '/contact' || hash.includes('contact-page')) {
+            setCurrentView('contact');
+            document.title = VIEW_TITLES['contact'];
           } else {
             setCurrentView('home');
+            document.title = VIEW_TITLES['home'];
             const cleanHash = hash.replace('#', '').replace('/', '');
             if (cleanHash && cleanHash !== '') {
               setTimeout(() => {
                 const el = document.getElementById(cleanHash);
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
-              }, 100);
+              }, 120);
             }
           }
         };
 
-        handleHash();
-        window.addEventListener('hashchange', handleHash);
-        return () => window.removeEventListener('hashchange', handleHash);
+        parseRoute();
+        window.addEventListener('popstate', parseRoute);
+        window.addEventListener('hashchange', parseRoute);
+        return () => {
+          window.removeEventListener('popstate', parseRoute);
+          window.removeEventListener('hashchange', parseRoute);
+        };
       }, []);
 
       const openFlyerLightbox = (src, title, subtitle = '') => {
@@ -3468,8 +4437,8 @@
                 </div>
               </div>
 
-              {/* Navigation Links - Balanced, clean and spacious */}
-              <nav className="hidden md:flex items-center gap-8 text-xs font-semibold text-slate-600">
+              {/* Navigation Links */}
+              <nav className="hidden lg:flex items-center gap-6 text-xs font-semibold text-slate-600">
                 <button
                   type="button"
                   onClick={() => navigateTo('home')}
@@ -3478,12 +4447,78 @@
                   Overview
                 </button>
 
+                {/* Services Dropdown */}
+                <div className="relative group/nav">
+                  <button
+                    type="button"
+                    onClick={() => setServicesMenuOpen(!servicesMenuOpen)}
+                    onMouseEnter={() => setServicesMenuOpen(true)}
+                    className={`hover:text-blue-600 transition flex items-center gap-1 ${['mobile-app-development', 'website-development', 'qa-testing', 'ai-solutions'].includes(currentView) ? 'text-blue-600 font-bold' : ''}`}
+                  >
+                    <span>Services</span>
+                    <span className="text-[10px] text-slate-400">▾</span>
+                  </button>
+
+                  <div
+                    onMouseLeave={() => setServicesMenuOpen(false)}
+                    className={`absolute top-full left-0 mt-1 w-64 bg-white rounded-2xl shadow-xl border border-slate-200 p-2 space-y-1 transition-all z-50 ${servicesMenuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible pointer-events-none -translate-y-2'}`}
+                  >
+                    <button
+                      type="button"
+                      onClick={() => navigateTo('mobile-app-development')}
+                      className="w-full p-2.5 rounded-xl text-left hover:bg-slate-50 flex items-start gap-2.5 group/item transition"
+                    >
+                      <SvgIcon name="smartphone" className="w-4 h-4 text-blue-600 mt-0.5" />
+                      <div>
+                        <div className="font-bold text-slate-900 group-hover/item:text-blue-600">Mobile App Development</div>
+                        <div className="text-[10px] text-slate-500">Rapid 5–7 Day PWAs on Glide</div>
+                      </div>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => navigateTo('website-development')}
+                      className="w-full p-2.5 rounded-xl text-left hover:bg-slate-50 flex items-start gap-2.5 group/item transition"
+                    >
+                      <SvgIcon name="monitor" className="w-4 h-4 text-cyan-600 mt-0.5" />
+                      <div>
+                        <div className="font-bold text-slate-900 group-hover/item:text-cyan-600">Website & Web Portals</div>
+                        <div className="text-[10px] text-slate-500">Dashboards & CRA Payroll Sync</div>
+                      </div>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => navigateTo('qa-testing')}
+                      className="w-full p-2.5 rounded-xl text-left hover:bg-slate-50 flex items-start gap-2.5 group/item transition"
+                    >
+                      <SvgIcon name="shield-check" className="w-4 h-4 text-emerald-600 mt-0.5" />
+                      <div>
+                        <div className="font-bold text-slate-900 group-hover/item:text-emerald-600">Software QA Testing</div>
+                        <div className="text-[10px] text-slate-500">20+ Yrs Test Lead Rigor</div>
+                      </div>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => navigateTo('ai-solutions')}
+                      className="w-full p-2.5 rounded-xl text-left hover:bg-slate-50 flex items-start gap-2.5 group/item transition"
+                    >
+                      <SvgIcon name="scan-face" className="w-4 h-4 text-indigo-600 mt-0.5" />
+                      <div>
+                        <div className="font-bold text-slate-900 group-hover/item:text-indigo-600">AI Face Verification</div>
+                        <div className="text-[10px] text-slate-500">1.00 Match Anti-Buddy Punch</div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
                 <button
                   type="button"
-                  onClick={() => navigateTo('home', 'proofly-suite')}
-                  className="hover:text-blue-600 transition"
+                  onClick={() => navigateTo('field-services')}
+                  className={`hover:text-blue-600 transition ${currentView === 'field-services' ? 'text-blue-600 font-bold' : ''}`}
                 >
-                  Modular Tiers
+                  Industries
                 </button>
 
                 <button
@@ -3524,7 +4559,7 @@
                 </a>
                 <button
                   type="button"
-                  onClick={() => navigateTo('home', 'contact')}
+                  onClick={() => navigateTo('contact')}
                   className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-sm hover:shadow transition-all cursor-pointer"
                 >
                   Consultation
@@ -3541,6 +4576,37 @@
                 onOpenContactWithProject={handleOpenContactWithProject}
                 onOpenContactWithFreeApp={handleOpenContactWithFreeApp}
                 onNavigate={navigateTo}
+              />
+            ) : currentView === 'mobile-app-development' ? (
+              <MobileAppDevPage
+                onNavigate={navigateTo}
+                onOpenContactWithTier={handleOpenContactWithTier}
+              />
+            ) : currentView === 'website-development' ? (
+              <WebsiteDevPage
+                onNavigate={navigateTo}
+                onOpenContactWithTier={handleOpenContactWithTier}
+              />
+            ) : currentView === 'qa-testing' ? (
+              <QaTestingPage
+                onNavigate={navigateTo}
+                onOpenContactWithTier={handleOpenContactWithTier}
+              />
+            ) : currentView === 'ai-solutions' ? (
+              <AiSolutionsPage
+                onNavigate={navigateTo}
+                onOpenContactWithTier={handleOpenContactWithTier}
+              />
+            ) : currentView === 'field-services' ? (
+              <FieldServicesPage
+                onNavigate={navigateTo}
+                onOpenContactWithTier={handleOpenContactWithTier}
+              />
+            ) : currentView === 'contact' ? (
+              <ContactPage
+                onNavigate={navigateTo}
+                initialTier={prefillTier}
+                initialIndustry={prefillIndustry}
               />
             ) : (
               <React.Fragment>
@@ -3586,10 +4652,10 @@
             />
           )}
 
-          {/* Footer */}
+          {/* Footer with Comprehensive SEO Links */}
           <footer className="bg-slate-950 text-white py-14 px-5 sm:px-8 border-t border-slate-800 text-xs">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-slate-800">
-              <div className="space-y-3 md:col-span-2">
+              <div className="space-y-3 md:col-span-1">
                 <div
                   onClick={handleLogoClick}
                   className="flex items-center gap-3 cursor-pointer group logo-interactive-container select-none"
@@ -3607,6 +4673,38 @@
                 <div className="text-slate-500 font-mono text-[11px]">
                   Toronto, Ontario, Canada · (437) 423-3456 · navarrojoserene.ca@gmail.com
                 </div>
+              </div>
+
+              {/* Core Services */}
+              <div>
+                <div className="font-bold text-slate-200 uppercase tracking-wider mb-3 font-mono">Core Services</div>
+                <ul className="space-y-2 text-slate-400">
+                  <li>
+                    <button type="button" onClick={() => navigateTo('mobile-app-development')} className="hover:text-white transition text-left">
+                      Mobile App Development (5-7 Days)
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" onClick={() => navigateTo('website-development')} className="hover:text-white transition text-left">
+                      Custom Web Portals & Dashboards
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" onClick={() => navigateTo('qa-testing')} className="hover:text-white transition text-left">
+                      Software QA & Usability Testing
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" onClick={() => navigateTo('ai-solutions')} className="hover:text-white transition text-left">
+                      AI Face Verification Biometrics
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" onClick={() => navigateTo('field-services')} className="hover:text-white transition text-left">
+                      Field Services & Trade Systems
+                    </button>
+                  </li>
+                </ul>
               </div>
 
               {/* Solutions & Work (Submenu / Deep Links) */}
@@ -3644,6 +4742,15 @@
                   <li><a href="mailto:navarrojoserene.ca@gmail.com" className="hover:text-white font-mono">✉️ navarrojoserene.ca@gmail.com</a></li>
                   <li><a href="https://www.linkedin.com/in/jose-navarro-93b31015/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">🔗 LinkedIn Profile</a></li>
                   <li><span className="text-slate-500 font-mono">my-mobileapps.com · Toronto, ON</span></li>
+                  <li className="pt-2">
+                    <button
+                      type="button"
+                      onClick={() => navigateTo('contact')}
+                      className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs"
+                    >
+                      Book Free Discovery Call
+                    </button>
+                  </li>
                 </ul>
               </div>
             </div>
