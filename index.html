@@ -98,8 +98,11 @@
   }
   </script>
 
-  <!-- Authentic Brand Favicon -->
-  <link rel="icon" type="image/webp" href="assets/logo.webp" />
+  <!-- Authentic Brand Favicon & Icons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/webp" href="/assets/logo.webp" />
+  <link rel="apple-touch-icon" href="/assets/logo.webp" />
+  <link rel="shortcut icon" href="/favicon.ico" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -4258,6 +4261,28 @@
         'contact': 'Contact Jose Rene Navarro | Free App Discovery Consultation Toronto'
       };
 
+      // Scroll to a target element with retries to handle React render delay
+      const scrollToTarget = (targetId, view = null) => {
+        let attempts = 0;
+        const maxAttempts = 20;
+        const tryScroll = () => {
+          const el = document.getElementById(targetId);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (view === 'work-done') {
+              el.classList.add('ring-2', 'ring-blue-500', 'ring-offset-4');
+              setTimeout(() => el.classList.remove('ring-2', 'ring-blue-500', 'ring-offset-4'), 2500);
+            }
+          } else if (attempts < maxAttempts) {
+            attempts++;
+            setTimeout(tryScroll, 50);
+          } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        };
+        setTimeout(tryScroll, 60);
+      };
+
       const syncUrl = (view, targetId = null) => {
         let path = '/';
         if (view === 'mobile-app-development') path = '/mobile-app-development';
@@ -4265,18 +4290,14 @@
         else if (view === 'qa-testing') path = '/qa-testing';
         else if (view === 'ai-solutions') path = '/ai-solutions';
         else if (view === 'field-services') path = '/industries/field-services';
-        else if (view === 'work-done') path = targetId ? `#/work-done/${targetId}` : '/work-done';
+        else if (view === 'work-done') path = targetId ? `/work-done#${targetId}` : '/work-done';
         else if (view === 'contact') path = '/contact';
-        else if (view === 'home' && targetId) path = `#${targetId}`;
+        else if (view === 'home' && targetId) path = `/#${targetId}`;
 
         try {
-          if (path.startsWith('#')) {
-            window.location.hash = path;
-          } else {
-            window.history.pushState(null, '', path);
-          }
+          window.history.pushState(null, '', path);
         } catch (e) {
-          window.location.hash = `#/${view}`;
+          // fallback: no URL change
         }
 
         if (VIEW_TITLES[view]) {
@@ -4303,18 +4324,7 @@
         syncUrl(view, targetId);
 
         if (targetId) {
-          setTimeout(() => {
-            const el = document.getElementById(targetId);
-            if (el) {
-              el.scrollIntoView({ behavior: 'smooth' });
-              if (view === 'work-done') {
-                el.classList.add('ring-2', 'ring-blue-500', 'ring-offset-4');
-                setTimeout(() => el.classList.remove('ring-2', 'ring-blue-500', 'ring-offset-4'), 2500);
-              }
-            } else {
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-          }, 80);
+          scrollToTarget(targetId, view);
         } else {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -4326,35 +4336,38 @@
           const pathname = window.location.pathname.toLowerCase().replace(/\/$/, '') || '/';
           const hash = window.location.hash.toLowerCase();
 
-          if (pathname === '/mobile-app-development' || hash.includes('mobile-app-development')) {
+          if (pathname === '/mobile-app-development') {
             setCurrentView('mobile-app-development');
             document.title = VIEW_TITLES['mobile-app-development'];
-          } else if (pathname === '/website-development' || hash.includes('website-development')) {
+          } else if (pathname === '/website-development') {
             setCurrentView('website-development');
             document.title = VIEW_TITLES['website-development'];
-          } else if (pathname === '/qa-testing' || hash.includes('qa-testing')) {
+          } else if (pathname === '/qa-testing') {
             setCurrentView('qa-testing');
             document.title = VIEW_TITLES['qa-testing'];
-          } else if (pathname === '/ai-solutions' || hash.includes('ai-solutions')) {
+          } else if (pathname === '/ai-solutions') {
             setCurrentView('ai-solutions');
             document.title = VIEW_TITLES['ai-solutions'];
-          } else if (pathname === '/industries/field-services' || pathname === '/field-services' || hash.includes('field-services')) {
+          } else if (pathname === '/industries/field-services' || pathname === '/field-services') {
             setCurrentView('field-services');
             document.title = VIEW_TITLES['field-services'];
-          } else if (pathname === '/work-done' || pathname === '/case-studies' || hash.startsWith('#/work-done')) {
+          } else if (pathname === '/work-done' || pathname === '/case-studies') {
             setCurrentView('work-done');
             document.title = VIEW_TITLES['work-done'];
-            const parts = hash.split('#/work-done/');
-            if (parts[1]) {
-              setTimeout(() => {
-                const el = document.getElementById(parts[1]);
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-              }, 120);
+            if (hash) {
+              const anchorId = hash.replace('#', '');
+              if (anchorId) {
+                setTimeout(() => {
+                  const el = document.getElementById(anchorId);
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }, 120);
+              }
             }
-          } else if (pathname === '/contact' || hash.includes('contact-page')) {
+          } else if (pathname === '/contact') {
             setCurrentView('contact');
             document.title = VIEW_TITLES['contact'];
           } else {
+            // Home (/) — check for anchor hash
             setCurrentView('home');
             document.title = VIEW_TITLES['home'];
             const cleanHash = hash.replace('#', '').replace('/', '');
@@ -4369,10 +4382,8 @@
 
         parseRoute();
         window.addEventListener('popstate', parseRoute);
-        window.addEventListener('hashchange', parseRoute);
         return () => {
           window.removeEventListener('popstate', parseRoute);
-          window.removeEventListener('hashchange', parseRoute);
         };
       }, []);
 
