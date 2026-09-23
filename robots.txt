@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /inquiries.json
+
+Sitemap: https://www.my-mobileapps.com/sitemap.xml

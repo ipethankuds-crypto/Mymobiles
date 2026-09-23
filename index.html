@@ -3,9 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Proofly | AI Workforce Platform, Custom Mobile & Web Apps · Jose Rene Navarro</title>
-  <meta name="description" content="Proofly - AI-powered workforce management platform & custom mobile and web applications built on Glide by 20-year Software QA veteran Jose Rene Navarro. Rapid delivery, zero-crash reliability." />
+  <title>My Mobile Apps | Custom Business Mobile & Web App Development Toronto</title>
+  <meta name="description" content="My Mobile Apps builds custom mobile PWAs, web applications, and AI face verification systems for field service businesses across Toronto & Canada. Rapid 5–7 day delivery." />
+  <link rel="canonical" href="https://www.my-mobileapps.com/" />
   <meta name="google-site-verification" content="yvMuvEmgFjrjCMEp9KlS3dsEpldCUEI5u16DWJoATRQ" />
+
+  <!-- Open Graph / Social Media Metadata -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="My Mobile Apps" />
+  <meta property="og:title" content="My Mobile Apps | Custom Business Apps & AI Solutions Toronto" />
+  <meta property="og:description" content="Custom mobile & web applications for field services, commercial cleaning, and construction. Deployed in 5–7 days with AI biometric face verification." />
+  <meta property="og:url" content="https://www.my-mobileapps.com/" />
+  <meta property="og:image" content="https://www.my-mobileapps.com/assets/logo.webp" />
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="My Mobile Apps | Custom Business Apps Toronto" />
+  <meta name="twitter:description" content="Custom business mobile apps, AI face verification, and 20+ years of Software QA testing rigor." />
+  <meta name="twitter:image" content="https://www.my-mobileapps.com/assets/logo.webp" />
+
+  <!-- Structured Data / JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://www.my-mobileapps.com/#organization",
+        "name": "My Mobile Apps",
+        "url": "https://www.my-mobileapps.com/",
+        "logo": "https://www.my-mobileapps.com/assets/logo.webp",
+        "image": "https://www.my-mobileapps.com/assets/logo.webp",
+        "description": "Custom mobile application development, business web portals, AI face verification attendance systems, and Software QA consulting.",
+        "telephone": "+1-437-423-3456",
+        "email": "navarrojoserene.ca@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Toronto",
+          "addressRegion": "ON",
+          "addressCountry": "CA"
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Toronto" },
+          { "@type": "AdministrativeArea", "name": "Ontario" },
+          { "@type": "Country", "name": "Canada" }
+        ],
+        "founder": {
+          "@type": "Person",
+          "name": "Jose Rene Navarro",
+          "jobTitle": "Software Quality Assurance Consultant & Systems Architect",
+          "sameAs": "https://www.linkedin.com/in/jose-navarro-93b31015/"
+        },
+        "priceRange": "$$"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.my-mobileapps.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How fast can My Mobile Apps build and deploy a custom business application?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most custom business applications built by My Mobile Apps are designed, tested, and deployed for your team in just 5 to 7 business days as Progressive Web Apps (PWAs)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does AI Face Verification eliminate buddy punching in field service apps?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When staff clock in, the app captures a live photo and uses an AI biometric engine to compare facial geometry with a 1.00 match score requirement, blocking pre-recorded gallery uploads and proxy clock-ins."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do employees need to download anything from the App Store?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. My Mobile Apps builds modern Progressive Web Apps (PWAs). Workers simply scan a QR code or tap a secure link to add the app icon directly to their smartphone home screen in 5 seconds."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can My Mobile Apps export hours directly to payroll or accounting software?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. My Mobile Apps formats verified shift hours into clean CSV spreadsheets broken down by employee, regular hours, overtime, and site tags, ready for QuickBooks, Sage, ADP, or your accountant."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <!-- Authentic Brand Favicon -->
   <link rel="icon" type="image/webp" href="assets/logo.webp" />
@@ -152,7 +243,7 @@
       const sizeClasses = size === "lg" ? "w-14 h-14" : size === "sm" ? "w-8 h-8" : "w-11 h-11";
       return (
         <div className={`${sizeClasses} logo-mark-wrapper rounded-xl overflow-hidden border border-slate-700/60 shadow-md bg-[#090D16] flex items-center justify-center shrink-0 ${isPulsing ? 'logo-click-active' : ''} ${className}`}>
-          <img src="assets/logo.webp" alt="Proofly - Jose Rene Navarro" className="w-full h-full object-cover select-none" />
+          <img src="assets/logo.webp" alt="My Mobile Apps - Jose Rene Navarro" className="w-full h-full object-cover select-none" />
         </div>
       );
     }
@@ -2604,15 +2695,15 @@
       // 2. Polite Thanks, Compliments & Pleasantries
       if (q.match(/\b(thank\s*you|thanks|thx|appreciate\s*it|awesome|great\s*job|good\s*job|cool|you('re|\s*are)\s*(smart|awesome|great|cool|helpful))\b/)) {
         return {
-          reply: `🙏 **You're very welcome!**\n\nI'm always happy to help. Whether you want to explore app ideas for your business, dive into Proofly's 4 levels, or learn more about Jose's 20+ years in software QA, I'm here 24/7.\n\nIf you'd like to talk directly with Jose Rene Navarro, you can call him anytime at **(437) 423-3456** or email **navarrojoserene.ca@gmail.com**.\n\nIs there anything else I can help you with today?`,
-          suggestions: ['Tell me about Proofly Level 1', 'What apps has Jose built?', 'Book a discovery consultation']
+          reply: `🙏 **You're very welcome!**\n\nI'm always happy to help. Whether you want to explore app ideas for your business, dive into our 4 modular tiers, or learn more about Jose's 20+ years in software QA, I'm here 24/7.\n\nIf you'd like to talk directly with Jose Rene Navarro, you can call him anytime at **(437) 423-3456** or email **navarrojoserene.ca@gmail.com**.\n\nIs there anything else I can help you with today?`,
+          suggestions: ['Tell me about Level 1 App', 'What apps has Jose built?', 'Book a discovery consultation']
         };
       }
 
       // 3. Goodbyes & Farewells
       if (q.match(/\b(goodbye|bye|see\s*you|cya|farewell|have\s*a\s*good\s*(day|night)|good\s*night)\b/)) {
         return {
-          reply: `👋 **Have a wonderful day!**\n\nThanks for stopping by Proofly. Whenever you're ready to transform your team's workflow into a high-speed mobile & web app, Jose Rene Navarro is ready to build it in just **5 to 7 business days**.\n\nFeel free to return anytime or reach Jose directly at **(437) 423-3456**!`,
+          reply: `👋 **Have a wonderful day!**\n\nThanks for stopping by My Mobile Apps. Whenever you're ready to transform your team's workflow into a high-speed mobile & web app, Jose Rene Navarro is ready to build it in just **5 to 7 business days**.\n\nFeel free to return anytime or reach Jose directly at **(437) 423-3456**!`,
           suggestions: ['Book consultation', 'View 5 Case Studies', 'Call Jose']
         };
       }
@@ -2621,15 +2712,15 @@
       if (q.match(/\b(how\s*(are|r)\s*(you|u)|how('s|\s*is)\s*it\s*going|how\s*do\s*you\s*do|how('s|\s*is)\s*your\s*day)\b/)) {
         return {
           reply: `🚀 **I'm doing great, thank you for asking!**\n\nI'm fully online, running at sub-50ms latency, and ready to assist you with custom app designs, workforce automation, and software testing.\n\nHow is your day going? What kind of project or business are you working on?`,
-          suggestions: ['I need an app for my business', 'Explain Proofly Level 1', 'Who is Jose Rene Navarro?']
+          suggestions: ['I need an app for my business', 'Explain Level 1 App', 'Who is Jose Rene Navarro?']
         };
       }
 
       // 5. Greetings
       if (q.match(/^(hi|hello|hey|greetings|good\s*(morning|afternoon|evening)|yo|howdy|sup)\b/) || q === 'hi' || q === 'hello') {
         return {
-          reply: `👋 **Hello! Welcome to Proofly.**\n\nI am the **Proofly AI Concierge**, virtual assistant to **Jose Rene Navarro**. Think of me as your dedicated assistant for business apps, workflow automation, and Software QA.\n\nI can help you:\n• Explore **Proofly Levels 1 to 4** (Face Verification, Task Checklists, CRA Payroll & Scheduling)\n• Review Jose's **5 live production applications**\n• Understand our **5 to 7 business day** delivery timeline\n• Scope a custom mobile & web app for your team\n\nWhat kind of business or project are you looking to build today?`,
-          suggestions: ['Explain Proofly Level 1', 'Can you build an app for my team?', 'What apps has Jose built?', 'Book a discovery consultation']
+          reply: `👋 **Hello! Welcome to My Mobile Apps.**\n\nI am the **My Mobile Apps AI Assistant**, virtual assistant to **Jose Rene Navarro**. Think of me as your dedicated assistant for custom mobile apps, workflow automation, and Software QA.\n\nI can help you:\n• Explore **App Levels 1 to 4** (Face Verification, Task Checklists, CRA Payroll & Scheduling)\n• Review Jose's **5 live production applications**\n• Understand our **5 to 7 business day** delivery timeline\n• Scope a custom mobile & web app for your team\n\nWhat kind of business or project are you looking to build today?`,
+          suggestions: ['Explain Level 1 App', 'Can you build an app for my team?', 'What apps has Jose built?', 'Book a discovery consultation']
         };
       }
 
@@ -2865,7 +2956,7 @@
         {
           id: 'msg_init',
           sender: 'ai',
-          text: "👋 Hi! I'm the **Proofly AI Concierge**, virtual assistant to **Jose Rene Navarro**.\n\nAsk me anything about our 4 Proofly levels (Biometric Face Match, Mandatory Tasks, Team Chat, CRA Payroll), our 5 live production apps, or book a quick discovery call!",
+          text: "👋 Hi! I'm the **My Mobile Apps AI Assistant**, virtual assistant to **Jose Rene Navarro**.\n\nAsk me anything about our 4 modular app tiers (Biometric Face Match, Mandatory Tasks, Team Chat, CRA Payroll), our 5 live production apps, or book a quick discovery call!",
           time: 'Just now'
         }
       ]);
@@ -3051,15 +3142,15 @@
               <div className="flex items-center gap-2.5">
                 <div className="relative">
                   <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-cyan-400/60 p-0.5 flex items-center justify-center bg-slate-900 ai-avatar-glow">
-                    <img src="assets/ai-bot-avatar.jpg" alt="Proofly AI Avatar" className="w-full h-full object-cover rounded-full" />
+                    <img src="assets/ai-bot-avatar.jpg" alt="My Mobile Apps AI Avatar" className="w-full h-full object-cover rounded-full" />
                   </div>
                   <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-slate-950 animate-pulse" />
                 </div>
                 <div>
                   <div className="flex items-center gap-1.5">
-                    <span className="font-heading font-extrabold text-sm text-white">Proofly AI</span>
+                    <span className="font-heading font-extrabold text-sm text-white">My Mobile Apps AI</span>
                     <span className="text-[8px] font-bold px-1.5 py-0.2 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 uppercase font-mono">
-                      CONCIERGE
+                      ASSISTANT
                     </span>
                   </div>
                   <div className="text-[10px] text-slate-400 flex items-center gap-1">
@@ -3178,7 +3269,7 @@
                 className="mb-2 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-950/95 border border-cyan-400/40 text-white text-[11px] font-semibold cursor-pointer ai-teaser-badge backdrop-blur-md hover:border-cyan-300 transition"
               >
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-slate-200">Ask Proofly AI anything</span>
+                <span className="text-slate-200">Ask My Mobile Apps AI</span>
                 <span className="text-cyan-400 font-bold">→</span>
               </div>
             )}
@@ -3187,24 +3278,24 @@
               type="button"
               onClick={() => setIsOpen(!isOpen)}
               className="ai-launcher-btn relative flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-slate-950 text-white border border-blue-500/60 hover:border-cyan-400 shadow-2xl transition-all group cursor-pointer"
-              title="Chat with Proofly AI"
-              aria-label="Chat with Proofly AI"
+              title="Chat with My Mobile Apps AI"
+              aria-label="Chat with My Mobile Apps AI"
             >
               <div className="relative w-8 h-8 rounded-full overflow-hidden border border-cyan-400/80 shrink-0 ai-avatar-glow">
-                <img src="assets/ai-bot-avatar.jpg" alt="Proofly AI" className="w-full h-full object-cover" />
+                <img src="assets/ai-bot-avatar.jpg" alt="My Mobile Apps AI" className="w-full h-full object-cover" />
                 <span className="absolute top-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-slate-950" />
               </div>
 
               <div className="text-left pr-1">
                 <div className="text-xs font-extrabold text-white font-heading flex items-center gap-1.5">
-                  <span>Proofly AI</span>
+                  <span>My Mobile Apps AI</span>
                   {hasUnread && (
                     <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
                   )}
                 </div>
                 <div className="text-[9px] text-cyan-300 font-mono flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                  <span>Concierge · 24/7</span>
+                  <span>Assistant · 24/7</span>
                 </div>
               </div>
             </button>
@@ -3364,12 +3455,12 @@
               <div
                 onClick={handleLogoClick}
                 className="flex items-center gap-2.5 group cursor-pointer select-none shrink-0"
-                title="Return to Top · Proofly by Jose Rene Navarro"
+                title="Return to Top · My Mobile Apps by Jose Rene Navarro"
               >
                 <StudioLogoMark isPulsing={logoActive} />
                 <div>
                   <div className="text-lg font-bold tracking-tight text-slate-950 group-hover:text-blue-600 transition-colors">
-                    Proofly
+                    My Mobile Apps
                   </div>
                   <div className="text-[11px] text-slate-500 font-medium -mt-0.5">
                     by Jose Rene Navarro
@@ -3392,7 +3483,7 @@
                   onClick={() => navigateTo('home', 'proofly-suite')}
                   className="hover:text-blue-600 transition"
                 >
-                  Proofly Levels
+                  Modular Tiers
                 </button>
 
                 <button
@@ -3502,16 +3593,16 @@
                 <div
                   onClick={handleLogoClick}
                   className="flex items-center gap-3 cursor-pointer group logo-interactive-container select-none"
-                  title="Return to top · Proofly"
+                  title="Return to top · My Mobile Apps"
                 >
                   <StudioLogoMark size="lg" isPulsing={logoActive} />
                   <div>
-                    <span className="font-bold text-xl tracking-tight text-white block font-heading group-hover:text-cyan-400 transition-colors">Proofly</span>
+                    <span className="font-bold text-xl tracking-tight text-white block font-heading group-hover:text-cyan-400 transition-colors">My Mobile Apps</span>
                     <span className="text-[11px] text-blue-400 font-mono uppercase tracking-wider">Solutions That Work · By Jose Rene Navarro</span>
                   </div>
                 </div>
                 <p className="text-slate-400 max-w-sm leading-relaxed">
-                  AI-powered workforce management platform, custom mobile & web applications, and enterprise quality assurance testing — backed by 20+ years of software engineering rigor.
+                  Custom mobile & web applications, AI face verification systems, and enterprise quality assurance testing for businesses in Toronto and across Canada — backed by 20+ years of software engineering rigor.
                 </p>
                 <div className="text-slate-500 font-mono text-[11px]">
                   Toronto, Ontario, Canada · (437) 423-3456 · navarrojoserene.ca@gmail.com
@@ -3552,13 +3643,13 @@
                   <li><a href="tel:437-423-3456" className="text-blue-400 hover:underline font-mono">📞 (437) 423-3456</a></li>
                   <li><a href="mailto:navarrojoserene.ca@gmail.com" className="hover:text-white font-mono">✉️ navarrojoserene.ca@gmail.com</a></li>
                   <li><a href="https://www.linkedin.com/in/jose-navarro-93b31015/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">🔗 LinkedIn Profile</a></li>
-                  <li><span className="text-slate-500 font-mono">joserenenavarro.blog · my-mobileapps.com</span></li>
+                  <li><span className="text-slate-500 font-mono">my-mobileapps.com · Toronto, ON</span></li>
                 </ul>
               </div>
             </div>
 
             <div className="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row items-center justify-between text-slate-500 text-[11px] gap-2">
-              <span>© 2026 Proofly / Jose Rene Navarro. All rights reserved.</span>
+              <span>© 2026 My Mobile Apps / Jose Rene Navarro. All rights reserved.</span>
               <span>Solutions That Work · Built on Glide Mobile & Web with 20+ Yrs QA</span>
             </div>
           </footer>

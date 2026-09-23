@@ -20,7 +20,9 @@ const MIME_TYPES = {
   '.jpeg': 'image/jpeg',
   '.webp': 'image/webp',
   '.svg': 'image/svg+xml',
-  '.ico': 'image/x-icon'
+  '.ico': 'image/x-icon',
+  '.xml': 'application/xml; charset=UTF-8',
+  '.txt': 'text/plain; charset=UTF-8'
 };
 
 function dispatchToFormSubmit(emailData) {
@@ -122,15 +124,15 @@ function generateAiResponse(userMsg, history) {
   // 2. Polite Thanks, Compliments & Pleasantries
   if (q.match(/\b(thank\s*you|thanks|thx|appreciate\s*it|awesome|great\s*job|good\s*job|cool|you('re|\s*are)\s*(smart|awesome|great|cool|helpful))\b/)) {
     return {
-      reply: `🙏 **You're very welcome!**\n\nI'm always happy to help. Whether you want to explore app ideas for your business, dive into Proofly's 4 levels, or learn more about Jose's 20+ years in software QA, I'm here 24/7.\n\nIf you'd like to talk directly with Jose Rene Navarro, you can call him anytime at **(437) 423-3456** or email **navarrojoserene.ca@gmail.com**.\n\nIs there anything else I can help you with today?`,
-      suggestions: ['Tell me about Proofly Level 1', 'What apps has Jose built?', 'Book a discovery consultation']
+      reply: `🙏 **You're very welcome!**\n\nI'm always happy to help. Whether you want to explore app ideas for your business, dive into our 4 modular tiers, or learn more about Jose's 20+ years in software QA, I'm here 24/7.\n\nIf you'd like to talk directly with Jose Rene Navarro, you can call him anytime at **(437) 423-3456** or email **navarrojoserene.ca@gmail.com**.\n\nIs there anything else I can help you with today?`,
+      suggestions: ['Tell me about Level 1 App', 'What apps has Jose built?', 'Book a discovery consultation']
     };
   }
 
   // 3. Goodbyes & Farewells
   if (q.match(/\b(goodbye|bye|see\s*you|cya|farewell|have\s*a\s*good\s*(day|night)|good\s*night)\b/)) {
     return {
-      reply: `👋 **Have a wonderful day!**\n\nThanks for stopping by Proofly. Whenever you're ready to transform your team's workflow into a high-speed mobile & web app, Jose Rene Navarro is ready to build it in just **5 to 7 business days**.\n\nFeel free to return anytime or reach Jose directly at **(437) 423-3456**!`,
+      reply: `👋 **Have a wonderful day!**\n\nThanks for stopping by My Mobile Apps. Whenever you're ready to transform your team's workflow into a high-speed mobile & web app, Jose Rene Navarro is ready to build it in just **5 to 7 business days**.\n\nFeel free to return anytime or reach Jose directly at **(437) 423-3456**!`,
       suggestions: ['Book consultation', 'View 5 Case Studies', 'Call Jose']
     };
   }
@@ -139,15 +141,15 @@ function generateAiResponse(userMsg, history) {
   if (q.match(/\b(how\s*(are|r)\s*(you|u)|how('s|\s*is)\s*it\s*going|how\s*do\s*you\s*do|how('s|\s*is)\s*your\s*day)\b/)) {
     return {
       reply: `🚀 **I'm doing great, thank you for asking!**\n\nI'm fully online, running at sub-50ms latency, and ready to assist you with custom app designs, workforce automation, and software testing.\n\nHow is your day going? What kind of project or business are you working on?`,
-      suggestions: ['I need an app for my business', 'Explain Proofly Level 1', 'Who is Jose Rene Navarro?']
+      suggestions: ['I need an app for my business', 'Explain Level 1 App', 'Who is Jose Rene Navarro?']
     };
   }
 
   // 5. Greetings
   if (q.match(/^(hi|hello|hey|greetings|good\s*(morning|afternoon|evening)|yo|howdy|sup)\b/) || q === 'hi' || q === 'hello') {
     return {
-      reply: `👋 **Hello! Welcome to Proofly.**\n\nI am the **Proofly AI Concierge**, virtual assistant to **Jose Rene Navarro**. Think of me as your dedicated assistant for business apps, workflow automation, and Software QA.\n\nI can help you:\n• Explore **Proofly Levels 1 to 4** (Face Verification, Task Checklists, CRA Payroll & Scheduling)\n• Review Jose's **5 live production applications**\n• Understand our **5 to 7 business day** delivery timeline\n• Scope a custom mobile & web app for your team\n\nWhat kind of business or project are you looking to build today?`,
-      suggestions: ['Explain Proofly Level 1', 'Can you build an app for my team?', 'What apps has Jose built?', 'Book a discovery consultation']
+      reply: `👋 **Hello! Welcome to My Mobile Apps.**\n\nI am the **My Mobile Apps AI Assistant**, virtual assistant to **Jose Rene Navarro**. Think of me as your dedicated assistant for custom mobile apps, workflow automation, and Software QA.\n\nI can help you:\n• Explore **App Levels 1 to 4** (Face Verification, Task Checklists, CRA Payroll & Scheduling)\n• Review Jose's **5 live production applications**\n• Understand our **5 to 7 business day** delivery timeline\n• Scope a custom mobile & web app for your team\n\nWhat kind of business or project are you looking to build today?`,
+      suggestions: ['Explain Level 1 App', 'Can you build an app for my team?', 'What apps has Jose built?', 'Book a discovery consultation']
     };
   }
 
@@ -318,16 +320,16 @@ function generateAiResponse(userMsg, history) {
   // 18. Identity & What are you / Who made you / ChatGPT comparisons
   if (q.includes('who are you') || q.includes('what are you') || q.includes('who made you') || q.includes('what can you do') || q.includes('chatgpt') || q.includes('your name')) {
     return {
-      reply: `I am the **Proofly AI Concierge**, an AI assistant built specifically for **Jose Rene Navarro's** custom software and workforce platform.\n\nJust like ChatGPT, I can converse in natural language, answer technical questions, write app specs, do calculations, and guide you through software architecture. My domain expertise covers:\n\n1. **Workforce Operations**: Eliminating buddy punching with AI Face Verification (1.00 match score), GPS check-ins, and mandatory before/after photo proof.\n2. **Cross-Platform Apps**: Building Progressive Web Apps (PWAs) on Glide that work seamlessly across iPhone, Android, and desktop browsers.\n3. **Quality Assurance Rigor**: Leveraging Jose's 20+ years of software QA experience to ensure zero-crash reliability.\n\nHow can I assist your business today?`,
-      suggestions: ['Tell me about Proofly Level 1', 'What apps has Jose built?', 'How much does an app cost?']
+      reply: `I am the **My Mobile Apps AI Assistant**, an AI assistant built specifically for **Jose Rene Navarro's** custom software and workforce platform.\n\nJust like ChatGPT, I can converse in natural language, answer technical questions, write app specs, do calculations, and guide you through software architecture. My domain expertise covers:\n\n1. **Workforce Operations**: Eliminating buddy punching with AI Face Verification (1.00 match score), GPS check-ins, and mandatory before/after photo proof.\n2. **Cross-Platform Apps**: Building Progressive Web Apps (PWAs) on Glide that work seamlessly across iPhone, Android, and desktop browsers.\n3. **Quality Assurance Rigor**: Leveraging Jose's 20+ years of software QA experience to ensure zero-crash reliability.\n\nHow can I assist your business today?`,
+      suggestions: ['Tell me about Level 1 App', 'What apps has Jose built?', 'How much does an app cost?']
     };
   }
 
-  // 19. Overview / Services / What is Proofly
-  if (q.includes('what is proofly') || q.includes('what do you do') || q.includes('what does proofly do') || q.includes('overview') || q.includes('services')) {
+  // 19. Overview / Services / What is My Mobile Apps
+  if (q.includes('what is my mobile apps') || q.includes('what is proofly') || q.includes('what do you do') || q.includes('what does proofly do') || q.includes('overview') || q.includes('services')) {
     return {
-      reply: `⭐ **Proofly Overview**: Proofly is an AI-powered workforce management platform and custom mobile/web application studio created by **Jose Rene Navarro**.\n\nWe specialize in turning chaotic, paper-based field operations into simple, audit-proof digital applications:\n\n• **AI Face Biometrics**: Guarantees zero buddy punching with 1.00 facial match score.\n• **Mandatory Shift Checklists**: Staff must upload before/after photos of finished work.\n• **In-App Messaging & Announcements**: Replaces messy WhatsApp/SMS chains.\n• **1-Click CRA Payroll**: Calculates regular vs. overtime hours under Ontario ESA.\n• **Fast Delivery**: Built on Glide Progressive Web Apps (PWAs) in just **5 to 7 business days**!\n\nWould you like to explore Proofly Level 1, or discuss an app for your team?`,
-      suggestions: ['Explain Proofly Level 1', 'How much does an app cost?', 'See Jose\'s 5 live apps', 'Book a discovery call']
+      reply: `⭐ **My Mobile Apps Overview**: My Mobile Apps is a custom mobile/web application studio and AI workforce solutions platform created by **Jose Rene Navarro** in Toronto, Ontario.\n\nWe specialize in turning chaotic, paper-based field operations into simple, audit-proof digital applications:\n\n• **AI Face Biometrics**: Guarantees zero buddy punching with 1.00 facial match score.\n• **Mandatory Shift Checklists**: Staff must upload before/after photos of finished work.\n• **In-App Messaging & Announcements**: Replaces messy WhatsApp/SMS chains.\n• **1-Click CRA Payroll**: Calculates regular vs. overtime hours under Ontario ESA.\n• **Fast Delivery**: Built on Glide Progressive Web Apps (PWAs) in just **5 to 7 business days**!\n\nWould you like to explore App Level 1, or discuss an app for your team?`,
+      suggestions: ['Explain Level 1 App', 'How much does an app cost?', 'See Jose\'s 5 live apps', 'Book a discovery call']
     };
   }
 
