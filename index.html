@@ -4249,6 +4249,7 @@
       const [focusFreeApp, setFocusFreeApp] = useState(false);
       const [servicesMenuOpen, setServicesMenuOpen] = useState(false);
       const [logoActive, setLogoActive] = useState(false);
+      const [pageTransition, setPageTransition] = useState('enter'); // 'enter' | 'exit'
 
       const VIEW_TITLES = {
         'home': 'My Mobile Apps | Custom Business Mobile & Web App Development Toronto',
@@ -4312,22 +4313,29 @@
         setTimeout(() => setLogoActive(false), 750);
         setServicesMenuOpen(false);
 
-        setCurrentView('home');
-        syncUrl('home');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setPageTransition('exit');
+        setTimeout(() => {
+          setCurrentView('home');
+          syncUrl('home');
+          setPageTransition('enter');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 180);
       };
 
       // Universal Navigation Router
       const navigateTo = (view, targetId = null) => {
         setServicesMenuOpen(false);
-        setCurrentView(view);
-        syncUrl(view, targetId);
-
-        if (targetId) {
-          scrollToTarget(targetId, view);
-        } else {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        setPageTransition('exit');
+        setTimeout(() => {
+          setCurrentView(view);
+          syncUrl(view, targetId);
+          setPageTransition('enter');
+          if (targetId) {
+            scrollToTarget(targetId, view);
+          } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        }, 180);
       };
 
       // Initial Path & Popstate Router
@@ -4580,7 +4588,7 @@
           </header>
 
           {/* Main Content View Switcher */}
-          <main className="flex-1">
+          <main className={`flex-1 ${pageTransition === 'exit' ? 'page-exit' : 'page-enter'}`}>
             {currentView === 'work-done' ? (
               <WorkDonePage
                 onOpenFlyer={openFlyerLightbox}
