@@ -131,7 +131,7 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body class="bg-white text-slate-900 antialiased selection:bg-blue-600 selection:text-white">
   <div id="root"></div>
@@ -246,7 +246,7 @@
       const sizeClasses = size === "lg" ? "w-14 h-14" : size === "sm" ? "w-8 h-8" : "w-11 h-11";
       return (
         <div className={`${sizeClasses} logo-mark-wrapper rounded-xl overflow-hidden border border-slate-700/60 shadow-md bg-[#090D16] flex items-center justify-center shrink-0 ${isPulsing ? 'logo-click-active' : ''} ${className}`}>
-          <img src="assets/logo.webp" alt="My Mobile Apps - Jose Rene Navarro" className="w-full h-full object-cover select-none" />
+          <img src="/assets/logo.webp" alt="My Mobile Apps - Jose Rene Navarro" className="w-full h-full object-cover select-none" />
         </div>
       );
     }
@@ -261,7 +261,7 @@
         name: 'Attendance & Tasks',
         subtitle: 'Attendance + Task Verification (Mobile & Web)',
         badge: 'Foundation Suite',
-        flyer: 'assets/proofly-tier1.webp',
+        flyer: '/assets/proofly-tier1.webp',
         summary: 'AI Face Verification, Late Detection, Missing Checkout Alerts, Photo Task Proof & Admin Web Monitoring.',
         features: [
           'AI Biometric Face Verification (Face Score 1.00 Match)',
@@ -282,7 +282,7 @@
         name: 'Team Messaging',
         subtitle: 'Attendance + Tasks + In-App Messaging (Mobile & Web)',
         badge: 'Communication Suite',
-        flyer: 'assets/proofly-tier2.webp',
+        flyer: '/assets/proofly-tier2.webp',
         summary: 'Everything in Level 1 plus Shift Reminders, Missed Check-In Alerts & Direct Manager-to-Employee Chat.',
         features: [
           'Everything in Level 1 Attendance & Task Verification',
@@ -303,7 +303,7 @@
         name: 'CRA-Ready Payroll',
         subtitle: 'Attendance + Tasks + Chat + CRA Payroll (Mobile & Web)',
         badge: 'Compliance Suite',
-        flyer: 'assets/proofly-tier3.webp',
+        flyer: '/assets/proofly-tier3.webp',
         summary: 'Everything in Levels 1 & 2 plus CRA-Ready Payroll, Missing Timesheets, Overtime Math & Anomaly Flagging.',
         features: [
           'Everything in Levels 1 & 2 (Biometrics, Tasks, Messaging)',
@@ -324,7 +324,7 @@
         name: 'Smart Scheduling',
         subtitle: 'Full Operations + In-App Scheduling (Mobile & Web)',
         badge: 'Enterprise Suite',
-        flyer: 'assets/proofly-tier4.webp',
+        flyer: '/assets/proofly-tier4.webp',
         summary: 'Everything in Levels 1–3 plus Drag-and-Drop Shift Planner, Conflict Detection & Staff Availability Matching.',
         features: [
           'Everything in Levels 1, 2, and 3',
@@ -445,7 +445,7 @@
         client: 'Manpower Solution',
         activeMetric: '18 Active Employees',
         badge: 'Level 1 Architecture · Field Operations',
-        flyerImg: 'assets/project-manpower.webp',
+        flyerImg: '/assets/project-manpower.webp',
         excerpt: 'Fast, paperless attendance system with photo proof, real-time admin monitoring, and instant reports currently used by 18 employees.',
         fullDocDescription: 'The Manpower Solution Level 1 Mobile App was successfully launched and is currently used by its 18 employees. The app provides a fast, paperless attendance system with photo proof, real-time admin monitoring, and instant reports. It eliminates time theft, improves accountability, and simplifies daily operations for managers and staff alike.',
         keyFeatures: [
@@ -469,7 +469,7 @@
         activeMetric: '100% Free App · 135+ Worship Songs',
         badge: '100% Free Community Worship App',
         isFreeApp: true,
-        flyerImg: 'assets/project-cfc-music.webp',
+        flyerImg: '/assets/project-cfc-music.webp',
         excerpt: 'Available 100% free of charge: mobile & web worship resource with 135+ Catholic songs, interactive chord transposing, and rehearsal schedules.',
         fullDocDescription: 'The CFC Music Ministry Scarborough South Mobile App was successfully launched and is available 100% free of charge for ministry members, choir leaders, and community worship teams. The app provides easy access to 135+ worship songs, song selection for services, latest service schedules, and announcements. It simplifies rehearsal preparation and keeps the entire ministry connected and aligned anytime, anywhere with zero fees or subscriptions.',
         keyFeatures: [
@@ -493,7 +493,7 @@
         client: 'Public / Faith Community',
         activeMetric: '100% Offline Capable · Zero Registration',
         badge: 'Public Mobile Web App',
-        flyerImg: 'assets/project-saint-finder.webp',
+        flyerImg: '/assets/project-saint-finder.webp',
         excerpt: 'Catholic patron saint discovery by birthday, saint biographies, virtues, and baby name search with 100% offline support.',
         fullDocDescription: 'The Birthday Saint Finder App was successfully launched and is currently available for use. This family-friendly app helps users discover Catholic patron saints associated with their birthday, explore saint biographies and virtues, and find saints for baby names. Designed for everyday inspiration, it works 100% offline, requires no registration, and makes faith learning simple and engaging for all ages.',
         keyFeatures: [
@@ -516,7 +516,7 @@
         client: 'Driving School Academy',
         activeMetric: 'Dual Admin & Instructor Dashboards',
         badge: 'Fleet & Driving School Platform',
-        flyerImg: 'assets/project-driving-academy.webp',
+        flyerImg: '/assets/project-driving-academy.webp',
         excerpt: 'All-in-one driving school management platform with dedicated Administrator and Instructor Dashboards.',
         fullDocDescription: 'The Driving Academy Management Platform is an all-in-one driving school management system with dedicated Administrator and Instructor Dashboards. It manages students, packages, road tests, and vehicles, with conflict-free scheduling and real-time lesson tracking. Designed to eliminate double-bookings and streamline driving school operations, the platform was successfully launched.',
         keyFeatures: [
@@ -539,7 +539,7 @@
         client: 'Joren Real Estate',
         activeMetric: 'Buyer Engagement & View Analytics',
         badge: 'Real Estate Brokerage Mobile App',
-        flyerImg: 'assets/project-joren-property.webp',
+        flyerImg: '/assets/project-joren-property.webp',
         excerpt: 'Real estate mobile & web app for buyers and agents to explore listings, view photos, and track property engagement.',
         fullDocDescription: 'The Joren Property Listings is a mobile application designed for buyers and agents to explore available properties. Users can browse listings, view high-quality photos, and access complete property details anytime. The app also tracks property views to help agents gauge buyer interest, making property discovery and marketing simple, fast, and organized.',
         keyFeatures: [
@@ -3085,7 +3085,7 @@
                 
                 <div className="md:col-span-4 flex flex-col items-center text-center">
                   <div className="w-36 h-36 rounded-2xl overflow-hidden border-2 border-blue-600 shadow-lg bg-slate-200">
-                    <img src="assets/jose-headshot.jpg" alt="Jose Rene Navarro" className="w-full h-full object-cover" />
+                    <img src="/assets/jose-headshot.jpg" alt="Jose Rene Navarro" className="w-full h-full object-cover" />
                   </div>
                   <h3 className="text-lg font-bold text-slate-900 mt-4">Jose Rene Navarro</h3>
                   <div className="text-xs font-semibold text-blue-600">QA Professional · Glide App Builder · Web Analyst</div>
@@ -3094,7 +3094,7 @@
                   {/* Official Brand Logo Badge */}
                   <div className="mt-4 p-2.5 rounded-2xl bg-slate-950 border border-slate-800 flex items-center gap-2.5 shadow-md max-w-[220px]">
                     <div className="w-10 h-10 rounded-xl overflow-hidden border border-white/20 shrink-0">
-                      <img src="assets/logo.webp" alt="Jose Navarro Logo" className="w-full h-full object-cover" />
+                      <img src="/assets/logo.webp" alt="Jose Navarro Logo" className="w-full h-full object-cover" />
                     </div>
                     <div className="text-left">
                       <div className="text-[10px] font-bold text-white tracking-tight">JOSE NAVARRO</div>
@@ -4074,7 +4074,7 @@
               <div className="flex items-center gap-2.5">
                 <div className="relative">
                   <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-cyan-400/60 p-0.5 flex items-center justify-center bg-slate-900 ai-avatar-glow">
-                    <img src="assets/ai-bot-avatar.jpg" alt="My Mobile Apps AI Avatar" className="w-full h-full object-cover rounded-full" />
+                    <img src="/assets/ai-bot-avatar.jpg" alt="My Mobile Apps AI Avatar" className="w-full h-full object-cover rounded-full" />
                   </div>
                   <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-slate-950 animate-pulse" />
                 </div>
@@ -4214,7 +4214,7 @@
               aria-label="Chat with My Mobile Apps AI"
             >
               <div className="relative w-8 h-8 rounded-full overflow-hidden border border-cyan-400/80 shrink-0 ai-avatar-glow">
-                <img src="assets/ai-bot-avatar.jpg" alt="My Mobile Apps AI" className="w-full h-full object-cover" />
+                <img src="/assets/ai-bot-avatar.jpg" alt="My Mobile Apps AI" className="w-full h-full object-cover" />
                 <span className="absolute top-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-slate-950" />
               </div>
 
