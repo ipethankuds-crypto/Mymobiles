@@ -7,8 +7,8 @@ const PORT = process.env.PORT || 3000;
 const PUBLIC_DIR = __dirname;
 const INQUIRIES_FILE = path.join(PUBLIC_DIR, 'inquiries.json');
 const FORMSUBMIT_EMAIL = 'navarrojoserene.ca@gmail.com';
-const SITE_URL = 'https://www.my-mobileapps.com/';
-const SITE_ORIGIN = 'https://www.my-mobileapps.com';
+const SITE_URL = 'https://my-mobileapps.com/';
+const SITE_ORIGIN = 'https://my-mobileapps.com';
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=UTF-8',
@@ -465,59 +465,59 @@ const server = http.createServer((req, res) => {
   // Define SEO metadata for all clean SPA routes
   const ROUTE_SEO = {
     '/': {
-      title: 'My Mobile Apps | Custom Business Mobile & Web App Development Toronto',
-      description: 'My Mobile Apps builds custom mobile PWAs, web applications, and AI face verification systems for field service businesses across Toronto & Canada. Rapid 5–7 day delivery.',
-      canonical: 'https://www.my-mobileapps.com/'
+      title: 'My Mobile Apps | Toronto App Development by Jose',
+      description: 'Custom mobile and web app development in Toronto. Build reliable apps, AI integrations and business software with My Mobile Apps.',
+      canonical: 'https://my-mobileapps.com/'
     },
     '/index.html': {
-      title: 'My Mobile Apps | Custom Business Mobile & Web App Development Toronto',
-      description: 'My Mobile Apps builds custom mobile PWAs, web applications, and AI face verification systems for field service businesses across Toronto & Canada. Rapid 5–7 day delivery.',
-      canonical: 'https://www.my-mobileapps.com/'
+      title: 'My Mobile Apps | Toronto App Development by Jose',
+      description: 'Custom mobile and web app development in Toronto. Build reliable apps, AI integrations and business software with My Mobile Apps.',
+      canonical: 'https://my-mobileapps.com/'
     },
     '/mobile-app-development': {
       title: 'Custom Mobile App Development Toronto & Canada | Rapid 5–7 Day PWAs',
       description: 'Get custom mobile Progressive Web Apps (PWAs) built on Glide and deployed for your business in 5-7 business days. 20+ years of Software QA rigor by Jose Rene Navarro.',
-      canonical: 'https://www.my-mobileapps.com/mobile-app-development'
+      canonical: 'https://my-mobileapps.com/mobile-app-development'
     },
     '/website-development': {
       title: 'Custom Business Web Portals & Dashboard Development | Toronto & Canada',
       description: 'Custom business web portals, operations management dashboards, and automated CRA payroll export systems built fast for Toronto and Ontario businesses.',
-      canonical: 'https://www.my-mobileapps.com/website-development'
+      canonical: 'https://my-mobileapps.com/website-development'
     },
     '/qa-testing': {
       title: 'Website & Software QA Testing Services Toronto | 20+ Yrs QA Engineering',
       description: 'Professional Software Quality Assurance testing by Jose Rene Navarro. Eliminate broken workflows, usability flaws, and UI bugs across desktop and mobile.',
-      canonical: 'https://www.my-mobileapps.com/qa-testing'
+      canonical: 'https://my-mobileapps.com/qa-testing'
     },
     '/ai-solutions': {
       title: 'AI Biometric Face Verification & Business Solutions | Anti-Buddy Punching',
       description: 'Stop buddy punching 100% with AI Face Match biometrics, anti-spoofing cameras, and GPS geofenced mobile attendance for Canadian field service teams.',
-      canonical: 'https://www.my-mobileapps.com/ai-solutions'
+      canonical: 'https://my-mobileapps.com/ai-solutions'
     },
     '/industries/field-services': {
       title: 'Field Service, Cleaning & Construction Apps Toronto | My Mobile Apps',
       description: 'Custom mobile apps for commercial cleaning, construction, HVAC, and trades. Digital before/after photo checklists, live shift tracking, and CRA payroll.',
-      canonical: 'https://www.my-mobileapps.com/industries/field-services'
+      canonical: 'https://my-mobileapps.com/industries/field-services'
     },
     '/field-services': {
       title: 'Field Service, Cleaning & Construction Apps Toronto | My Mobile Apps',
       description: 'Custom mobile apps for commercial cleaning, construction, HVAC, and trades. Digital before/after photo checklists, live shift tracking, and CRA payroll.',
-      canonical: 'https://www.my-mobileapps.com/industries/field-services'
+      canonical: 'https://my-mobileapps.com/industries/field-services'
     },
     '/work-done': {
       title: 'Verified Client Work Done & Live Apps Portfolio | My Mobile Apps',
       description: 'Explore 5 live production apps built by Jose Rene Navarro: Manpower Solution, Driving Academy, Property Listings, CFC Music Ministry, and Saint Finder.',
-      canonical: 'https://www.my-mobileapps.com/work-done'
+      canonical: 'https://my-mobileapps.com/work-done'
     },
     '/case-studies': {
       title: 'Production App Case Studies & Portfolio | My Mobile Apps Toronto',
       description: 'Explore 5 live production apps built by Jose Rene Navarro: Manpower Solution, Driving Academy, Property Listings, CFC Music Ministry, and Saint Finder.',
-      canonical: 'https://www.my-mobileapps.com/work-done'
+      canonical: 'https://my-mobileapps.com/work-done'
     },
     '/contact': {
       title: 'Contact Jose Rene Navarro | Free App Discovery Consultation Toronto',
       description: 'Book a free 30-minute consultation or call (437) 423-3456. Get your custom mobile or web app scoped and delivered in 5 to 7 days.',
-      canonical: 'https://www.my-mobileapps.com/contact'
+      canonical: 'https://my-mobileapps.com/contact'
     }
   };
 
