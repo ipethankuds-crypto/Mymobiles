@@ -1,18 +1,18 @@
 # My Mobile Apps — Custom Mobile & Web Applications, AI Solutions & QA Testing
 **By Jose Rene Navarro · Solutions That Work**
 
-A clean, modern, and conversion-focused business website built for **My Mobile Apps** (`https://www.my-mobileapps.com/`), showcasing custom mobile & web application solutions (delivered in 5-7 business days), AI workflow tools, and 20-year Software QA & SEO audits by founder **Jose Rene Navarro**.
+A clean, modern, and conversion-focused business website built for **My Mobile Apps** (`https://my-mobile-apps.ca/`), showcasing custom mobile & web application solutions (delivered in 5-7 business days), AI workflow tools, and 20-year Software QA & SEO audits by founder **Jose Rene Navarro**.
 
 ## 🚀 Live Server
 The website runs on:
 **[http://localhost:3000/](http://localhost:3000/)**
 
 Dedicated Work Done & Production Deployments page:
-**[http://localhost:3000/#/work-done](http://localhost:3000/#/work-done)**
+**[http://localhost:3000/work-done](http://localhost:3000/work-done)**
 
 Search Crawler Files:
-- Sitemap: **[http://localhost:3000/sitemap.xml](http://localhost:3000/sitemap.xml)** (`https://www.my-mobileapps.com/sitemap.xml`)
-- Robots.txt: **[http://localhost:3000/robots.txt](http://localhost:3000/robots.txt)** (`https://www.my-mobileapps.com/robots.txt`)
+- Sitemap: **[http://localhost:3000/sitemap.xml](http://localhost:3000/sitemap.xml)** (`https://my-mobile-apps.ca/sitemap.xml`)
+- Robots.txt: **[http://localhost:3000/robots.txt](http://localhost:3000/robots.txt)** (`https://my-mobile-apps.ca/robots.txt`)
 
 To start the server manually:
 ```bash

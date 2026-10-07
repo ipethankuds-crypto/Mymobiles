@@ -3,4 +3,4 @@ Allow: /
 Disallow: /api/
 Disallow: /inquiries.json
 
-Sitemap: https://my-mobileapps.com/sitemap.xml
+Sitemap: https://my-mobile-apps.ca/sitemap.xml
