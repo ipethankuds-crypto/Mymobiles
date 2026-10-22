@@ -1,4 +1,4 @@
-/* My Mobile Apps — Custom Mobile & Web Apps & QA Testing - Jose Rene Navarro */
+/* Proofly AI Workforce Platform & Custom Mobile Apps - Jose Rene Navarro */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
@@ -47,39 +47,6 @@ h1, h2, h3, .font-heading {
   background-image: radial-gradient(rgba(148, 163, 184, 0.28) 1.2px, transparent 1.2px);
   background-size: 20px 20px;
 }
-
-/* ─── Page Transition Animations ─────────────────────────────────────────── */
-@keyframes pageEnter {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pageExit {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-}
-
-.page-enter {
-  animation: pageEnter 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-.page-exit {
-  animation: pageExit 0.18s ease-in both;
-  pointer-events: none;
-}
-/* ─────────────────────────────────────────────────────────────────────────── */
 
 /* Glassmorphism Classes */
 .glass-panel {
@@ -241,7 +208,7 @@ html {
 }
 
 /* =========================================================================
-   Interactive My Mobile Apps Brand Logo & Direct-to-Top Animations
+   Interactive Proofly Brand Logo & Direct-to-Top Animations
    ========================================================================= */
 @keyframes logoClickPulse {
   0% {
@@ -322,7 +289,7 @@ html {
 }
 
 /* =========================================================================
-   My Mobile Apps AI Concierge Chatbot Widget
+   Proofly AI Concierge Chatbot Widget
    ========================================================================= */
 
 /* Floating Chatbot Launcher */
